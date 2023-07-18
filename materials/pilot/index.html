@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Geheugentaken</title>
+    <script src="https://unpkg.com/jspsych@7.3.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-categorize-html@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.3"></script>
+
+
+
+    <link href="css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="css/jspsych_grid.css" rel="stylesheet" type="text/css"></link>
+    <link href="https://unpkg.com/jspsych@7.3.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <script src="plugins/ospan-recall.js"></script>
+
+
+    <script src="functions/generate_math.js"></script>
+    <script src="functions/recall_display.js"></script>
+    <script src="functions/utils.js"></script>
+    <script src="functions/generate_timelines.js"></script>
+
+    <script src="plugins/updating-binding-number.js"></script>
+    <script src="plugins/updating-binding-color.js"></script>
+    <script src="plugins/updating-binding-fixation.js"></script>
+    <script src="plugins/updating-binding-number-recall.js"></script>
+    <script src="plugins/updating-binding-color-recall.js"></script>
+
+
+    <script src="updating_binding/1_upd_bind_number_procedure.js"></script>
+    <script src="updating_binding/2_upd_bind_color_procedure.js"></script>
+    <script src="ospan/0_ospan_instructions.js"></script>
+    <script src="ospan/1_ospan_procedure.js"></script>
+
+  </head>
+  <body></body>
+  <script>
+
+
+
+var jsPsych = initJsPsych({
+    on_finish: function() {
+        jsPsych.data.displayData('csv')
+    }
+})
+
+
+
+
+//var timeline = binding_updating_timeline
+var timeline = [binding_updating_color_full_loop]
+
+jsPsych.run(timeline);
+</script>
+</html>
