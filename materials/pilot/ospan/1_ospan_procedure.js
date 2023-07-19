@@ -198,7 +198,8 @@ var ospan_full_loop = {
     generate_timeline_variables_ospan(setSize = 4, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
   ],
-  repetitions: 3
+  repetitions: 3,
+  randomize: true
 }
 
 
