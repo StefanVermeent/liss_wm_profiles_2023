@@ -71,11 +71,11 @@ var jsPsychBindingUpdatingNumberGrid = (function (jspsych) {
       var letter2 = (trial.pos == 1)? current_letter : "";
       var letter3 = (trial.pos == 2)? current_letter : "";
       var letter4 = (trial.pos == 3)? current_letter : "";
-      var letter5 = (trial.pos == 4)? current_letter : "";
-      var letter6 = (trial.pos == 5)? current_letter : "";
-      var letter7 = (trial.pos == 6)? current_letter : "";
-      var letter8 = (trial.pos == 7)? current_letter : "";
-      var letter9 = (trial.pos == 8)? current_letter : "";
+     // var letter5 = (trial.pos == 4)? current_letter : "";
+      var letter5 = (trial.pos == 5)? current_letter : "";
+      var letter6 = (trial.pos == 6)? current_letter : "";
+      var letter7 = (trial.pos == 7)? current_letter : "";
+      var letter8 = (trial.pos == 8)? current_letter : "";
 
       // Construct and display 3 X 3 grid
       var html = "<style>" +
@@ -104,11 +104,11 @@ var jsPsychBindingUpdatingNumberGrid = (function (jspsych) {
       "<div>" + letter2 + "</div>" +
       "<div>" + letter3 + "</div>" +
       "<div>" + letter4 + "</div>" +
+      "<div>" + "+" + "</div>" +
       "<div>" + letter5 + "</div>" +
       "<div>" + letter6 + "</div>" +
       "<div>" + letter7 + "</div>" +
       "<div>" + letter8 + "</div>" +
-      "<div>" + letter9 + "</div>" +
       "</div>"
 
       // draw

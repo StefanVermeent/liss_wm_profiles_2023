@@ -218,6 +218,10 @@
   border-color: #ccc;
 }
 
+.jspsych-btn-recall-number:hover {
+  background: rgba(220,0,0,0.3);
+}
+
 .jspsych-btn-recall-number:active {
   color: #cc3311;
 }

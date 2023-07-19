@@ -6,6 +6,9 @@
     <script src="https://unpkg.com/@jspsych/plugin-survey-html-form@1.0.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-categorize-html@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.3"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-fullscreen@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
 
 
 
@@ -28,7 +31,7 @@
     <script src="plugins/updating-binding-number-recall.js"></script>
     <script src="plugins/updating-binding-color-recall.js"></script>
 
-
+    <script src="updating_binding/0_upd_bind_instructions.js"></script>
     <script src="updating_binding/1_upd_bind_number_procedure.js"></script>
     <script src="updating_binding/2_upd_bind_color_procedure.js"></script>
     <script src="ospan/0_ospan_instructions.js"></script>
@@ -37,6 +40,54 @@
   </head>
   <body></body>
   <script>
+
+// Preload Instruction Images
+var preload_bind_upd = {
+  type: jsPsychPreload,
+  images: [
+     'updating_binding/img/instr01.png',
+     'updating_binding/img/instr02.png',
+     'updating_binding/img/instr03.png',
+     'updating_binding/img/instr04.png',
+     'updating_binding/img/instr05.png',
+     'updating_binding/img/instr06.png',
+     'updating_binding/img/instr07.png',
+  ]
+}
+
+var preload_ospan = {
+  type: jsPsychPreload,
+  images: [
+     'ospan/img/instr01.png',
+     'ospan/img/instr02.png',
+     'ospan/img/instr03.png',
+     'ospan/img/instr04.png',
+  ]
+}
+
+
+
+// General variables
+var fullscreenmode = {
+  type: jsPsychFullscreen,
+  fullscreen_mode: true,
+  message: "<p>Het experiment zal verder gaan in <i>volledig scherm modus</i>.<br>We verzoeken je om in <i>volledig scherm modus</i> te blijven tijdens de gehele duur van het experiment.</p>",
+  button_label: "Ga verder"
+};
+
+var cursor_off = {
+    type: jsPsychCallFunction,
+    func: function() {
+        document.body.style.cursor= "none";
+    }
+};
+
+var cursor_on = {
+    type: jsPsychCallFunction,
+    func: function() {
+        document.body.style.cursor= "auto";
+    }
+};
 
 
 
@@ -47,10 +98,78 @@ var jsPsych = initJsPsych({
 })
 
 
+var ospan_timeline = [
+  preload_ospan,
+  ospan_welcome,
+  ospan_instructions_letters,
+  ospan_practice_letters_full_loop,
+  ospan_instructions_math,
+  ospan_practice_math_full_loop,
+  ospan_instructions_full,
+  ospan_practice_full_loop,
+  ospan_start,
+  ospan_full_loop,
+  ospan_end
+].flat(2)
 
+
+var bind_upd_timeline01 = [
+  preload_bind_upd,
+  bind_upd_welcome,
+  bind_upd_number_instructions,
+  bind_upd_number_practice_loop,
+  bind_upd_start,
+  bind_upd_number_full_loop,
+  bind_upd_number_to_color_transition,
+  bind_upd_color_practice_loop,
+  bind_upd_start,
+  bind_upd_color_full_loop,
+  bind_upd_end
+]
+
+var bind_upd_timeline02 = [
+  preload_bind_upd,
+  bind_upd_welcome,
+  bind_upd_color_instructions,
+  bind_upd_color_practice_loop,
+  bind_upd_start,
+  bind_upd_color_full_loop,
+  bind_upd_color_to_number_transition,
+  bind_upd_number_practice_loop,
+  bind_upd_start,
+  bind_upd_color_full_loop,
+  bind_upd_end
+]
+
+var test_order1 = [
+    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
+    ospan_timeline, bind_upd_timeline01
+  ].flat(2)
+
+  var test_order2 = [
+    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
+    ospan_timeline, bind_upd_timeline02
+  ].flat(2)
+
+  var test_order3 = [
+    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 3})}},
+    bind_upd_timeline01, ospan_timeline
+  ].flat(2)
+
+  var test_order4 = [
+    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 4})}},
+    bind_upd_timeline02, ospan_timeline
+  ].flat(2)
+
+var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2, test_order3, test_order4], 1)[0]
+
+var full_experiment_timeline = [
+    fullscreenmode,
+    counterbalance
+    ].flat(2)
 
 //var timeline = binding_updating_timeline
-var timeline = [binding_updating_color_full_loop]
+var timeline = full_experiment_timeline
 
 jsPsych.run(timeline);
 </script>

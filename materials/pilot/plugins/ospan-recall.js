@@ -95,7 +95,7 @@ var jsPsychOspanRecall = (function (jspsych) {
         }
 
         // start time
-
+        var start_time = performance.now();
 
           // Add clicking functionality to buttons
           for (var i = 0; i < matrix.length; i++) {

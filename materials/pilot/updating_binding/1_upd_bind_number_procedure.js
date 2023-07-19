@@ -7,11 +7,6 @@ var number_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] // Set of al
 var fixation = {
    on_start: function(){
     bind_upd_number_step += 1
-    console.log(jsPsych.timelineVariable("stim"))
-    console.log(jsPsych.timelineVariable("pos"))
-    console.log(jsPsych.timelineVariable("recall_stim"))
-    console.log(jsPsych.timelineVariable("recall_pos"))
-
   },
   stimulus: "+",
   type: jsPsychBindingUpdatingFixation,
@@ -23,7 +18,7 @@ var fixation = {
 };
 
 // Grid with memory item
-var binding_updating_number = {
+var bind_upd_number = {
   type: jsPsychBindingUpdatingNumberGrid,
   stimulus: function(){return jsPsych.timelineVariable("stim")[bind_upd_number_step]},
   pos: function(){return jsPsych.timelineVariable("pos")[bind_upd_number_step]},
@@ -33,12 +28,13 @@ var binding_updating_number = {
   trial_duration: function(){return 1500},
   data: {
     nBind: function(){return jsPsych.timelineVariable("nBind")},
-    nUpd: function(){return jsPsych.timelineVariable("nUpd")}
+    nUpd: function(){return jsPsych.timelineVariable("nUpd")},
+    task: function(){return jsPsych.timelineVariable("task")}
   }
 }
 
 // Empty grid in between memory items
-var binding_updating_number_empty = {
+var bind_upd_number_empty = {
   type: jsPsychBindingUpdatingNumberGrid,
   stimulus: "",
   pos: 0,
@@ -51,11 +47,12 @@ var binding_updating_number_empty = {
     position: function(){return jsPsych.timelineVariable("pos")},
     nBind: function(){return jsPsych.timelineVariable("nBind")},
     nUpd: function(){return jsPsych.timelineVariable("nUpd")},
+    task: function(){return jsPsych.timelineVariable("task")}
   }
 }
 
 // Recall of last n letters
-var binding_updating_number_recall = {
+var bind_upd_number_recall = {
   type: jsPsychBindingUpdatingNumberRecall,
   recall_position: function(){return jsPsych.timelineVariable("recall_pos")[bind_upd_number_recall_step]},
   nBind: function(){return jsPsych.timelineVariable("nBind")},
@@ -63,6 +60,7 @@ var binding_updating_number_recall = {
   correct_number: function(){return jsPsych.timelineVariable("recall_stim")[bind_upd_number_recall_step]},
   data: {
     variable: 'recall',
+    task: function(){return jsPsych.timelineVariable("task")}
   }
 };
 
@@ -71,8 +69,8 @@ var binding_updating_number_recall = {
 
 
 // Loop over all Binding and Updating stimuli
-var binding_updating_number_stim_loop = {
-  timeline: [binding_updating_number, binding_updating_number_empty],
+var bind_upd_number_stim_loop = {
+  timeline: [bind_upd_number, bind_upd_number_empty],
   loop_function: function(){
     if(bind_upd_number_step == ((jsPsych.timelineVariable('nBind') + jsPsych.timelineVariable('nUpd')) - 1)){
       bind_upd_number_step = -1
@@ -85,8 +83,8 @@ var binding_updating_number_stim_loop = {
 }
 
 // Loop over all Recall stimuli
-var binding_updating_number_recall_loop = {
-  timeline: [binding_updating_number_recall],
+var bind_upd_number_recall_loop = {
+  timeline: [bind_upd_number_recall],
   loop_function: function(){
     if(bind_upd_number_recall_step == jsPsych.timelineVariable("nBind")-1){
       bind_upd_number_recall_step = 0
@@ -99,13 +97,50 @@ var binding_updating_number_recall_loop = {
 }
 
 // The full loop, including fixation, memory items, and recall phase
-var binding_updating_number_full_loop = {
-  timeline: [fixation, binding_updating_number_stim_loop, binding_updating_number_recall_loop].flat(2),
+var bind_upd_number_full_loop = {
+  timeline: [fixation, bind_upd_number_stim_loop, bind_upd_number_recall_loop].flat(2),
   timeline_variables: [
-   // generate_bind_upd_number_timeline(nBind = 3, nUpd = 0, stimset = number_set),
-    generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = number_set),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+
+    generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 5, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 5, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 5, stimset = number_set, task = "bind_upd_number_test"),
+
   ]
 }
+
+
+// Practice loop
+var bind_upd_number_practice_loop = {
+  timeline: [fixation, bind_upd_number_stim_loop, bind_upd_number_recall_loop].flat(2),
+  timeline_variables: [
+    generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 1, stimset = number_set, task = "bind_upd_number_practice"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_practice"),
+  ]
+}
+
 
 
 

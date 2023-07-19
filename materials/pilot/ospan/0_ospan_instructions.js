@@ -38,7 +38,7 @@ var ospan_instructions_letters = {
         //page 5
 
           "Na afloop klik je op de letters <strong>in de juiste volgorde</strong>.<br><br>" +
-          "Gebruik de '<strong>?</strong>' knop als je een letter niet meer kunt herinneren.<br>" +
+          "Gebruik de '<strong>?</strong>' knop als je een letter bent vergeten.<br>" +
           "Gebruik de '<strong>corrigeer</strong>' knop om je antwoord aan te passen.<br><br><br>" +
           '<img width = 250 src = ospan/img/instr02.png></img><br><br>',
 
@@ -129,7 +129,7 @@ var ospan_instructions_full = {
 
         //page 2
         "<p style = 'text-align: center;'>"+
-          "In het volledige spel moet je <strong>snel wisselen</strong> tussen de twee taken.<br><br><br>" +
+          "In het volledige spel moet je <strong>snel wisselen</strong> tussen de twee taken<br>die je net hebt geoefend.<br><br><br>" +
           "Je ziet eerst een letter, dan een rekensom, dan een letter, dan een rekensom, enzovoort:<br><br><br>" +
           "<img width = 400 src = ospan/img/instr03.png></img><br><br>",
 
@@ -141,7 +141,7 @@ var ospan_instructions_full = {
         //page 4
         "<p style = 'text-align: center;'>"+
           "Het is belangrijk dat je je best doet op beide taken!<br>" +
-          "Probeer de letters zo goed mogelijk te onthouden, en probeer de rekensommen zo snel en goed mogelijk op te lossen.<br><br>",
+          "Probeer de letters zo goed mogelijk te onthouden,<br>en probeer de rekensommen zo snel en goed mogelijk op te lossen.<br><br>",
 
         //page 5
         "<p style = 'text-align: center;'>"+
@@ -182,7 +182,7 @@ var ospan_start = {
 
 
 var ospan_end = {
-  type: "instructions",
+  type: jsPsychInstructions,
   pages: [
     "<p style = 'text-align: center;'>"+
       "Dit is het einde van de <strong>Letters en Nummers</strong> taak.<br>" +
