@@ -61,7 +61,6 @@ var preload_ospan = {
      'ospan/img/instr01.png',
      'ospan/img/instr02.png',
      'ospan/img/instr03.png',
-     'ospan/img/instr04.png',
   ]
 }
 
@@ -92,10 +91,33 @@ var cursor_on = {
 
 
 var jsPsych = initJsPsych({
-    on_finish: function() {
-        jsPsych.data.displayData('csv')
-    }
-})
+  on_finish: function() {
+    tasks_start                   = jsPsych.getStartTime();
+
+    data_ospan_practice           = jsPsych.data.get().filter({task: 'ospan_practice'})
+    data_ospan                    = jsPsych.data.get().filter({task: 'ospan_test'})
+
+    data_bind_upd_color_practice  = jsPsych.data.get().filter({task: 'bind_upd_color_practice'})
+    data_bind_upd_color           = jsPsych.data.get().filter({task: 'bind_upd_color_test'})
+
+    data_bind_upd_number_practice = jsPsych.data.get().filter({task: 'bind_upd_number_practice'})
+    data_bind_upd_number          = jsPsych.data.get().filter({task: 'bind_upd_number_test'})
+
+    tasks_browser                 = jsPsych.data.getInteractionData().json();
+
+    window.parent.postMessage([
+      tasks_start,
+      data_ospan_practice,
+      data_ospan,
+      data_bind_upd_color_practice,
+      data_bind_upd_color,
+      data_bind_upd_number_practice,
+      data_bind_upd_number,
+      tasks_browser
+      ],
+      "https://survey.uu.nl/jfe/form/SV_1B4wQ0QzRnlNEZU");
+  }
+});
 
 
 var ospan_timeline = [

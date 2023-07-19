@@ -3,6 +3,7 @@ var possibleLetters = ["F","H","J","K","L","N","P","Q","R","S","T","V"];
 var nCorrectRecall = 0
 var mathCorrect = false
 var nMathCorrect = 0
+var ospan_block = 1
 
 // Empty grid with fixation cross
 var ospan_fixation = {
@@ -12,7 +13,7 @@ var ospan_fixation = {
   choices: "NO_KEYS",
   trial_duration: 1500,
   data: {
-    task: "ospan",
+    task: "ospan_fixation",
     variable: 'fixation',
     step_number: step_number
   }
@@ -25,7 +26,7 @@ var ospan_fixation_short = {
   choices: "NO_KEYS",
   trial_duration: 1000,
   data: {
-    task: "ospan",
+    task: "ospan_fixation",
     variable: 'fixation',
     step_number: step_number
   }
@@ -37,7 +38,7 @@ var ospan_start_new_trial = {
   choices: "ALL_KEYS",
   response_ends_trial: true,
   data: {
-    task: "ospan",
+    task: "ospan_pretrial",
     variable: 'pretrial',
     step_number: step_number
   }
@@ -51,8 +52,9 @@ var ospan_letter = {
   choices: "No_KEYS",
   trial_duration: 1000,
   data: {
-    task: "ospan",
-    variable: "letter"
+    task: function(){return(jsPsych.timelineVariable("task"))},
+    variable: "letter",
+    block: ospan_block
   }
 }
 
@@ -125,8 +127,9 @@ var ospan_math = {
   key_answer: function(){return jsPsych.timelineVariable("key_answer")[step_number]},
   data: {
     step_number: step_number,
-    task: "ospan",
-    variable: "math"
+    task: function(){return(jsPsych.timelineVariable("task"))},
+    variable: "math",
+    block: ospan_block
   },
   trial_duration: 5000,
   correct_text: "",
@@ -173,8 +176,9 @@ var ospan_recall = {
   type: jsPsychOspanRecall,
   correct_order: function() {return jsPsych.timelineVariable('stim_l')},
   data: {
-    task: "ospan",
-    variable: "recall"
+    task: function(){return(jsPsych.timelineVariable("task"))},
+    variable: "recall",
+    block: ospan_block
   },
   on_finish: function() {
     nCorrectRecall = jsPsych.data.get().last(1).values()[0].accuracy;
@@ -184,13 +188,17 @@ var ospan_recall = {
 
 // The full loop, including fixation, memory items, and recall phase
 var ospan_full_loop = {
+  on_start: function(){
+    ospan_block += 1
+  }
   timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall].flat(2),
   timeline_variables: [
-    generate_timeline_variables_ospan(setSize = 3),
-    generate_timeline_variables_ospan(setSize = 4),
-    generate_timeline_variables_ospan(setSize = 5),
+    generate_timeline_variables(ospan(setSize = 2, task = "ospan_test")
+    generate_timeline_variables_ospan(setSize = 3, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 4, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
   ],
-  repetitions: 2
+  repetitions: 3
 }
 
 
@@ -242,10 +250,8 @@ var ospan_practice_math_full_loop = {
 var ospan_practice_full_loop = {
   timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall,  ospan_full_feedback].flat(2),
   timeline_variables: [
-    generate_timeline_variables_ospan(setSize = 2),
-    generate_timeline_variables_ospan(setSize = 3),
-    generate_timeline_variables_ospan(setSize = 4),
-    generate_timeline_variables_ospan(setSize = 5)
+    generate_timeline_variables_ospan(setSize = 2, task = "ospan_practice"),
+    generate_timeline_variables_ospan(setSize = 3, task = "ospan_practice"),
+    generate_timeline_variables_ospan(setSize = 4, task = "ospan_practice"),
   ],
-  repetitions: 3
 }

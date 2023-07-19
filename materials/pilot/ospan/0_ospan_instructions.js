@@ -9,7 +9,9 @@ var ospan_welcome = {
   key_forward: -1,
   key_backward: -1,
   button_label_next: "verder",
-  data: {variable: 'welcome', task_version: "introduction"}
+  data: {
+    task: "ospan_welcome",
+    variable: 'welcome'}
 };
 
 
@@ -52,7 +54,10 @@ var ospan_instructions_letters = {
       key_backward: -1,
       button_label_next: "verder",
       button_label_previous: "ga terug",
-      data: {variable: 'instruction', task_version: "introduction"}
+      data: {
+        task: "ospan_instructions",
+        variable: 'instruction'
+      }
     },
 
     {
@@ -104,7 +109,10 @@ var ospan_instructions_math = {
       key_backward: -1,
       button_label_next: "verder",
       button_label_previous: "ga terug",
-      data: {variable: 'instruction', task_version: "introduction"}
+      data: {
+        task: "ospan_instruction",
+        variable: 'instruction'
+      }
     },
 
     {
@@ -155,7 +163,10 @@ var ospan_instructions_full = {
       key_backward: -1,
       button_label_next: "verder",
       button_label_previous: "ga terug",
-      data: {variable: 'instruction', task_version: "introduction"}
+      data: {
+        task: "ospan_instructions",
+        variable: 'instruction'
+      }
     },
 
     {
@@ -176,7 +187,10 @@ var ospan_start = {
     "Vanaf nu krijg je geen feedback meer op je prestaties.<br><br>" +
     "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen en druk op een willekeurige knop om te beginnen.",
   choices: "ALL_KEYS",
-  data: {variable: 'ospan_start'},
+  data: {
+    task: "ospan_start",
+    variable: 'ospan_start'
+  },
 };
 
 
@@ -194,5 +208,8 @@ var ospan_end = {
   key_backward: -1,
   button_label_next: "verder",
   button_label_previous: "ga terug",
-  data: {variable: 'instruction', task_version: "introduction"}
+  data: {
+    task: "ospan_end",
+    variable: 'ospan_end'
+  }
 };

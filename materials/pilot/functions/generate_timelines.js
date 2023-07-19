@@ -60,7 +60,7 @@ var generate_bind_upd_timeline = function(nBind, nUpd, stimset, task){
 }
 
 
-generate_timeline_variables_ospan = function(setSize){
+generate_timeline_variables_ospan = function(setSize, task){
   var stims = shuffleWithoutReplacement(arr = ["F","H","J","K","L","N","P","Q","R","S","T","V"], size = setSize);
   var math_correct = shuffleWithReplacement(arr = [true, false], size = setSize, immediate_reps = true)
 
@@ -72,5 +72,5 @@ generate_timeline_variables_ospan = function(setSize){
       answer_i.push('l')
     }
   }
-  return({stim_l: stims, math_correct: math_correct, key_answer: answer_i, setSize: setSize})
+  return({stim_l: stims, math_correct: math_correct, key_answer: answer_i, setSize: setSize, task: task})
 }
