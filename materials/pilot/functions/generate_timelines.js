@@ -18,35 +18,42 @@ function shuffle_identical(arr1, arr2) {
 var generate_bind_upd_timeline = function(nBind, nUpd, stimset, task){
 
   var bindStims = shuffleWithoutReplacement(arr = stimset, size = nBind)
-  var updStims = shuffleWithReplacement(arr = stimset.filter(x => !bindStims.includes(x)), size = nUpd, immediate_reps = false)
-  var stims = bindStims.concat(updStims)
 
-  //var stims = shuffleWithoutReplacement(arr = stimset, size = nBind+nUpd)
-  var bindPos = shuffleWithoutReplacement(arr = [0,1,2,3, 5,6,7,8], size = nBind)
-  var updPos = shuffleWithReplacement(arr = bindPos, size = nUpd, immediate_reps = false)
-  var allPos = bindPos.concat(updPos)
+  var uniqueRecallStims = []
 
 
-  var recallStims = []
-  var recallPos = []
+  // Make sure that array of recall stimuli does not contain any duplicate stimuli
+  while(uniqueRecallStims.length < bindStims.length) {
 
-  var recall_i = allPos.length -1
+    var updStims = shuffleWithReplacement(arr = stimset.filter(x => !bindStims.includes(x)), size = nUpd, immediate_reps = false)
+    var stims = bindStims.concat(updStims)
 
-  while (recallPos.length < nBind) {
+    //var stims = shuffleWithoutReplacement(arr = stimset, size = nBind+nUpd)
+    var bindPos = shuffleWithoutReplacement(arr = [0,1,2,3, 5,6,7,8], size = nBind)
+    var updPos = shuffleWithReplacement(arr = bindPos, size = nUpd, immediate_reps = false)
+    var allPos = bindPos.concat(updPos)
 
-    if (recallPos.includes(allPos[recall_i])) {
-      recall_i -= 1
-    } else {
-      recallPos.push(allPos[recall_i])
-      recallStims.push(stims[recall_i])
-      recall_i -= 1
+
+    var recallStims = []
+    var recallPos = []
+
+    var recall_i = allPos.length -1
+
+    while (recallPos.length < nBind) {
+
+      if (recallPos.includes(allPos[recall_i])) {
+        recall_i -= 1
+      } else {
+        recallPos.push(allPos[recall_i])
+        recallStims.push(stims[recall_i])
+        recall_i -= 1
+      }
     }
 
+    uniqueRecallStims = recallStims.filter((item, i, ar) => ar.indexOf(item) === i);
   }
 
-
   // Randomize recall order and make sure stimuli and their positions are still matched across arrays
-
   shuffle_identical(recallStims, recallPos)
 
   return({stim: stims, pos: allPos, nBind: nBind, nUpd: nUpd, recall_pos: recallPos, recall_stim: recallStims, task: task})
