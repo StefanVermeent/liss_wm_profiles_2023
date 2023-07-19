@@ -190,10 +190,10 @@ var ospan_recall = {
 var ospan_full_loop = {
   on_start: function(){
     ospan_block += 1
-  }
+  },
   timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall].flat(2),
   timeline_variables: [
-    generate_timeline_variables(ospan(setSize = 2, task = "ospan_test")
+    generate_timeline_variables_ospan(setSize = 2, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 3, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 4, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
