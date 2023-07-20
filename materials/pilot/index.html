@@ -135,17 +135,17 @@ var bind_upd_timeline02 = [
   preload_bind_upd,
   cursor_on,
   bind_upd_welcome,
-  bind_upd_color_instructions,
-  bind_upd_color_practice_loop,
-  bind_upd_start,
-  bind_upd_color_full_loop,
-  cursor_on,
-  bind_upd_color_to_number_transition,
-  bind_upd_number_practice_loop,
-  bind_upd_start,
-  bind_upd_number_full_loop,
-  cursor_on,
-  bind_upd_end
+ // bind_upd_color_instructions,
+  //bind_upd_color_practice_loop,
+  //bind_upd_start,
+//  bind_upd_color_full_loop,
+//  cursor_on,
+//  bind_upd_color_to_number_transition,
+//  bind_upd_number_practice_loop,
+//  bind_upd_start,
+//  bind_upd_number_full_loop,
+//  cursor_on,
+//  bind_upd_end
 ]
 
 var test_order1 = [
@@ -175,8 +175,7 @@ var full_experiment_timeline = [
     counterbalance
     ].flat(2)
 
-//var timeline = binding_updating_timeline
-var timeline = full_experiment_timeline
+var timeline = bind_upd_timeline02//full_experiment_timeline
 
 jsPsych.run(timeline);
 </script>
