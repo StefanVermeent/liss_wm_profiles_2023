@@ -1,6 +1,6 @@
 var step_number = 0
 var possibleLetters = ["F","H","J","K","L","N","P","Q","R","S","T","V"];
-var nCorrectRecall = 0
+var nCorrectOspanRecall = 0
 var mathCorrect = false
 var nMathCorrect = 0
 var ospan_block = 1
@@ -62,8 +62,8 @@ var ospan_letter_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
 
-   // var nCorrectRecall = jsPsych.data.get().last(1).values()[0].accuracy;
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br></div>";
+   // var nCorrectOspanRecall = jsPsych.data.get().last(1).values()[0].accuracy;
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectOspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br></div>";
 
     return html
   },
@@ -100,7 +100,7 @@ var ospan_math_feedback = {
 var ospan_full_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br>";
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectOspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br>";
     html += "Je hebt <font color='blue'>"+nMathCorrect+" van de " + jsPsych.timelineVariable('setSize') + "</font> rekensommen correct opgelost.<br><br></div><br><br><br>";
 
     return html
@@ -113,7 +113,7 @@ var ospan_full_feedback = {
   },
   on_finish: function() {
     nMathCorrect = 0
-    nCorrectRecall = 0
+    nCorrectOspanRecall = 0
   }
 }
 
@@ -185,7 +185,7 @@ var ospan_recall = {
     block: ospan_block
   },
   on_finish: function() {
-    nCorrectRecall = jsPsych.data.get().last(1).values()[0].accuracy;
+    nCorrectOspanRecall = jsPsych.data.get().last(1).values()[0].accuracy;
   }
 }
 

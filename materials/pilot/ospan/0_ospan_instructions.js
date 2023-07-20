@@ -119,7 +119,7 @@ var ospan_instructions_math = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
         "We zullen deze taak nu eerst 5 keer oefenen.<br><br>" +
-        "Druk op een willekeurige toets op je toetsenbord als je klaar bent om te oefenen.",
+        "PPlaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op je toetsenbord en druk op een willekeurige toets op je toetsenbord als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
   ]

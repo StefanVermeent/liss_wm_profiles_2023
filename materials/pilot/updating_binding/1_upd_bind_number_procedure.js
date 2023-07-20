@@ -2,7 +2,8 @@
 var bind_upd_number_step = -1 // Keep track of where we are in the current trial flow
 var bind_upd_number_recall_step = 0 // Keep track of where we are in the recall flow
 var number_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] // Set of all stimuli
-var nCorrectRecall = 0
+var nCorrectBindUpdNumberRecall = 0
+
 
 
 // Empty grid with fixation cross
@@ -74,7 +75,7 @@ var bind_upd_number_recall = {
     task: function(){return jsPsych.timelineVariable("task")}
   },
   on_finish: function(){
-    nCorrectRecall += jsPsych.data.get().last(1).values()[0].accuracy;
+    nCorrectBindUpdNumberRecall += jsPsych.data.get().last(1).values()[0].accuracy;
   }
 };
 
@@ -114,15 +115,13 @@ var bind_upd_number_recall_loop = {
 var bind_upd_number_full_loop = {
   timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off].flat(2),
   timeline_variables: [
-    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
@@ -130,15 +129,13 @@ var bind_upd_number_full_loop = {
     generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
-    generate_bind_upd_timeline(nBind = 3, nUpd = 5, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
-    generate_bind_upd_timeline(nBind = 4, nUpd = 5, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
-    generate_bind_upd_timeline(nBind = 5, nUpd = 5, stimset = number_set, task = "bind_upd_number_test"),
+
   ],
   randomize_order: true
 }
@@ -148,7 +145,7 @@ var bind_upd_number_full_loop = {
 var bind_upd_number_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> nummers goed onthouden.<br><br>";
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectBindUpdNumberRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> nummers goed onthouden.<br><br>";
     return html
   },
   choices: "NO_KEYS",
@@ -158,7 +155,7 @@ var bind_upd_number_feedback = {
     variable: "full_feedback"
   },
   on_finish: function() {
-    nCorrectRecall = 0
+    nCorrectBindUpdNumberRecall = 0
   }
 }
 

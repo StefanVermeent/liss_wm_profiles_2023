@@ -141,7 +141,7 @@ var bind_upd_number_to_color_transition = {
           "Goed gedaan!<br><br>" +
           "Je gaat nu een andere versie van deze taak doen met <strong>kleuren</strong> in plaats van nummers.<br>" +
           "Jouw taak blijft hetzelfde: Onthoud welke kleur <strong>als laatste</strong> wordt getoond in een bepaald vakje.<br><br><br>" +
-          "<img width = 250 src = updating_binding/img/instr05.png></img><br><br>",
+          "<img width = 500 src = updating_binding/img/instr05.png></img><br><br>",
 
         //page 2
         "<p style = 'text-align: center;'>"+
@@ -193,7 +193,7 @@ var bind_upd_color_to_number_transition = {
           "Goed gedaan!<br><br>" +
           "Je gaat nu een andere versie van deze taak doen met <strong>nummers</strong> in plaats van kleuren.<br>" +
           "Jouw taak blijft hetzelfde: Onthoud welk nummer <strong>als laatste</strong> wordt getoond in een bepaald vakje.<br><br><br>" +
-          "<img width = 250 src = updating_binding/img/instr02.png></img><br><br>",
+          "<img width = 500 src = updating_binding/img/instr02.png></img><br><br>",
 
         //page 2
         "<p style = 'text-align: center;'>"+

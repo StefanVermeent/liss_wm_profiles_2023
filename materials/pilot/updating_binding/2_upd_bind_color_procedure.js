@@ -2,7 +2,7 @@
 var bind_upd_color_step = -1 // Keep track of where we are in the current trial flow
 var recall_step = 0 // Keep track of where we are in the recall flow
 var color_set = ['#117733','#DDCC77','#661100','#F357D9','#88CCEE','#332288','#888888','#000000'] // Set of all stimuli
-var nCorrectRecall = 0
+var nCorrectBindUpdColorRecall = 0
 
 
 // Empty grid with fixation cross
@@ -80,7 +80,7 @@ var bind_upd_color_recall = {
     task: function(){return jsPsych.timelineVariable("task")}
   },
   on_finish: function(){
-    nCorrectRecall += jsPsych.data.get().last(1).values()[0].accuracy;
+    nCorrectBindUpdColorRecall += jsPsych.data.get().last(1).values()[0].accuracy;
   }
 };
 
@@ -124,12 +124,9 @@ var bind_upd_color_full_loop = {
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
@@ -137,15 +134,12 @@ var bind_upd_color_full_loop = {
     generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 3, nUpd = 5, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 4, nUpd = 5, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 5, nUpd = 5, stimset = color_set, task = "bind_upd_color_test"),
   ],
   randomize_order: true
 }
@@ -156,7 +150,7 @@ var bind_upd_color_full_loop = {
 var bind_upd_color_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> kleuren goed onthouden.<br><br>";
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectBindUpdColorRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> kleuren goed onthouden.<br><br>";
     return html
   },
   choices: "NO_KEYS",
@@ -166,7 +160,7 @@ var bind_upd_color_feedback = {
     variable: "full_feedback"
   },
   on_finish: function() {
-    nCorrectRecall = 0
+    nCorrectBindUpdColorRecall = 0
   }
 }
 
