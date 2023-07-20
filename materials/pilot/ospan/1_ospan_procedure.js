@@ -225,9 +225,9 @@ var ospan_practice_letter_loop = {
 var ospan_practice_letters_full_loop = {
   timeline: [ospan_fixation, ospan_practice_letter_loop, ospan_recall, ospan_letter_feedback].flat(2),
   timeline_variables: [
-    generate_timeline_variables_ospan(setSize = 2),
-    generate_timeline_variables_ospan(setSize = 3),
-    generate_timeline_variables_ospan(setSize = 4)
+    generate_timeline_variables_ospan(setSize = 2, task = "ospan_practice"),
+    generate_timeline_variables_ospan(setSize = 3, task = "ospan_practice"),
+    generate_timeline_variables_ospan(setSize = 4, task = "ospan_practice")
   ]
 }
 
@@ -247,13 +247,13 @@ var ospan_practice_math_loop = {
 var ospan_practice_math_full_loop = {
   timeline: [ospan_fixation, ospan_practice_math_loop].flat(2),
   timeline_variables: [
-    generate_timeline_variables_ospan(setSize = 5),
+    generate_timeline_variables_ospan(setSize = 5, task = "ospan_practice"),
   ]
 }
 
 
 var ospan_practice_full_loop = {
-  timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall,  ospan_full_feedback].flat(2),
+  timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall, ospan_full_feedback].flat(2),
   timeline_variables: [
     generate_timeline_variables_ospan(setSize = 2, task = "ospan_practice"),
     generate_timeline_variables_ospan(setSize = 3, task = "ospan_practice"),
