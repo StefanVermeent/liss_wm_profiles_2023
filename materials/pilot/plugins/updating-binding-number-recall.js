@@ -236,7 +236,7 @@ var jsPsychBindingUpdatingNumberRecall = (function (jspsych) {
                 btn_el.style.borderWidth = 3;
 
                 recalledNumber = btn_el.getAttribute("data-choice")
-                console.log(recalledNumber)
+
               })
           }
 

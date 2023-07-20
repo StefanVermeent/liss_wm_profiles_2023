@@ -63,7 +63,7 @@ var ospan_letter_feedback = {
   stimulus: function() {
 
    // var nCorrectRecall = jsPsych.data.get().last(1).values()[0].accuracy;
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> nummers goed onthouden.<br><br></div>";
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br></div>";
 
     return html
   },
@@ -100,12 +100,13 @@ var ospan_math_feedback = {
 var ospan_full_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> nummers goed onthouden.<br><br>";
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br>";
     html += "Je hebt <font color='blue'>"+nMathCorrect+" van de " + jsPsych.timelineVariable('setSize') + "</font> rekensommen correct opgelost.<br><br></div><br><br><br>";
 
     return html
   },
   trial_duration: 1500,
+  choices: "NO_KEYS",
   data: {
     task: "ospan",
     variable: "full_feedback"

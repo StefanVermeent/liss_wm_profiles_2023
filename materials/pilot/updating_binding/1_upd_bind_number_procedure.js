@@ -2,6 +2,8 @@
 var bind_upd_number_step = -1 // Keep track of where we are in the current trial flow
 var bind_upd_number_recall_step = 0 // Keep track of where we are in the recall flow
 var number_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] // Set of all stimuli
+var nCorrectRecall = 0
+console.log(nCorrectRecall)
 
 // Empty grid with fixation cross
 var fixation = {
@@ -61,7 +63,13 @@ var bind_upd_number_recall = {
   data: {
     variable: 'recall',
     task: function(){return jsPsych.timelineVariable("task")}
+  },
+  on_finish: function(){
+
+    nCorrectRecall += jsPsych.data.get().last(1).values()[0].accuracy;
+    console.log(nCorrectRecall)
   }
+
 };
 
 
@@ -93,7 +101,7 @@ var bind_upd_number_recall_loop = {
       bind_upd_number_recall_step += 1
       return true;
     }
-  }
+  },
 }
 
 // The full loop, including fixation, memory items, and recall phase
@@ -129,10 +137,29 @@ var bind_upd_number_full_loop = {
   randomize: true
 }
 
+// Practice feedback
+
+var bind_upd_feedback = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> nummers goed onthouden.<br><br>";
+    return html
+  },
+  choices: "NO_KEYS",
+  trial_duration: 1500,
+  data: {
+  //  task: function(){return jsPsych.timelineVariable("task")},
+    variable: "full_feedback"
+  },
+  on_finish: function() {
+    nCorrectRecall = 0
+  }
+}
+
 
 // Practice loop
 var bind_upd_number_practice_loop = {
-  timeline: [fixation, bind_upd_number_stim_loop, bind_upd_number_recall_loop].flat(2),
+  timeline: [fixation, bind_upd_number_stim_loop, bind_upd_number_recall_loop, bind_upd_feedback].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
@@ -140,7 +167,5 @@ var bind_upd_number_practice_loop = {
     generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_practice"),
   ]
 }
-
-
 
 
