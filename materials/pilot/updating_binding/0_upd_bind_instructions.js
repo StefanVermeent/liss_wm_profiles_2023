@@ -174,7 +174,7 @@ var bind_upd_number_to_color_transition = {
     {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
-        "We zullen deze versie van de taak nu eerst 2 keer oefenen.<br><br>" +
+        "We zullen deze versie van de taak nu eerst 4 keer oefenen.<br><br>" +
         "Druk op een willekeurige knop als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
@@ -224,7 +224,7 @@ var bind_upd_color_to_number_transition = {
     {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
-        "We zullen deze versie van de taak nu eerst 2 keer oefenen.<br><br>" +
+        "We zullen deze versie van de taak nu eerst 4 keer oefenen.<br><br>" +
         "Druk op een willekeurige knop als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
@@ -237,7 +237,7 @@ var bind_upd_start = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "<p style = 'text-align: center;'>"+
     "Je bent nu klaar voor de echte taak.<br><br>" +
-    "De taak bestaat uit 6 rondes.<br>" +
+    "De taak bestaat uit 18 rondes.<br>" +
     "Vanaf nu krijg je geen feedback meer op je prestaties.<br><br>" +
     "Druk op een willekeurige knop om te beginnen.",
   choices: "ALL_KEYS",

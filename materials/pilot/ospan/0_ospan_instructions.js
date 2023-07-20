@@ -183,7 +183,7 @@ var ospan_start = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "<p style = 'text-align: center;'>"+
     "Je bent nu klaar voor de echte taak.<br><br>" +
-    "De taak bestaat uit 6 rondes.<br>" +
+    "De taak bestaat uit 12 rondes.<br>" +
     "Vanaf nu krijg je geen feedback meer op je prestaties.<br><br>" +
     "Druk op een willekeurige toets op je toetsenbord om te beginnen.",
   choices: "ALL_KEYS",
