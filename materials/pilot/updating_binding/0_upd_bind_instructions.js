@@ -44,7 +44,7 @@ var bind_upd_number_instructions = {
 
           //page 4
           "Als alle nummers zijn getoond geef je voor elk vakje aan welk nummer er <strong>als laatst</strong> werd getoond.<br>" +
-          "Je doet dit steeds voor het vakje met het vraagteken.<br><br>" +
+          "Je doet dit steeds voor het vakje met het <strong>vraagteken</strong> (?).<br><br>" +
           "Gebruik hiervoor de knoppen die onder het vierkant verschijnen.<br><br><br>" +
           '<img width = 600 src = updating_binding/img/instr04.png></img><br><br>',
 

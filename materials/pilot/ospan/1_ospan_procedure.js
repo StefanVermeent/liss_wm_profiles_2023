@@ -34,7 +34,7 @@ var ospan_fixation_short = {
 
 var ospan_start_new_trial = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: '<div style="font-size:18px;">' + "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen en druk op een willekeurige knop om te beginnen." + '</div>',
+  stimulus: '<div style="font-size:18px;">' + "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op je toetsenbord en druk op een willekeurige toets om te beginnen." + '</div>',
   choices: "ALL_KEYS",
   response_ends_trial: true,
   data: {

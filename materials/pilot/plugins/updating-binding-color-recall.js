@@ -86,7 +86,7 @@ var jsPsychBindingUpdatingColorRecall = (function (jspsych) {
 
         ".grid-response-container {" +
           "display: inline-grid;" +
-          "grid-template-columns: auto auto auto auto auto auto auto auto auto auto;" +
+          "grid-template-columns: auto auto auto auto auto auto auto auto;" +
 
           "grid-gap: 5px;" +
         "}" +
@@ -124,7 +124,7 @@ var jsPsychBindingUpdatingColorRecall = (function (jspsych) {
       "<div>" + stim2 + "</div>" +
       "<div>" + stim3 + "</div>" +
       "<div>" + stim4 + "</div>" +
-      "<div>" + stim5 + "</div>" +
+      "<div>" + "+" + "</div>" +
       "<div>" + stim6 + "</div>" +
       "<div>" + stim7 + "</div>" +
       "<div>" + stim8 + "</div>" +
@@ -134,16 +134,14 @@ var jsPsychBindingUpdatingColorRecall = (function (jspsych) {
 
 
       html += "<div class='grid-response-container' id='response-display'>" +
-      "<div id='jspsych-response-grid-button-0' style = 'background-color:" + "#332288" + "' data-choice='#332288'></div>" +
-      "<div id='jspsych-response-grid-button-1' style = 'background-color:" + '#88ccee' + "' data-choice='#88ccee'></div>" +
-      "<div id='jspsych-response-grid-button-2' style = 'background-color:" + '#44aa99' + "' data-choice='#44aa99'></div>" +
-      "<div id='jspsych-response-grid-button-3' style = 'background-color:" + '#117733' + "' data-choice='#117733'></div>" +
-      "<div id='jspsych-response-grid-button-4' style = 'background-color:" + '#999933' + "' data-choice='#999933'></div>" +
-      "<div id='jspsych-response-grid-button-5' style = 'background-color:" + '#ddcc77' + "' data-choice='#ddcc77'></div>" +
-      "<div id='jspsych-response-grid-button-6' style = 'background-color:" + '#cc6677' + "' data-choice='#cc6677'></div>" +
-      "<div id='jspsych-response-grid-button-7' style = 'background-color:" + '#882255' + "' data-choice='#882255'></div>" +
-      "<div id='jspsych-response-grid-button-8' style = 'background-color:" + '#aa4499' + "' data-choice='#aa4499'></div>" +
-      "<div id='jspsych-response-grid-button-9' style = 'background-color:" + '#000000' + "' data-choice='#000000'></div>" +
+      "<div id='jspsych-response-grid-button-0' style = 'background-color:" + "#117733" + "' data-choice='#117733'></div>" +
+      "<div id='jspsych-response-grid-button-1' style = 'background-color:" + '#DDCC77' + "' data-choice='#DDCC77'></div>" +
+      "<div id='jspsych-response-grid-button-2' style = 'background-color:" + '#661100' + "' data-choice='#661100'></div>" +
+      "<div id='jspsych-response-grid-button-3' style = 'background-color:" + '#F357D9' + "' data-choice='#F357D9'></div>" +
+      "<div id='jspsych-response-grid-button-4' style = 'background-color:" + '#88CCEE' + "' data-choice='#88CCEE'></div>" +
+      "<div id='jspsych-response-grid-button-5' style = 'background-color:" + '#332288' + "' data-choice='#332288'></div>" +
+      "<div id='jspsych-response-grid-button-6' style = 'background-color:" + '#888888' + "' data-choice='#888888'></div>" +
+      "<div id='jspsych-response-grid-button-7' style = 'background-color:" + '#000000' + "' data-choice='#000000'></div>" +
       "</div>"
 
        html += '<div class="jspsych-btn-numpad" style="display: inline-block; margin:'+10+' '+2+'; position: relative;" id="jspsych-html-button-response-button">Klaar</div>' +
@@ -217,14 +215,14 @@ var jsPsychBindingUpdatingColorRecall = (function (jspsych) {
                 after_response(acc);
               })
 
-          for (var i = 0; i < 10; i++) {
+          for (var i = 0; i < 8; i++) {
             display_element
               .querySelector("#jspsych-response-grid-button-" + i)
               .addEventListener("click", (e) => {
 
                 recalledNumber = []
 
-                for (var i = 0; i < 10; i++) {
+                for (var i = 0; i < 8; i++) {
                   display_element.querySelector("#jspsych-response-grid-button-" + i).style.borderWidth = 1
                 }
                 var btn_el = e.currentTarget

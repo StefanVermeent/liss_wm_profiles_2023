@@ -64,7 +64,7 @@ var ospan_instructions_letters = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
         "We zullen deze taak nu eerst 3 keer oefenen.<br><br>" +
-        "Druk op een willekeurige knop als je klaar bent om te oefenen.",
+        "Druk op een willekeurige toets op je toetsenbord als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
   ]
@@ -119,7 +119,7 @@ var ospan_instructions_math = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
         "We zullen deze taak nu eerst 5 keer oefenen.<br><br>" +
-        "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen en druk op een willekeurige knop als je klaar bent om te oefenen.",
+        "Druk op een willekeurige toets op je toetsenbord als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
   ]
@@ -173,7 +173,7 @@ var ospan_instructions_full = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
         "We zullen de volledige taak nu eerst 3 keer oefenen.<br><br>" +
-        "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen en druk op een willekeurige knop als je klaar bent om te oefenen.",
+        "Druk op een willekeurige toets op je toetsenbord als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
   ]
@@ -185,7 +185,7 @@ var ospan_start = {
     "Je bent nu klaar voor de echte taak.<br><br>" +
     "De taak bestaat uit 6 rondes.<br>" +
     "Vanaf nu krijg je geen feedback meer op je prestaties.<br><br>" +
-    "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen en druk op een willekeurige knop om te beginnen.",
+    "Druk op een willekeurige toets op je toetsenbord om te beginnen.",
   choices: "ALL_KEYS",
   data: {
     task: "ospan_start",
