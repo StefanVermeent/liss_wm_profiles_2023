@@ -2,6 +2,9 @@
 var bind_upd_color_step = -1 // Keep track of where we are in the current trial flow
 var recall_step = 0 // Keep track of where we are in the recall flow
 var color_set = ['#117733','#DDCC77','#661100','#F357D9','#88CCEE','#332288','#888888','#000000'] // Set of all stimuli
+var nCorrectRecall = 0
+
+
 // Empty grid with fixation cross
 var fixation = {
   on_start: function(){
@@ -66,6 +69,9 @@ var bind_upd_color_recall = {
   data: {
     variable: 'recall',
     task: function(){return jsPsych.timelineVariable("task")}
+  },
+  on_finish: function(){
+    nCorrectRecall += jsPsych.data.get().last(1).values()[0].accuracy;
   }
 };
 
@@ -135,9 +141,29 @@ var bind_upd_color_full_loop = {
   randomize: true
 }
 
+
+// Practice feedback
+
+var bind_upd_color_feedback = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: function() {
+    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> kleuren goed onthouden.<br><br>";
+    return html
+  },
+  choices: "NO_KEYS",
+  trial_duration: 1500,
+  data: {
+    task: function(){return jsPsych.timelineVariable("task")},
+    variable: "full_feedback"
+  },
+  on_finish: function() {
+    nCorrectRecall = 0
+  }
+}
+
 // Practice loop
 var bind_upd_color_practice_loop = {
-  timeline: [fixation, bind_upd_color_stim_loop, bind_upd_color_recall_loop].flat(2),
+  timeline: [fixation, bind_upd_color_stim_loop, bind_upd_color_recall_loop, bind_upd_color_feedback].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),

@@ -89,15 +89,15 @@ var bind_upd_color_instructions = {
         //page 2
         "<p style = 'text-align: center;'>"+
           "Soms wordt in elk vakje maar &#233;&#233;n kleur getoond.<br><br>" +
-          "In het voorbeeld hieronder zie je eerst '<strong><font color='#000000'>zwart</font></strong>' midden-boven, dan '<strong><font color='#117733'>groen</font></strong>' linksonder, en tot slot '<strong><font color = '#AA4499'>paars</font></strong>' linksmidden.<br>" +
-          "De kleuren die je moet onthouden zijn dus '<strong><font color='#000000'>zwart</font></strong>', '<strong><font color='#117733'>groen</font></strong>', en '<strong><font color = '#AA4499'>paars</font></strong>'.<br><br><br>" +
+          "In het voorbeeld hieronder zie je eerst '<strong><font color='#000000'>ZWART</font></strong>' midden-boven, dan '<strong><font color='#117733'>GROEN</font></strong>' linksonder, en tot slot '<strong><font color = '#F357D9'>ROZE</font></strong>' linksmidden.<br>" +
+          "De kleuren die je moet onthouden zijn dus '<strong><font color='#000000'>ZWART</font></strong>', '<strong><font color='#117733'>GROEN</font></strong>', en '<strong><font color = '#F357D9'>ROZE</font></strong>'.<br><br><br>" +
           "<img width = 500 src = updating_binding/img/instr05.png></img><br><br>",
 
         //page 3
           "Soms worden meerdere kleuren getoond in hetzelfde vakje.<br><br>" +
-          "In het voorbeeld hieronder zie je eerst '<strong><font color='#CC6677'>roze</font></strong>' rechtsmidden, dan '<strong><font color='#88CCEE'>lichtblauw</font></strong>' linksboven, en tot slot '<strong><font color='#117733'>groen</font></strong>' rechtsmidden.<br>" +
-          "In dit geval is '<strong><font color='#CC6677'>roze</font></strong>' vervangen door '<strong><font color='#117733'>groen</font></strong>'.<br>" +
-          "De kleuren die je moet onthouden zijn dus '<strong><font color='#88CCEE'>lichtblauw</font></strong>' en '<strong><font color='#117733'>groen</font></strong>'.<br><br><br>" +
+          "In het voorbeeld hieronder zie je eerst '<strong><font color='#888888'>GRIJS</font></strong>' rechtsmidden, dan '<strong><font color='#88CCEE'>BLAUW</font></strong>' linksboven, en tot slot '<strong><font color='#117733'>GROEN</font></strong>' rechtsmidden.<br>" +
+          "In dit geval is '<strong><font color='#888888'>GRIJS</font></strong>' vervangen door '<strong><font color='#117733'>GROEN</font></strong>'.<br>" +
+          "De kleuren die je moet onthouden zijn dus '<strong><font color='#88CCEE'>BLAUW</font></strong>' en '<strong><font color='#117733'>GROEN</font></strong>'.<br><br><br>" +
           '<img width = 500 src = updating_binding/img/instr06.png></img><br><br>',
 
           //page 4
@@ -145,10 +145,11 @@ var bind_upd_number_to_color_transition = {
 
         //page 2
         "<p style = 'text-align: center;'>"+
-          "In het voorbeeld hieronder zie je eerst '<strong>roze</strong>' rechtsmidden, dan '<strong>lichtblauw</strong>' linksboven, en tot slot '<strong>groen</strong>' rechtsmidden.<br>" +
-          "In dit geval is '<strong>roze</strong>' vervangen door '<strong>groen</strong>'.<br>" +
-          "De kleuren die je moet onthouden zijn dus '<strong>lichtblauw</strong>' en '<strong>groen</strong>'.<br><br><br>" +
+          "In het voorbeeld hieronder zie je eerst '<strong><font color='#888888'>GRIJS</font></strong>' rechtsmidden, dan '<strong><font color='#88CCEE'>BLAUW</font></strong>' linksboven, en tot slot '<strong><font color='#117733'>GROEN</font></strong>' rechtsmidden.<br>" +
+          "In dit geval is '<strong><font color='#888888'>GRIJS</font></strong>' vervangen door '<strong><font color='#117733'>GROEN</font></strong>'.<br>" +
+          "De kleuren die je moet onthouden zijn dus '<strong><font color='#88CCEE'>BLAUW</font></strong>' en '<strong><font color='#117733'>GROEN</font></strong>'.<br><br><br>" +
           '<img width = 500 src = updating_binding/img/instr06.png></img><br><br>',
+
 
           //page 4
           "Als alle kleuren zijn getoond geef je voor elk vakje aan welke kleur er <strong>als laatst</strong> werd getoond.<br>" +
