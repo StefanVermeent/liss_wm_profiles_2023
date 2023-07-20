@@ -59,6 +59,15 @@ var bind_upd_color_empty = {
   }
 }
 
+var bind_upd_color_intertrial = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  choices: "ALL_KEYS",
+  data: {
+    task: "bind_upd_color_intertrial"
+  }
+}
+
 // Recall of last n letters
 var bind_upd_color_recall = {
   type: jsPsychBindingUpdatingColorRecall,
@@ -110,7 +119,7 @@ var bind_upd_color_recall_loop = {
 
 // The full loop, including fixation, memory items, and recall phase
 var bind_upd_color_full_loop = {
-  timeline: [fixation, bind_upd_color_stim_loop, bind_upd_color_recall_loop].flat(2),
+  timeline: [cursor_off, fixation, bind_upd_color_stim_loop, cursor_on, bind_upd_color_recall_loop, cursor_off, bind_upd_color_intertrial].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),

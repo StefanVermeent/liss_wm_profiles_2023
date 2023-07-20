@@ -53,6 +53,15 @@ var bind_upd_number_empty = {
   }
 }
 
+var bind_upd_number_intertrial = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  choices: "ALL_KEYS",
+  data: {
+    task: "bind_upd_number_intertrial"
+  }
+}
+
 // Recall of last n letters
 var bind_upd_number_recall = {
   type: jsPsychBindingUpdatingNumberRecall,
@@ -156,7 +165,7 @@ var bind_upd_number_feedback = {
 
 // Practice loop
 var bind_upd_number_practice_loop = {
-  timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off, bind_upd_number_feedback].flat(2),
+  timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off, bind_upd_number_feedback, bind_upd_number_intertrial].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
