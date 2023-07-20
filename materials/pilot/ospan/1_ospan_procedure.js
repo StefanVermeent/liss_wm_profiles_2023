@@ -195,14 +195,21 @@ var ospan_full_loop = {
   on_start: function(){
     ospan_block += 1
   },
-  timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall].flat(2),
+  timeline: [cursor_off, ospan_start_new_trial, ospan_fixation, ospan_stim_loop, cursor_on, ospan_recall, cursor_off].flat(2),
   timeline_variables: [
     generate_timeline_variables_ospan(setSize = 2, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 2, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 2, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 3, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 3, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 3, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 4, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 4, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 4, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
+    generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
   ],
-  repetitions: 3,
   randomize: true
 }
 
@@ -223,7 +230,7 @@ var ospan_practice_letter_loop = {
 }
 
 var ospan_practice_letters_full_loop = {
-  timeline: [ospan_fixation, ospan_practice_letter_loop, ospan_recall, ospan_letter_feedback].flat(2),
+  timeline: [cursor_off, ospan_fixation, ospan_practice_letter_loop, cursor_on, ospan_recall, cursor_off, ospan_letter_feedback].flat(2),
   timeline_variables: [
     generate_timeline_variables_ospan(setSize = 2, task = "ospan_practice"),
     generate_timeline_variables_ospan(setSize = 3, task = "ospan_practice"),
@@ -245,7 +252,7 @@ var ospan_practice_math_loop = {
 }
 
 var ospan_practice_math_full_loop = {
-  timeline: [ospan_fixation, ospan_practice_math_loop].flat(2),
+  timeline: [cursor_off, ospan_fixation, ospan_practice_math_loop].flat(2),
   timeline_variables: [
     generate_timeline_variables_ospan(setSize = 5, task = "ospan_practice"),
   ]
@@ -253,7 +260,7 @@ var ospan_practice_math_full_loop = {
 
 
 var ospan_practice_full_loop = {
-  timeline: [ospan_start_new_trial, ospan_fixation, ospan_stim_loop, ospan_recall, ospan_full_feedback].flat(2),
+  timeline: [cursor_off, ospan_start_new_trial, ospan_fixation, ospan_stim_loop, cursor_on, ospan_recall, cursor_off, ospan_full_feedback].flat(2),
   timeline_variables: [
     generate_timeline_variables_ospan(setSize = 2, task = "ospan_practice"),
     generate_timeline_variables_ospan(setSize = 3, task = "ospan_practice"),

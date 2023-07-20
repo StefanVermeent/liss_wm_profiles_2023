@@ -163,7 +163,7 @@ var bind_upd_color_feedback = {
 
 // Practice loop
 var bind_upd_color_practice_loop = {
-  timeline: [fixation, bind_upd_color_stim_loop, bind_upd_color_recall_loop, bind_upd_color_feedback].flat(2),
+  timeline: [cursor_off, fixation, bind_upd_color_stim_loop, cursor_on, bind_upd_color_recall_loop, cursor_off, bind_upd_color_feedback].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),

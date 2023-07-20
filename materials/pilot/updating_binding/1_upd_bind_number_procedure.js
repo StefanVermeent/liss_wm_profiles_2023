@@ -103,7 +103,7 @@ var bind_upd_number_recall_loop = {
 
 // The full loop, including fixation, memory items, and recall phase
 var bind_upd_number_full_loop = {
-  timeline: [fixation, bind_upd_number_stim_loop, bind_upd_number_recall_loop].flat(2),
+  timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
@@ -156,7 +156,7 @@ var bind_upd_number_feedback = {
 
 // Practice loop
 var bind_upd_number_practice_loop = {
-  timeline: [fixation, bind_upd_number_stim_loop, bind_upd_number_recall_loop, bind_upd_number_feedback].flat(2),
+  timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off, bind_upd_number_feedback].flat(2),
   timeline_variables: [
     generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
     generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
