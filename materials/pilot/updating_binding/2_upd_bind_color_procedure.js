@@ -147,7 +147,7 @@ var bind_upd_color_full_loop = {
     generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 5, stimset = color_set, task = "bind_upd_color_test"),
   ],
-  randomize: true
+  randomize_order: true
 }
 
 

@@ -210,7 +210,7 @@ var ospan_full_loop = {
     generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
     generate_timeline_variables_ospan(setSize = 5, task = "ospan_test"),
   ],
-  randomize: true
+  randomize_order: true
 }
 
 
