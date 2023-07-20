@@ -91,6 +91,9 @@ var ospan_math_feedback = {
   data: {
     task: "ospan",
     variable: "math_feedback"
+  },
+  on_finish: function() {
+    nMathCorrect = 0
   }
 }
 
