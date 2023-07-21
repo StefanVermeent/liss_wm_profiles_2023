@@ -90,7 +90,9 @@ var bind_upd_number_recall = {
   correct_number: function(){return jsPsych.timelineVariable("recall_stim")[bind_upd_number_recall_step]},
   data: {
     variable: 'recall',
-    task: function(){return jsPsych.timelineVariable("task")}
+    task: function(){return jsPsych.timelineVariable("task")},
+    nBind: function(){return jsPsych.timelineVariable("nBind")},
+    nUpd: function(){return jsPsych.timelineVariable("nUpd")}
   },
   on_finish: function(){
     nCorrectBindUpdNumberRecall += jsPsych.data.get().last(1).values()[0].accuracy;

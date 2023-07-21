@@ -180,9 +180,10 @@ var ospan_recall = {
   type: jsPsychOspanRecall,
   correct_order: function() {return jsPsych.timelineVariable('stim_l')},
   data: {
-    task: function(){return(jsPsych.timelineVariable("task"))},
+    task: function(){return jsPsych.timelineVariable("task")},
     variable: "recall",
-    block: ospan_block
+    block: ospan_block,
+    set_size: function(){return jsPsych.timelineVariable("setSize")}
   },
   on_finish: function() {
     nCorrectOspanRecall = jsPsych.data.get().last(1).values()[0].accuracy;

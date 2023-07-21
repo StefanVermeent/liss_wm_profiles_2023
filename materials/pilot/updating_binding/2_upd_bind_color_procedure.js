@@ -95,7 +95,9 @@ var bind_upd_color_recall = {
   correct_color: function(){return jsPsych.timelineVariable("recall_stim")[recall_step]},
   data: {
     variable: 'recall',
-    task: function(){return jsPsych.timelineVariable("task")}
+    task: function(){return jsPsych.timelineVariable("task")},
+    nBind: function(){return jsPsych.timelineVariable("nBind")},
+    nUpd: function(){return jsPsych.timelineVariable("nUpd")}
   },
   on_finish: function(){
     nCorrectBindUpdColorRecall += jsPsych.data.get().last(1).values()[0].accuracy;
