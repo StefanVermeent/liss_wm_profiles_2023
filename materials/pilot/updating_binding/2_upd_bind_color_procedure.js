@@ -68,6 +68,24 @@ var bind_upd_color_intertrial = {
   }
 }
 
+var bind_upd_color_break01 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Je hebt <font color='blue'>6</font> van de <font color='blue'>18</font>rondes voltooid.<br>Als je wilt kun je even pauzeren voordat je verder gaat.<br><br>Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  choices: "ALL_KEYS",
+  data: {
+    task: "bind_upd_number_break01"
+  }
+}
+
+var bind_upd_color_break02 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Je hebt <font color='blue'>12</font> van de <font color='blue'>18</font>rondes voltooid.<br>Als je wilt kun je even pauzeren voordat je verder gaat.<br><br>Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  choices: "ALL_KEYS",
+  data: {
+    task: "bind_upd_number_break02"
+  }
+}
+
 // Recall of last n letters
 var bind_upd_color_recall = {
   type: jsPsychBindingUpdatingColorRecall,
@@ -118,31 +136,47 @@ var bind_upd_color_recall_loop = {
 }
 
 // The full loop, including fixation, memory items, and recall phase
-var bind_upd_color_full_loop = {
+
+
+var bind_upd_color_full_loop01 = {
   timeline: [cursor_off, fixation, bind_upd_color_stim_loop, cursor_on, bind_upd_color_recall_loop, cursor_off, bind_upd_color_intertrial].flat(2),
   timeline_variables: [
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test"),
-
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = color_set, task = "bind_upd_color_test"),
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
-   // generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = color_set, task = "bind_upd_color_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = color_set, task = "bind_upd_color_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = color_set, task = "bind_upd_color_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = color_set, task = "bind_upd_color_test"),
-    generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = color_set, task = "bind_upd_color_test"),
-  ],
-  randomize_order: true
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test01"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test01"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test01"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = color_set, task = "bind_upd_color_test01"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = color_set, task = "bind_upd_color_test01"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = color_set, task = "bind_upd_color_test01"),
+    ],
+    randomize_order: true
 }
+
+var bind_upd_color_full_loop02 = {
+  timeline: [cursor_off, fixation, bind_upd_color_stim_loop, cursor_on, bind_upd_color_recall_loop, cursor_off, bind_upd_color_intertrial].flat(2),
+  timeline_variables: [
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test02"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test02"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test02"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = color_set, task = "bind_upd_color_test02"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = color_set, task = "bind_upd_color_test02"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = color_set, task = "bind_upd_color_test02"),
+    ],
+    randomize_order: true
+}
+var bind_upd_color_full_loop03 = {
+  timeline: [cursor_off, fixation, bind_upd_color_stim_loop, cursor_on, bind_upd_color_recall_loop, cursor_off, bind_upd_color_intertrial].flat(2),
+  timeline_variables: [
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_test03"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = color_set, task = "bind_upd_color_test03"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = color_set, task = "bind_upd_color_test03"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = color_set, task = "bind_upd_color_test03"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = color_set, task = "bind_upd_color_test03"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = color_set, task = "bind_upd_color_test03"),
+    ],
+    randomize_order: true
+}
+
+
 
 
 // Practice feedback
@@ -168,9 +202,9 @@ var bind_upd_color_feedback = {
 var bind_upd_color_practice_loop = {
   timeline: [cursor_off, fixation, bind_upd_color_stim_loop, cursor_on, bind_upd_color_recall_loop, cursor_off, bind_upd_color_feedback].flat(2),
   timeline_variables: [
-   // generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 1, stimset = color_set, task = "bind_upd_color_practice"),
+    generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = color_set, task = "bind_upd_color_practice"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 1, stimset = color_set, task = "bind_upd_color_practice"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = color_set, task = "bind_upd_color_practice"),
   ]
 }

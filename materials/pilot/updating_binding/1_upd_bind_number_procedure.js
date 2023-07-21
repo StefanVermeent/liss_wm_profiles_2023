@@ -63,6 +63,24 @@ var bind_upd_number_intertrial = {
   }
 }
 
+var bind_upd_number_break01 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Je hebt <font color='blue'>6</font> van de <font color='blue'>18</font>rondes voltooid.<br>Als je wilt kun je even pauzeren voordat je verder gaat.<br><br>Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  choices: "ALL_KEYS",
+  data: {
+    task: "bind_upd_number_break01"
+  }
+}
+
+var bind_upd_number_break02 = {
+  type: jsPsychHtmlKeyboardResponse,
+  stimulus: "Je hebt <font color='blue'>12</font> van de <font color='blue'>18</font>rondes voltooid.<br>Als je wilt kun je even pauzeren voordat je verder gaat.<br><br>Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  choices: "ALL_KEYS",
+  data: {
+    task: "bind_upd_number_break02"
+  }
+}
+
 // Recall of last n letters
 var bind_upd_number_recall = {
   type: jsPsychBindingUpdatingNumberRecall,
@@ -112,30 +130,41 @@ var bind_upd_number_recall_loop = {
 }
 
 // The full loop, including fixation, memory items, and recall phase
-var bind_upd_number_full_loop = {
+var bind_upd_number_full_loop01 = {
   timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off].flat(2),
   timeline_variables: [
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
+  ],
+  randomize_order: true
+}
 
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  ///  generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
-
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 4, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
-  //  generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
+var bind_upd_number_full_loop02 = {
+  timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off].flat(2),
+  timeline_variables: [
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
     generate_bind_upd_timeline(nBind = 5, nUpd = 4, stimset = number_set, task = "bind_upd_number_test"),
+  ],
+  randomize_order: true
+}
 
+var bind_upd_number_full_loop03 = {
+  timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off].flat(2),
+  timeline_variables: [
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 0, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 2, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 4, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
+    generate_bind_upd_timeline(nBind = 5, nUpd = 3, stimset = number_set, task = "bind_upd_number_test"),
   ],
   randomize_order: true
 }
@@ -164,9 +193,9 @@ var bind_upd_number_feedback = {
 var bind_upd_number_practice_loop = {
   timeline: [cursor_off, fixation, bind_upd_number_stim_loop, cursor_on, bind_upd_number_recall_loop, cursor_off, bind_upd_number_feedback, bind_upd_number_intertrial].flat(2),
   timeline_variables: [
-   // generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
-   // generate_bind_upd_timeline(nBind = 3, nUpd = 1, stimset = number_set, task = "bind_upd_number_practice"),
+    generate_bind_upd_timeline(nBind = 2, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 0, stimset = number_set, task = "bind_upd_number_practice"),
+    generate_bind_upd_timeline(nBind = 3, nUpd = 1, stimset = number_set, task = "bind_upd_number_practice"),
     generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_practice"),
   ]
 }

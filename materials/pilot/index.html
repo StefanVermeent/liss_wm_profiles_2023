@@ -73,10 +73,14 @@ var jsPsych = initJsPsych({
     data_ospan                    = jsPsych.data.get().filter({task: 'ospan_test'})
 
     data_bind_upd_color_practice  = jsPsych.data.get().filter({task: 'bind_upd_color_practice'})
-    data_bind_upd_color           = jsPsych.data.get().filter({task: 'bind_upd_color_test'})
+    data_bind_upd_color01           = jsPsych.data.get().filter({task: 'bind_upd_color_test01'})
+    data_bind_upd_color02           = jsPsych.data.get().filter({task: 'bind_upd_color_test02'})
+    data_bind_upd_color03           = jsPsych.data.get().filter({task: 'bind_upd_color_test03'})
 
     data_bind_upd_number_practice = jsPsych.data.get().filter({task: 'bind_upd_number_practice'})
-    data_bind_upd_number          = jsPsych.data.get().filter({task: 'bind_upd_number_test'})
+    data_bind_upd_number01          = jsPsych.data.get().filter({task: 'bind_upd_number_test01'})
+    data_bind_upd_number02          = jsPsych.data.get().filter({task: 'bind_upd_number_test02'})
+    data_bind_upd_number03          = jsPsych.data.get().filter({task: 'bind_upd_number_test03'})
 
     tasks_browser                 = jsPsych.data.getInteractionData().json();
 
@@ -85,9 +89,13 @@ var jsPsych = initJsPsych({
       data_ospan_practice.json(),
       data_ospan.json(),
       data_bind_upd_color_practice.json(),
-      data_bind_upd_color.json(),
+      data_bind_upd_color01.json(),
+      data_bind_upd_color02.json(),
+      data_bind_upd_color03.json(),
       data_bind_upd_number_practice.json(),
-      data_bind_upd_number.json(),
+      data_bind_upd_number01.json(),
+      data_bind_upd_number02.json(),
+      data_bind_upd_number03.json(),
       tasks_browser
       ],
       "https://survey.uu.nl/jfe/form/SV_1B4wQ0QzRnlNEZU");
@@ -121,12 +129,21 @@ var bind_upd_timeline01 = [
   bind_upd_number_instructions,
   bind_upd_number_practice_loop,
   bind_upd_start,
-  bind_upd_number_full_loop,
+  bind_upd_number_full_loop01,
+  bind_upd_number_break01,
+  bind_upd_number_full_loop02,
+  bind_upd_number_break02,
+  bind_upd_number_full_loop03,
   cursor_on,
   bind_upd_number_to_color_transition,
   bind_upd_color_practice_loop,
   bind_upd_start,
   bind_upd_color_full_loop,
+  bind_upd_color_full_loop01,
+  bind_upd_color_break01,
+  bind_upd_color_full_loop02,
+  bind_upd_color_break02,
+  bind_upd_color_full_loop03,
   cursor_on,
   bind_upd_end
 ]
@@ -138,12 +155,20 @@ var bind_upd_timeline02 = [
   bind_upd_color_instructions,
   bind_upd_color_practice_loop,
   bind_upd_start,
-  bind_upd_color_full_loop,
+  bind_upd_color_full_loop01,
+  bind_upd_color_break01,
+  bind_upd_color_full_loop02,
+  bind_upd_color_break02,
+  bind_upd_color_full_loop03,
   cursor_on,
   bind_upd_color_to_number_transition,
   bind_upd_number_practice_loop,
   bind_upd_start,
-  bind_upd_number_full_loop,
+  bind_upd_number_full_loop01,
+  bind_upd_number_break01
+  bind_upd_number_full_loop02,
+  bind_upd_number_break02
+  bind_upd_number_full_loop03,
   cursor_on,
   bind_upd_end
 ]
