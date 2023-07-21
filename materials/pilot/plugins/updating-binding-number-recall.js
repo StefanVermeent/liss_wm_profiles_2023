@@ -110,6 +110,7 @@ var jsPsychBindingUpdatingNumberRecall = (function (jspsych) {
           "margin: 40px 5px;" +
           "background-color: solid black;" +
           "border: 1px solid black;" +
+          "cursor: pointer;" +
           "font-size: 20px;" +
           "font-family: sans-serif;" +
           "height: 30px;" +

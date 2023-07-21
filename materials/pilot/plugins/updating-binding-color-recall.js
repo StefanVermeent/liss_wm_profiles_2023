@@ -109,6 +109,7 @@ var jsPsychBindingUpdatingColorRecall = (function (jspsych) {
           "align-items: center;" +
           "margin: 40px 5px;" +
           "background-color: solid black;" +
+          "cursor: pointer;" +
           "border: 1px solid black;" +
           "font-size: 20px;" +
           "font-family: sans-serif;" +
