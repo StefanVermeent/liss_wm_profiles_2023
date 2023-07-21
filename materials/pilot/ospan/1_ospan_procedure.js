@@ -122,11 +122,11 @@ var ospan_math = {
   type: jsPsychCategorizeHtml,
   stimulus: function(){
     var correct = jsPsych.timelineVariable("math_correct")[step_number]
-    var equation = '<div style="font-size:60px;">' + cogloadf(correct = correct)
+    var equation = '<br><br><br><br><br><br><div style="font-size:60px;">' + cogloadf(correct = correct)
     return equation
   },
-  prompt: "<div style='width:500px; height: 12px;'></div><br><br><br>" +
-              "<div style='width: 500px;'><h1 style='float: left; font-size: 20; margin:0;'>A<br>CORRECT</h1><h1 style='float: right; font-size: 20; margin:0;'>L<br>INCORRECT</h1></div>",
+  prompt: "<br><br><div style='width:500px; height: 12px;'></div><br><br><br>" +
+              "<div style='width: 500px;'><h1 style='float: left; font-size: 20; margin:0;'>'A': <font color='#008000'>  JUIST</font></h1><h1 style='float: right; font-size: 20; margin:0;'>'L': <font color='#FF0000'>  ONJUIST</font></h1></div>",
   choices: ['a', 'l'],
   key_answer: function(){return jsPsych.timelineVariable("key_answer")[step_number]},
   data: {
@@ -138,7 +138,7 @@ var ospan_math = {
   trial_duration: 5000,
   correct_text: "",
   incorrect_text: "",
-  feedback_duration: 250,
+  feedback_duration: 0,
   show_stim_with_feedback: false,
   on_finish: function(data){
     if(jsPsych.pluginAPI.compareKeys(data.response, 'a') & jsPsych.timelineVariable("math_correct") == true) {
