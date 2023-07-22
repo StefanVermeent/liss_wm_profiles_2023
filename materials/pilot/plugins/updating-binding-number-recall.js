@@ -120,7 +120,7 @@ var jsPsychBindingUpdatingNumberRecall = (function (jspsych) {
 
         "<div style='width: 470px; height: 500px'>" +
 
-      "<div class='grid-container' id='stim-display'>" +
+      "<br><br><br><br><div class='grid-container' id='stim-display'>" +
       "<div>" + stim1 + "</div>" +
       "<div>" + stim2 + "</div>" +
       "<div>" + stim3 + "</div>" +
