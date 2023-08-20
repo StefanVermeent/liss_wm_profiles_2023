@@ -43,48 +43,19 @@
 var jsPsych = initJsPsych({
   on_finish: function() {
     tasks_start                   = jsPsych.getStartTime();
-
     data_rspan_practice           = jsPsych.data.get().filter({task: 'rspan_practice'})
     data_rspan                    = jsPsych.data.get().filter({task: 'rspan_test'})
-
     tasks_browser                 = jsPsych.data.getInteractionData().json();
 
     window.parent.postMessage([
       tasks_start,
-      data_ospan_practice.json(),
-      data_ospan.json(),
-      data_bind_upd_color_practice.json(),
-      data_bind_upd_color01.json(),
-      data_bind_upd_color02.json(),
-      data_bind_upd_color03.json(),
-      data_bind_upd_number_practice.json(),
-      data_bind_upd_number01.json(),
-      data_bind_upd_number02.json(),
-      data_bind_upd_number03.json(),
+      data_rspan_practice.json(),
+      data_rspan.json(),
       tasks_browser
       ],
-      "https://survey.uu.nl/jfe/form/SV_1B4wQ0QzRnlNEZU");
+      "https://survey.uu.nl/jfe/form/SV_6JVjAWrPoHnjah8");
   }
 });
-
-
-var ospan_timeline = [
-  preload_ospan,
-  cursor_on,
-  ospan_welcome,
-  ospan_instructions_letters,
-  ospan_practice_letters_full_loop,
-  cursor_on,
-  ospan_instructions_math,
-  ospan_practice_math_full_loop,
-  cursor_on,
-  ospan_instructions_full,
-  ospan_practice_full_loop,
-  ospan_start,
-  ospan_full_loop,
-  cursor_on,
-  ospan_end
-].flat(2)
 
 var rspan_timeline = [
   preload_rspan_arr,
@@ -96,7 +67,7 @@ var rspan_timeline = [
   rspan_instructions_rotation,
   rspan_practice_rotation_full_loop,
   cursor_on,
-  ospan_instructions_full,
+  rspan_instructions_full,
   rspan_practice_full_loop,
   rspan_start,
   rspan_full_loop,
@@ -105,84 +76,12 @@ var rspan_timeline = [
 ].flat(2)
 
 
-var bind_upd_timeline01 = [
-  preload_bind_upd,
-  cursor_on,
-  bind_upd_welcome,
-  bind_upd_number_instructions,
-  bind_upd_number_practice_loop,
-  bind_upd_start,
-  bind_upd_number_full_loop01,
-  bind_upd_number_break01,
-  bind_upd_number_full_loop02,
-  bind_upd_number_break02,
-  bind_upd_number_full_loop03,
-  cursor_on,
-  bind_upd_number_to_color_transition,
-  bind_upd_color_practice_loop,
-  bind_upd_start,
-  bind_upd_color_full_loop01,
-  bind_upd_color_break01,
-  bind_upd_color_full_loop02,
-  bind_upd_color_break02,
-  bind_upd_color_full_loop03,
-  cursor_on,
-  bind_upd_end
-]
-
-var bind_upd_timeline02 = [
-  preload_bind_upd,
-  cursor_on,
-  bind_upd_welcome,
-  bind_upd_color_instructions,
-  bind_upd_color_practice_loop,
-  bind_upd_start,
-  bind_upd_color_full_loop01,
-  bind_upd_color_break01,
-  bind_upd_color_full_loop02,
-  bind_upd_color_break02,
-  bind_upd_color_full_loop03,
-  cursor_on,
-  bind_upd_color_to_number_transition,
-  bind_upd_number_practice_loop,
-  bind_upd_start,
-  bind_upd_number_full_loop01,
-  bind_upd_number_break01,
-  bind_upd_number_full_loop02,
-  bind_upd_number_break02,
-  bind_upd_number_full_loop03,
-  cursor_on,
-  bind_upd_end
-]
-
-var test_order1 = [
-    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 1})}},
-    ospan_timeline, bind_upd_timeline01
-  ].flat(2)
-
-  var test_order2 = [
-    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 2})}},
-    ospan_timeline, bind_upd_timeline02
-  ].flat(2)
-
-  var test_order3 = [
-    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 3})}},
-    bind_upd_timeline01, ospan_timeline
-  ].flat(2)
-
-  var test_order4 = [
-    {type: jsPsychCallFunction, func: function(){jsPsych.data.addProperties({counterbalance: 4})}},
-    bind_upd_timeline02, ospan_timeline
-  ].flat(2)
-
-var counterbalance = jsPsych.randomization.sampleWithoutReplacement([test_order1, test_order2, test_order3, test_order4], 1)[0]
-
 var full_experiment_timeline = [
     fullscreenmode,
-    counterbalance
+    rspan_timeline
     ].flat(2)
 
-var timeline = rspan_timeline//full_experiment_timeline
+var timeline = full_experiment_timeline
 
 jsPsych.run(timeline);
 </script>
