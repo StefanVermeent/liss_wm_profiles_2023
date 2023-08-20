@@ -258,15 +258,18 @@ var rspan_full_loop = {
   },
   timeline: [cursor_off, rspan_start_new_trial, rspan_fixation, rspan_stim_loop, cursor_on, rspan_recall, cursor_off].flat(2),
   timeline_variables: [
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 2, task = "rspan_test"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 2, task = "rspan_test"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 2, task = "rspan_test"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 3, task = "rspan_test"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 3, task = "rspan_test"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 3, task = "rspan_test"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 4, task = "rspan_test"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 4, task = "rspan_test"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 4, task = "rspan_test"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 5, task = "rspan_test"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 5, task = "rspan_test"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 5, task = "rspan_test"),
-    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 6, task = "rspan_test"),
-    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 6, task = "rspan_test"),
-    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 6, task = "rspan_test"),
   ],
   randomize_order: true
 }
@@ -320,7 +323,7 @@ var rspan_practice_full_loop = {
   timeline: [cursor_off, rspan_start_new_trial, rspan_fixation, rspan_stim_loop, cursor_on, rspan_recall, cursor_off, rspan_full_feedback].flat(2),
   timeline_variables: [
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 2, task = "rspan_practice"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 2, task = "rspan_practice"),
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 3, task = "rspan_practice"),
-    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 4, task = "rspan_practice"),
   ],
 }
