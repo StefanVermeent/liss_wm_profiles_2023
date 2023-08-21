@@ -83,12 +83,12 @@ var rspan_instructions_rotation = {
         //page 2
         "<p style = 'text-align: center;'>"+
           "<strong>Taak 2: Gespiegelde Letters</strong><br><br>" +
-          "Op de tweede taak zul je &#233;&#233;n voor &#233;&#233;n steeds een 'G', 'F', of 'R' zien.<br><br>Soms zijn de letters <strong>normaal</strong>, zoals hieronder:<br>" +
+          "Op de tweede taak zul je &#233;&#233;n voor &#233;&#233;n steeds een <strong>G</strong>, <strong>F</strong>, of <strong>R</strong> zien.<br><br>Soms zijn de letters <strong>NORMAAL</strong>, zoals hieronder:<br>" +
           "<img src=" + '"rspan/img/g_0_normal.png">' + "<br>",
 
         //page 3
         "<p style = 'text-align: center;'>"+
-          "Soms zijn de letters <strong>gespiegeld</strong>, zoals hieronder:<br>" +
+          "Soms zijn de letters <strong>GESPIEGELD</strong>, zoals hieronder:<br>" +
           "<img src=" + '"rspan/img/g_0_mirror.png"' + "><br>",
 
         //page 4
