@@ -39,7 +39,7 @@ var rspan_instructions_arrows = {
         //page 5
 
           "Na afloop klik je op de pijlen <strong>in de juiste volgorde</strong>.<br><br>" +
-          "Gebruik de '<strong>?</strong>' knop als je een letter bent vergeten.<br>" +
+          "Gebruik de '<strong>?</strong>' knop als je een pijl bent vergeten.<br>" +
           "Gebruik de '<strong>corrigeer</strong>' knop om je antwoord aan te passen.<br><br><br>" +
           '<img width = 250 src = rspan/img/instr02.png></img><br><br>',
 
@@ -83,7 +83,7 @@ var rspan_instructions_rotation = {
         //page 2
         "<p style = 'text-align: center;'>"+
           "<strong>Taak 2: Gespiegelde Letters</strong><br><br>" +
-          "Op de tweede taak zul je &#233;&#233;n voor &#233;&#233;n letters zien.<br><br>Soms zijn de letters <strong>normaal</strong>, zoals hieronder:<br>" +
+          "Op de tweede taak zul je &#233;&#233;n voor &#233;&#233;n steeds een 'G', 'F', of 'R' zien.<br><br>Soms zijn de letters <strong>normaal</strong>, zoals hieronder:<br>" +
           "<img src=" + '"rspan/img/g_0_normal.png">' + "<br>",
 
         //page 3
@@ -94,15 +94,21 @@ var rspan_instructions_rotation = {
         //page 4
         "<p style = 'text-align: center;'>"+
           "Jouw taak is om te bepalen of de letter <strong><span style = 'color: green;'>NORMAAL</span></strong> of <strong><span style = 'color: red;'>GESPIEGELD</span></strong> is.<br><br><br>" +
-          "<div style = 'float: left;'>Als de letter <strong><span style = 'color: green;'>NORMAAL</span></strong> is,<br>druk dan op de '<strong>A</strong>' toets<br>op je toetsenbord.<br>" + "<img src=" + '"rspan/img/g_0_normal.png">' + "</div>" +
-          "<div style = 'float: right;'>Als de letter <strong><span style = 'color: red;'>GESPIEGELD</span></strong> is,<br>druk dan op de '<strong>L</strong>' toets<br>op je toetsenbord.<br>" + "<img src=" + '"rspan/img/g_0_mirror.png">' + "</div><br><br><br>",
+          "<div style = 'float: left;'>Als de letter <strong><span style = 'color: green;'>NORMAAL</span></strong> is,<br>druk dan op de '<strong>A</strong>' toets<br>op je toetsenbord.<br>" + "<img src=" + '"rspan/img/f_0_normal.png">' + "</div>" +
+          "<div style = 'float: right;'>Als de letter <strong><span style = 'color: red;'>GESPIEGELD</span></strong> is,<br>druk dan op de '<strong>L</strong>' toets<br>op je toetsenbord.<br>" + "<img src=" + '"rspan/img/f_0_mirror.png">' + "</div><br><br><br>",
 
         //page 5
          "<p style = 'text-align: center;'>"+
          "Om het lastiger te maken zijn de letters soms (deels) gedraaid.<br>" +
-         "Hieronder zie je voorbeelden van een  <strong>normale</strong> 'G' en een <strong>gespiegelde</strong> 'G' die allebei gedraaid zijn:<br>" +
-         "<div style = 'float: left;'><strong><span style = 'color: green;'>NORMAAL</span></strong><br><img src=" + '"rspan/img/g_135_normal.png">' + "</div>" +
-          "<div style = 'float: right;'><strong><span style = 'color: red;'>GESPIEGELD</span></strong><br><img src=" + '"rspan/img/g_225_mirror.png">' + "</div><br><br><br><br>",
+         "Hieronder zie je voorbeelden van een  <strong>normale</strong> 'R' en een <strong>gespiegelde</strong> 'R' die allebei gedraaid zijn:<br>" +
+         "<div style = 'float: left;'><strong><span style = 'color: green;'>NORMAAL</span></strong><br><img src=" + '"rspan/img/r_315_normal.png">' + "</div>" +
+         "<div style = 'float: right;'><strong><span style = 'color: red;'>GESPIEGELD</span></strong><br><img src=" + '"rspan/img/r_225_mirror.png">' + "</div><br><br><br><br>",
+
+         //page 6
+         "<p style = 'text-align: center;'>" +
+         "Je moet de letter soms dus eerst in je hoofd omdraaien voordat je kunt bepalen of hij gespiegeld is.<br>" +
+         "<div style = 'float: left;'><strong><span style = 'color: green;'>NORMAAL</span></strong><br><img src=" + '"rspan/img/f_180_normal.png">' + "</div>" +
+         "<div style = 'float: right;'><strong><span style = 'color: red;'>GESPIEGELD</span></strong><br><img src=" + '"rspan/img/r_270_mirror.png">' + "</div><br><br><br><br>",
 
       ],
       show_clickable_nav: true,
@@ -120,7 +126,7 @@ var rspan_instructions_rotation = {
     {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
-        "We zullen deze taak nu eerst 5 keer oefenen.<br><br>" +
+        "We zullen deze taak nu eerst 8 keer oefenen.<br><br>" +
         "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op je toetsenbord en druk op een willekeurige toets op je toetsenbord als je klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }

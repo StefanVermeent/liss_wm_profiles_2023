@@ -12,7 +12,7 @@ var preload_rspan_arr = {
   ]
 }
 
-var preload_g = {
+var preload_g_normal = {
   type: jsPsychPreload,
   images: [
      'rspan/img/g_0_normal.png',
@@ -22,7 +22,13 @@ var preload_g = {
      'rspan/img/g_180_normal.png',
      'rspan/img/g_225_normal.png',
      'rspan/img/g_270_normal.png',
-     'rspan/img/g_315_normal.png',
+     'rspan/img/g_315_normal.png'
+  ]
+}
+
+var preload_g_mirror = {
+  type: jsPsychPreload,
+  images: [
      'rspan/img/g_0_mirror.png',
      'rspan/img/g_45_mirror.png',
      'rspan/img/g_90_mirror.png',
@@ -33,6 +39,64 @@ var preload_g = {
      'rspan/img/g_315_mirror.png',
   ]
 }
+
+
+var preload_r_normal = {
+  type: jsPsychPreload,
+  images: [
+     'rspan/img/r_0_normal.png',
+     'rspan/img/r_45_normal.png',
+     'rspan/img/r_90_normal.png',
+     'rspan/img/r_135_normal.png',
+     'rspan/img/r_180_normal.png',
+     'rspan/img/r_225_normal.png',
+     'rspan/img/r_270_normal.png',
+     'rspan/img/r_315_normal.png'
+  ]
+}
+
+var preload_r_mirror = {
+  type: jsPsychPreload,
+  images: [
+     'rspan/img/r_0_mirror.png',
+     'rspan/img/r_45_mirror.png',
+     'rspan/img/r_90_mirror.png',
+     'rspan/img/r_135_mirror.png',
+     'rspan/img/r_180_mirror.png',
+     'rspan/img/r_225_mirror.png',
+     'rspan/img/r_270_mirror.png',
+     'rspan/img/r_315_mirror.png',
+  ]
+}
+
+var preload_f_normal = {
+  type: jsPsychPreload,
+  images: [
+     'rspan/img/f_0_normal.png',
+     'rspan/img/f_45_normal.png',
+     'rspan/img/f_90_normal.png',
+     'rspan/img/f_135_normal.png',
+     'rspan/img/f_180_normal.png',
+     'rspan/img/f_225_normal.png',
+     'rspan/img/f_270_normal.png',
+     'rspan/img/f_315_normal.png'
+  ]
+}
+
+var preload_f_mirror = {
+  type: jsPsychPreload,
+  images: [
+     'rspan/img/f_0_mirror.png',
+     'rspan/img/f_45_mirror.png',
+     'rspan/img/f_90_mirror.png',
+     'rspan/img/f_135_mirror.png',
+     'rspan/img/f_180_mirror.png',
+     'rspan/img/f_225_mirror.png',
+     'rspan/img/f_270_mirror.png',
+     'rspan/img/f_315_mirror.png',
+  ]
+}
+
 
 var a1_short    = "<img src='rspan/img/a1_short.png' height=300>";
 var a2_short    = "<img src='rspan/img/a2_short.png' height=300>";
@@ -60,11 +124,45 @@ var g225_mirror = "<img src='rspan/img/g_225_mirror.png'>";
 var g270_mirror = "<img src='rspan/img/g_270_mirror.png'>";
 var g315_mirror = "<img src='rspan/img/g_315_mirror.png'>";
 
+var f0_normal   = "<img src='rspan/img/f_0_normal.png'>";
+var f45_normal  = "<img src='rspan/img/f_45_normal.png'>";
+var f90_normal  = "<img src='rspan/img/f_90_normal.png'>";
+var f135_normal = "<img src='rspan/img/f_135_normal.png'>";
+var f180_normal = "<img src='rspan/img/f_180_normal.png'>";
+var f225_normal = "<img src='rspan/img/f_225_normal.png'>";
+var f270_normal = "<img src='rspan/img/f_270_normal.png'>";
+var f315_normal = "<img src='rspan/img/f_315_normal.png'>";
+var f0_mirror   = "<img src='rspan/img/f_0_mirror.png'>";
+var f45_mirror  = "<img src='rspan/img/f_45_mirror.png'>";
+var f90_mirror  = "<img src='rspan/img/f_90_mirror.png'>";
+var f135_mirror = "<img src='rspan/img/f_135_mirror.png'>";
+var f180_mirror = "<img src='rspan/img/f_180_mirror.png'>";
+var f225_mirror = "<img src='rspan/img/f_225_mirror.png'>";
+var f270_mirror = "<img src='rspan/img/f_270_mirror.png'>";
+var f315_mirror = "<img src='rspan/img/f_315_mirror.png'>";
+
+var r0_normal   = "<img src='rspan/img/r_0_normal.png'>";
+var r45_normal  = "<img src='rspan/img/r_45_normal.png'>";
+var r90_normal  = "<img src='rspan/img/r_90_normal.png'>";
+var r135_normal = "<img src='rspan/img/r_135_normal.png'>";
+var r180_normal = "<img src='rspan/img/r_180_normal.png'>";
+var r225_normal = "<img src='rspan/img/r_225_normal.png'>";
+var r270_normal = "<img src='rspan/img/r_270_normal.png'>";
+var r315_normal = "<img src='rspan/img/r_315_normal.png'>";
+var r0_mirror   = "<img src='rspan/img/r_0_mirror.png'>";
+var r45_mirror  = "<img src='rspan/img/r_45_mirror.png'>";
+var r90_mirror  = "<img src='rspan/img/r_90_mirror.png'>";
+var r135_mirror = "<img src='rspan/img/r_135_mirror.png'>";
+var r180_mirror = "<img src='rspan/img/r_180_mirror.png'>";
+var r225_mirror = "<img src='rspan/img/r_225_mirror.png'>";
+var r270_mirror = "<img src='rspan/img/r_270_mirror.png'>";
+var r315_mirror = "<img src='rspan/img/r_315_mirror.png'>";
+
 
 var step_number = 0
 var arrowSet  = [a1_short, a2_short, a3_short, a4_short, a5_short, a6_short, a7_short, a8_short];
-var normalSet = [g0_normal, g45_normal, g90_normal, g135_normal, g180_normal, g225_normal, g270_normal, g315_normal]
-var mirrorSet = [g0_mirror, g45_mirror, g90_mirror, g135_mirror, g180_mirror, g225_mirror, g270_mirror, g315_mirror]
+var normalSet = [g0_normal, g45_normal, g90_normal, g135_normal, g180_normal, g225_normal, g270_normal, g315_normal, f0_normal, f45_normal, f90_normal, f135_normal, f180_normal, f225_normal, f270_normal, f315_normal, r0_normal, r45_normal, r90_normal, r135_normal, r180_normal, r225_normal, r270_normal, r315_normal]
+var mirrorSet = [g0_mirror, g45_mirror, g90_mirror, g135_mirror, g180_mirror, g225_mirror, g270_mirror, g315_mirror, f0_mirror, f45_mirror, f90_mirror, f135_mirror, f180_mirror, f225_mirror, f270_mirror, f315_mirror, r0_mirror, r45_mirror, r90_mirror, r135_mirror, r180_mirror, r225_mirror, r270_mirror, r315_mirror]
 var nCorrectRspanRecall = 0
 var RotationCorrect = false
 var nRotationCorrect = 0
@@ -314,7 +412,7 @@ var rspan_practice_rotation_loop = {
 var rspan_practice_rotation_full_loop = {
   timeline: [cursor_off, rspan_fixation, rspan_practice_rotation_loop].flat(2),
   timeline_variables: [
-    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 5, task = "rspan_practice"),
+    generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 8, task = "rspan_practice"),
   ]
 }
 
