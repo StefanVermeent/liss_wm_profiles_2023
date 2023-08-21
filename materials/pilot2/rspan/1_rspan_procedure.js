@@ -1,3 +1,12 @@
+var preload_rspan_instr = {
+  type: jsPsychPreload,
+  images: [
+    "rspan/img/instr01.png",
+    "rspan/img/instr02.png",
+    "rspan/img/instr03.png"
+  ]
+}
+
 var preload_rspan_arr = {
   type: jsPsychPreload,
   images: [
