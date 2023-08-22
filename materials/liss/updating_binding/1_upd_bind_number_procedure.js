@@ -67,7 +67,7 @@ var bind_upd_number_empty = {
 
 var bind_upd_number_intertrial = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  stimulus: "Druk op een willekeurige toets op uw toetsenbord om de volgende ronde te starten.",
   choices: "ALL_KEYS",
   data: {
     task: "bind_upd_number_intertrial"
@@ -76,7 +76,7 @@ var bind_upd_number_intertrial = {
 
 var bind_upd_number_break01 = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Je hebt <font color='blue'>6</font> van de <font color='blue'>18</font> rondes voltooid.<br>Als je wilt kun je even pauzeren voordat je verder gaat.<br><br>Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  stimulus: "U heeft <font color='blue'>6</font> van de <font color='blue'>18</font> rondes voltooid.<br>Als u wilt kunt u even pauzeren voordat u verder gaat.<br><br>Druk op een willekeurige toets op uw toetsenbord om de volgende ronde te starten.",
   choices: "ALL_KEYS",
   data: {
     task: "bind_upd_number_break01"
@@ -85,7 +85,7 @@ var bind_upd_number_break01 = {
 
 var bind_upd_number_break02 = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: "Je hebt <font color='blue'>12</font> van de <font color='blue'>18</font> rondes voltooid.<br>Als je wilt kun je even pauzeren voordat je verder gaat.<br><br>Druk op een willekeurige toets op je toetsenbord om de volgende ronde te starten.",
+  stimulus: "U heeft <font color='blue'>12</font> van de <font color='blue'>18</font> rondes voltooid.<br>Als u wilt kunt u even pauzeren voordat u verder gaat.<br><br>Druk op een willekeurige toets op uw toetsenbord om de volgende ronde te starten.",
   choices: "ALL_KEYS",
   data: {
     task: "bind_upd_number_break02"
@@ -187,7 +187,7 @@ var bind_upd_number_full_loop03 = {
 var bind_upd_number_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+ nCorrectBindUpdNumberRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> nummers goed onthouden.<br><br>";
+    var html = "<div style='font-size:20px;'><b>U heeft <font color='blue'>"+ nCorrectBindUpdNumberRecall +" van de " + jsPsych.timelineVariable("nBind") + "</font> nummers goed onthouden.<br><br>";
     return html
   },
   choices: "NO_KEYS",

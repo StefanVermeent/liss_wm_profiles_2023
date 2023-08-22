@@ -44,7 +44,7 @@ var ospan_fixation_short = {
 
 var ospan_start_new_trial = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: '<div style="font-size:18px;">' + "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op je toetsenbord en druk op een willekeurige toets om te beginnen." + '</div>',
+  stimulus: '<div style="font-size:18px;">' + "Plaats uw vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op uw toetsenbord en druk op een willekeurige toets om te beginnen." + '</div>',
   choices: "ALL_KEYS",
   response_ends_trial: true,
   data: {
@@ -73,7 +73,7 @@ var ospan_letter_feedback = {
   stimulus: function() {
 
    // var nCorrectOspanRecall = jsPsych.data.get().last(1).values()[0].accuracy;
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectOspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br></div>";
+    var html = "<div style='font-size:20px;'><b>U heeft <font color='blue'>"+nCorrectOspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br></div>";
 
     return html
   },
@@ -110,8 +110,8 @@ var ospan_math_feedback = {
 var ospan_full_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectOspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br>";
-    html += "Je hebt <font color='blue'>"+nMathCorrect+" van de " + jsPsych.timelineVariable('setSize') + "</font> rekensommen correct opgelost.<br><br></div><br><br><br>";
+    var html = "<div style='font-size:20px;'><b>U heeft <font color='blue'>"+nCorrectOspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed onthouden.<br><br>";
+    html += "U heeft <font color='blue'>"+nMathCorrect+" van de " + jsPsych.timelineVariable('setSize') + "</font> rekensommen correct opgelost.<br><br></div><br><br><br>";
 
     return html
   },

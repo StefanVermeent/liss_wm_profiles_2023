@@ -206,7 +206,7 @@ var rspan_fixation_short = {
 
 var rspan_start_new_trial = {
   type: jsPsychHtmlKeyboardResponse,
-  stimulus: '<div style="font-size:18px;">' + "Plaats je vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op je toetsenbord en druk op een willekeurige toets om te beginnen." + '</div>',
+  stimulus: '<div style="font-size:18px;">' + "Plaats uw vingers op de '<strong>A</strong>' en '<strong>L</strong>' toetsen op uw toetsenbord en druk op een willekeurige toets om te beginnen." + '</div>',
   choices: "ALL_KEYS",
   response_ends_trial: true,
   data: {
@@ -233,7 +233,7 @@ var rspan_arrow = {
 var rspan_arrow_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> pijlen goed onthouden.<br><br></div>";
+    var html = "<div style='font-size:20px;'><b>U heeft <font color='blue'>"+nCorrectRspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> pijlen goed onthouden.<br><br></div>";
 
     return html
   },
@@ -269,8 +269,8 @@ var rspan_rotation_feedback = {
 var rspan_full_feedback = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: function() {
-    var html = "<div style='font-size:20px;'><b>Je hebt <font color='blue'>"+nCorrectRspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> pijlen goed onthouden.<br><br>";
-    html += "Je hebt <font color='blue'>"+nRotationCorrect+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed beantwoord.<br><br></div><br><br><br>";
+    var html = "<div style='font-size:20px;'><b>U heeft <font color='blue'>"+nCorrectRspanRecall+" van de " + jsPsych.timelineVariable('setSize') + "</font> pijlen goed onthouden.<br><br>";
+    html += "U heeft <font color='blue'>"+nRotationCorrect+" van de " + jsPsych.timelineVariable('setSize') + "</font> letters goed beantwoord.<br><br></div><br><br><br>";
 
     return html
   },
