@@ -149,7 +149,7 @@ var ospan_instructions_full = {
         //page 4
         "<p style = 'text-align: center;'>"+
           "Het is belangrijk dat u uw best doet op beide taken!<br>" +
-          "Probeer de letters zo goed mogelijk te onthouden,<br>en probeer de rekensommen zo snel en goed mogelijk op te lossen.<br><br>",
+          "Probeer de letters zo goed mogelijk te onthouden,<br>en probeer de rekensommen zo goed mogelijk op te lossen.<br><br>",
 
         //page 5
         "<p style = 'text-align: center;'>"+
