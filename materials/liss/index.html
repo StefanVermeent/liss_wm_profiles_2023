@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/@jspsych/plugin-call-function@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-fullscreen@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.2"></script>
 
     <!-- Experiment appearance -->
     <link href="css/jspsych_operationspan.css" rel="stylesheet" type="text/css"></link>
@@ -83,10 +84,10 @@ var ospan_timeline = [
   cursor_on,
   ospan_welcome,
   ospan_instructions_letters,
-  ospan_practice_letters_full_loop,
+  ospan_practice_letters_full_repeat_loop,
   cursor_on,
   ospan_instructions_math,
-  ospan_practice_math_full_loop,
+  ospan_practice_math_full_repeat_loop,
   cursor_on,
   ospan_instructions_full,
   ospan_practice_full_loop,
@@ -106,12 +107,12 @@ var rspan_timeline = [
   preload_r_normal,
   preload_r_mirror,
   rspan_instructions_arrows,
-  rspan_practice_arrows_full_loop,
+  rspan_practice_arrows_full_repeat_loop,
   preload_f_normal,
   preload_f_mirror,
   cursor_on,
   rspan_instructions_rotation,
-  rspan_practice_rotation_full_loop,
+  rspan_practice_rotation_full_repeat_loop,
   cursor_on,
   rspan_instructions_full,
   rspan_practice_full_loop,
@@ -127,7 +128,7 @@ var bind_upd_timeline = [
   cursor_on,
   bind_upd_welcome,
   bind_upd_number_instructions,
-  bind_upd_number_practice_loop,
+  bind_upd_number_practice_full_repeat_loop,
   bind_upd_start,
   bind_upd_number_full_loop01,
   bind_upd_number_break01,

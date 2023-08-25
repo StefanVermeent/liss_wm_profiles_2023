@@ -14,6 +14,8 @@ var nCorrectOspanRecall = 0
 var mathCorrect = false
 var nMathCorrect = 0
 var ospan_block = 1
+var OspanLettersPracticeCorrect = 0
+var OspanMathPracticeCorrect = 0
 
 // Empty grid with fixation cross
 var ospan_fixation = {
@@ -81,6 +83,9 @@ var ospan_letter_feedback = {
   data: {
     task: "ospan",
     variable: "letter_feedback"
+  },
+  on_finish: function(){
+    OspanLettersPracticeCorrect += nCorrectOspanRecall
   }
 }
 
@@ -246,6 +251,40 @@ var ospan_practice_letters_full_loop = {
   ]
 }
 
+var ospan_practice_letters_repeat = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p>Wilt u de LETTERS taak nog eens oefenen?</p>",
+  choices: ['Nee, ik ben klaar om verder te gaan', 'Ja, ik wil nogmaals oefenen'],
+  prompt: "",
+  data: {variable: 'ospan_letters_confirmation', task: "rspan_instructions"}
+};
+
+var ospan_if_low_letters_accuracy = {
+  timeline: [cursor_on, ospan_practice_letters_repeat, cursor_on],
+  conditional_function: function(){
+
+    if(OspanLettersPracticeCorrect <= 4){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+var ospan_practice_letters_full_repeat_loop = {
+  timeline: [ospan_practice_letters_full_loop, ospan_if_low_letters_accuracy],
+  loop_function: function(data){
+    if(jsPsych.data.get().last(1).values()[0].response == 1){
+      OspanLettersPracticeCorrect = 0
+      return true;
+    } else {
+      OspanLettersPracticeCorrect = 0
+      return false;
+    }
+  }
+};
+
+
 var ospan_practice_math_loop = {
   timeline: [ospan_fixation_short, ospan_math, ospan_math_feedback],
   loop_function: function(){
@@ -262,9 +301,43 @@ var ospan_practice_math_loop = {
 var ospan_practice_math_full_loop = {
   timeline: [cursor_off, ospan_fixation, ospan_practice_math_loop].flat(2),
   timeline_variables: [
-    generate_timeline_variables_ospan(setSize = 5, task = "ospan_practice"),
+    generate_timeline_variables_ospan(setSize = 8, task = "ospan_practice"),
   ]
 }
+
+var ospan_practice_math_repeat = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p>Wilt u de REKENSOMMEN taak nog eens oefenen?</p>",
+  choices: ['Nee, ik ben klaar om verder te gaan', 'Ja, ik wil nogmaals oefenen'],
+  prompt: "",
+  data: {variable: 'ospan_math_confirmation', task: "rspan_instructions"}
+};
+
+var ospan_if_low_math_accuracy = {
+  timeline: [cursor_on, ospan_practice_math_repeat, cursor_off],
+  conditional_function: function(){
+    console.log(OspanMathPracticeCorrect)
+    if(OspanMathPracticeCorrect <= 4){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+var ospan_practice_math_full_repeat_loop = {
+  timeline: [ospan_practice_math_full_loop, ospan_if_low_math_accuracy],
+  loop_function: function(data){
+    if(jsPsych.data.get().last(1).values()[0].response == 1){
+      OspanMathPracticeCorrect = 0
+      return true;
+    } else {
+      OspanMathPracticeCorrect = 0
+      return false;
+    }
+  }
+};
+
 
 
 var ospan_practice_full_loop = {

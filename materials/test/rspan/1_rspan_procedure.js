@@ -176,6 +176,8 @@ var nCorrectRspanRecall = 0
 var RotationCorrect = false
 var nRotationCorrect = 0
 var rspan_block = 1
+var RspanArrowPracticeCorrect = 0
+var RspanRotationPracticeCorrect = 0
 
 // Empty grid with fixation cross
 var rspan_fixation = {
@@ -241,6 +243,10 @@ var rspan_arrow_feedback = {
   data: {
     task: "rspan",
     variable: "arrow_feedback"
+  },
+  on_finish: function() {
+    RspanArrowPracticeCorrect += nCorrectRspanRecall
+
   }
 }
 
@@ -324,8 +330,10 @@ var rspan_rotation = {
     RotationCorrect = data.correct;
     if (data.correct == true) {
       nRotationCorrect += 1
+      RspanRotationPracticeCorrect += 1
     } else {
       nRotationCorrect += 0
+      RspanRotationPracticeCorrect += 0
     }
   }
 }
@@ -405,6 +413,41 @@ var rspan_practice_arrows_full_loop = {
   ]
 }
 
+var rspan_practice_arrows_repeat = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p>Wilt u de PIJLEN taak nog eens oefenen?</p>",
+  choices: ['Nee, ik ben klaar om verder te gaan', 'Ja, ik wil nogmaals oefenen'],
+  prompt: "",
+  data: {variable: 'rspan_arrows_confirmation', task: "rspan_instructions"}
+};
+
+var rspan_if_low_arrows_accuracy = {
+  timeline: [rspan_practice_arrows_repeat],
+  conditional_function: function(){
+    console.log(RspanArrowPracticeCorrect)
+
+    if(RspanArrowPracticeCorrect <= 4){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+var rspan_practice_arrows_full_repeat_loop = {
+  timeline: [rspan_practice_arrows_full_loop, rspan_if_low_arrows_accuracy],
+  loop_function: function(data){
+    if(jsPsych.data.get().last(1).values()[0].response == 1){
+      RspanArrowPracticeCorrect = 0
+      return true;
+    } else {
+      RspanArrowPracticeCorrect = 0
+      return false;
+    }
+  }
+};
+
+
 var rspan_practice_rotation_loop = {
   timeline: [rspan_fixation_short, rspan_rotation, rspan_rotation_feedback],
   loop_function: function(){
@@ -426,6 +469,42 @@ var rspan_practice_rotation_full_loop = {
 }
 
 
+var rspan_practice_rotation_repeat = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p>Wilt u de LETTERS taak nog eens oefenen?</p>",
+  choices: ['Nee, ik ben klaar om verder te gaan', 'Ja, ik wil nogmaals oefenen'],
+  prompt: "",
+  data: {variable: 'rspan_rotation_confirmation', task: "rspan_instructions"}
+};
+
+var rspan_if_low_rotation_accuracy = {
+  timeline: [rspan_practice_rotation_repeat],
+  conditional_function: function(){
+
+    if(RspanRotationPracticeCorrect <= 4){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+var rspan_practice_rotation_full_repeat_loop = {
+  timeline: [rspan_practice_rotation_full_loop, rspan_if_low_rotation_accuracy],
+  loop_function: function(data){
+    if(jsPsych.data.get().last(1).values()[0].response == 1){
+      RspanRotationPracticeCorrect = 0
+      return true;
+    } else {
+      RspanRotationPracticeCorrect = 0
+      return false;
+    }
+  }
+};
+
+
+
+
 var rspan_practice_full_loop = {
   timeline: [cursor_off, rspan_start_new_trial, rspan_fixation, rspan_stim_loop, cursor_on, rspan_recall, cursor_off, rspan_full_feedback].flat(2),
   timeline_variables: [
@@ -434,3 +513,4 @@ var rspan_practice_full_loop = {
     generate_timeline_variables_rspan(stimset = arrowSet, normalSet = normalSet, mirrorSet = mirrorSet, setSize = 3, task = "rspan_practice"),
   ],
 }
+

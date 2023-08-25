@@ -14,7 +14,7 @@ var bind_upd_number_step = -1 // Keep track of where we are in the current trial
 var bind_upd_number_recall_step = 0 // Keep track of where we are in the recall flow
 var number_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] // Set of all stimuli
 var nCorrectBindUpdNumberRecall = 0
-
+var BindUpdPracticeCorrect = 0
 
 
 // Empty grid with fixation cross
@@ -197,6 +197,7 @@ var bind_upd_number_feedback = {
     variable: "full_feedback"
   },
   on_finish: function() {
+    BindUpdPracticeCorrect += nCorrectBindUpdNumberRecall
     nCorrectBindUpdNumberRecall = 0
   }
 }
@@ -212,5 +213,39 @@ var bind_upd_number_practice_loop = {
     generate_bind_upd_timeline(nBind = 4, nUpd = 2, stimset = number_set, task = "bind_upd_number_practice"),
   ]
 }
+
+var bind_upd_number_practice_repeat = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: "<p>Wilt u de taak nog eens oefenen?</p>",
+  choices: ['Nee, ik ben klaar om verder te gaan', 'Ja, ik wil nogmaals oefenen'],
+  prompt: "",
+  data: {variable: 'bind_upd_confirmation', task: "bind_upd_number_instructions"}
+};
+
+var bind_upd_if_low_accuracy = {
+  timeline: [bind_upd_number_practice_repeat],
+  conditional_function: function(){
+
+    if(BindUpdPracticeCorrect <= 6){
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+var bind_upd_number_practice_full_repeat_loop = {
+  timeline: [bind_upd_number_practice_loop, bind_upd_if_low_accuracy],
+  loop_function: function(data){
+    if(jsPsych.data.get().last(1).values()[0].response == 1){
+      BindUpdPracticeCorrect = 0
+      return true;
+    } else {
+      BindUpdPracticeCorrect = 0
+      return false;
+    }
+  }
+};
+
 
 

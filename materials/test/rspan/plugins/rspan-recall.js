@@ -18,7 +18,7 @@ var jsPsychRspanRecall = (function (jspsych) {
       correct_order: {
         type:jspsych.ParameterType.INT,
         default: undefined,
-        description: 'Recored the correct array'
+        description: 'Record the correct array'
       }
     }
   };
@@ -60,14 +60,14 @@ var jsPsychRspanRecall = (function (jspsych) {
         }
 
         var imgtoarrow = {
-          "<img src='rspan/img/a1_short.png' height=300>": "&nwarr;",
-          "<img src='rspan/img/a2_short.png' height=300>": "&nearr;",
-          "<img src='rspan/img/a3_short.png' height=300>": "&searr;",
-          "<img src='rspan/img/a4_short.png' height=300>": "&swarr;",
-          "<img src='rspan/img/a5_short.png' height=300>": "&uarr;",
-          "<img src='rspan/img/a6_short.png' height=300>": "&rarr;",
-          "<img src='rspan/img/a7_short.png' height=300>": "&darr;",
-          "<img src='rspan/img/a8_short.png' height=300>": "&larr;"
+          "<img src='img/a1_short.png' height=300>": "&nwarr;",
+          "<img src='img/a2_short.png' height=300>": "&nearr;",
+          "<img src='img/a3_short.png' height=300>": "&searr;",
+          "<img src='img/a4_short.png' height=300>": "&swarr;",
+          "<img src='img/a5_short.png' height=300>": "&uarr;",
+          "<img src='img/a6_short.png' height=300>": "&rarr;",
+          "<img src='img/a7_short.png' height=300>": "&darr;",
+          "<img src='img/a8_short.png' height=300>": "&larr;"
         }
 
         var correctArrows = []
@@ -154,6 +154,8 @@ var jsPsychRspanRecall = (function (jspsych) {
 
           function after_response(choice) {
 
+            console.log(choice)
+
             // measure rt
             var end_time = performance.now();
             var rt = end_time - start_time;
@@ -183,6 +185,9 @@ var jsPsychRspanRecall = (function (jspsych) {
           }
 
           const end_trial = () => {
+
+            console.log(response.button)
+            console.log(recalledGrid)
 
             // kill any remaining setTimeout handlers
             this.jsPsych.pluginAPI.clearAllTimeouts();
