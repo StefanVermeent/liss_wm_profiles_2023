@@ -260,7 +260,7 @@ var ospan_practice_letters_repeat = {
 };
 
 var ospan_if_low_letters_accuracy = {
-  timeline: [ospan_practice_letters_repeat],
+  timeline: [cursor_on, ospan_practice_letters_repeat, cursor_off],
   conditional_function: function(){
 
     if(OspanLettersPracticeCorrect <= 4){

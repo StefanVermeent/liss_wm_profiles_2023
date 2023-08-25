@@ -478,7 +478,7 @@ var rspan_practice_rotation_repeat = {
 };
 
 var rspan_if_low_rotation_accuracy = {
-  timeline: [rspan_practice_rotation_repeat],
+  timeline: [cursor_on, rspan_practice_rotation_repeat, cursor_off],
   conditional_function: function(){
 
     if(RspanRotationPracticeCorrect <= 4){
