@@ -274,7 +274,8 @@ var ospan_if_low_letters_accuracy = {
 var ospan_practice_letters_full_repeat_loop = {
   timeline: [ospan_practice_letters_full_loop, ospan_if_low_letters_accuracy],
   loop_function: function(data){
-    if(jsPsych.data.get().last(1).values()[0].response == 1){
+    console.log(jsPsych.data.get().last(2).values()[0].response)
+    if(jsPsych.data.get().last(2).values()[0].response == 1){
       OspanLettersPracticeCorrect = 0
       return true;
     } else {
@@ -328,7 +329,7 @@ var ospan_if_low_math_accuracy = {
 var ospan_practice_math_full_repeat_loop = {
   timeline: [ospan_practice_math_full_loop, ospan_if_low_math_accuracy],
   loop_function: function(data){
-    if(jsPsych.data.get().last(1).values()[0].response == 1){
+    if(jsPsych.data.get().last(2).values()[0].response == 1){
       OspanMathPracticeCorrect = 0
       return true;
     } else {

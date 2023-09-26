@@ -141,7 +141,7 @@ var rspan_instructions_full = {
         //page 1
         "<p style = 'text-align: center;'>"+
           "Goed gedaan!<br><br>" +
-          "We gaan nu de volledige taak oefenen.",
+          "We gaan nu het volledige spel oefenen.",
 
         //page 2
         "<p style = 'text-align: center;'>"+
@@ -180,7 +180,7 @@ var rspan_instructions_full = {
     {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
-        "We zullen de volledige taak nu eerst 3 keer oefenen.<br><br>" +
+        "We zullen het volledige spel nu eerst 3 keer oefenen.<br><br>" +
         "Druk op een willekeurige toets op uw toetsenbord als u klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
@@ -190,8 +190,8 @@ var rspan_instructions_full = {
 var rspan_start = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "<p style = 'text-align: center;'>"+
-    "U bent nu klaar voor de echte taak.<br><br>" +
-    "De taak bestaat uit 12 rondes.<br>" +
+    "U bent nu klaar voor het echte spel.<br><br>" +
+    "Het spel bestaat uit 12 rondes.<br>" +
     "Vanaf nu krijgt u geen feedback meer op uw prestaties.<br><br>" +
     "Druk op een willekeurige toets op uw toetsenbord om te beginnen.",
   choices: "ALL_KEYS",
@@ -207,7 +207,7 @@ var rspan_end = {
   type: jsPsychInstructions,
   pages: [
     "<p style = 'text-align: center;'>"+
-      "Dit is het einde van de <strong>Pijlen en Letters</strong> taak.<br>" +
+      "Dit is het einde van het <strong>Pijlen en Letters</strong> spel.<br>" +
       "Klik op 'verder' om door te gaan.",
   ],
   show_clickable_nav: true,

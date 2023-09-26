@@ -422,7 +422,7 @@ var rspan_practice_arrows_repeat = {
 };
 
 var rspan_if_low_arrows_accuracy = {
-  timeline: [rspan_practice_arrows_repeat],
+  timeline: [cursor_on, rspan_practice_arrows_repeat, cursor_on],
   conditional_function: function(){
     console.log(RspanArrowPracticeCorrect)
 
@@ -437,7 +437,7 @@ var rspan_if_low_arrows_accuracy = {
 var rspan_practice_arrows_full_repeat_loop = {
   timeline: [rspan_practice_arrows_full_loop, rspan_if_low_arrows_accuracy],
   loop_function: function(data){
-    if(jsPsych.data.get().last(1).values()[0].response == 1){
+    if(jsPsych.data.get().last(2).values()[0].response == 1){
       RspanArrowPracticeCorrect = 0
       return true;
     } else {
@@ -492,7 +492,7 @@ var rspan_if_low_rotation_accuracy = {
 var rspan_practice_rotation_full_repeat_loop = {
   timeline: [rspan_practice_rotation_full_loop, rspan_if_low_rotation_accuracy],
   loop_function: function(data){
-    if(jsPsych.data.get().last(1).values()[0].response == 1){
+    if(jsPsych.data.get().last(2).values()[0].response == 1){
       RspanRotationPracticeCorrect = 0
       return true;
     } else {

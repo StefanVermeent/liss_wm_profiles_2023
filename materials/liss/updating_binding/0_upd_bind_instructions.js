@@ -65,7 +65,7 @@ var bind_upd_number_instructions = {
     {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: "<p style = 'text-align: center;'>"+
-        "We zullen deze taak nu eerst 4 keer oefenen.<br><br>" +
+        "We zullen dit spel nu eerst 4 keer oefenen.<br><br>" +
         "Druk op een willekeurige knop als u klaar bent om te oefenen.",
       choices: "ALL_KEYS"
     }
@@ -76,8 +76,8 @@ var bind_upd_number_instructions = {
 var bind_upd_start = {
   type: jsPsychHtmlKeyboardResponse,
   stimulus: "<p style = 'text-align: center;'>"+
-    "U bent nu klaar voor de echte taak.<br><br>" +
-    "De taak bestaat uit 18 rondes.<br>" +
+    "U bent nu klaar voor het echte spel.<br><br>" +
+    "Het spel bestaat uit 18 rondes.<br>" +
     "Vanaf nu krijgt u geen feedback meer op uw prestaties.<br><br>" +
     "Druk op een willekeurige knop om te beginnen.",
   choices: "ALL_KEYS",
@@ -89,7 +89,7 @@ var bind_upd_end = {
   type: jsPsychInstructions,
   pages: [
     "<p style = 'text-align: center;'>"+
-      "Dit is het einde van de <strong>geheugentaak</strong>.<br>" +
+      "Dit is het einde van het <strong>geheugenspel</strong>.<br>" +
       "Klik op 'verder' om door te gaan.",
   ],
   show_clickable_nav: true,
