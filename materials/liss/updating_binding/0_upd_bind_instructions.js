@@ -43,7 +43,7 @@ var bind_upd_number_instructions = {
           '<img width = 500 src = updating_binding/img/instr03.png></img><br><br>',
 
           //page 4
-          "Als alle nummers zijn getoond geeft u voor elk vakje aan welk nummer er <strong>als laatst</strong> werd getoond.<br>" +
+          "Als alle nummers zijn getoond geeft u voor elk vakje aan welk nummer er <strong>als laatste</strong> werd getoond.<br>" +
           "U doet dit steeds voor het vakje met het <strong>vraagteken</strong> (?).<br><br>" +
           "Gebruik hiervoor de knoppen die onder het vierkant verschijnen.<br><br><br>" +
           '<img width = 600 src = updating_binding/img/instr04.png></img><br><br>',
