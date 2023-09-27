@@ -424,8 +424,6 @@ var rspan_practice_arrows_repeat = {
 var rspan_if_low_arrows_accuracy = {
   timeline: [cursor_on, rspan_practice_arrows_repeat, cursor_on],
   conditional_function: function(){
-    console.log(RspanArrowPracticeCorrect)
-
     if(RspanArrowPracticeCorrect <= 4){
       return true;
     } else {

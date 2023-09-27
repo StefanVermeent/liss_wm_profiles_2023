@@ -172,8 +172,10 @@ var ospan_math = {
     mathCorrect = data.correct;
     if (data.correct == true) {
       nMathCorrect += 1
+      OspanMathPracticeCorrect += 1
     } else {
       nMathCorrect += 0
+      OspanMathPracticeCorrect += 0
     }
   }
 }
@@ -262,7 +264,6 @@ var ospan_practice_letters_repeat = {
 var ospan_if_low_letters_accuracy = {
   timeline: [cursor_on, ospan_practice_letters_repeat, cursor_on],
   conditional_function: function(){
-
     if(OspanLettersPracticeCorrect <= 4){
       return true;
     } else {
@@ -274,7 +275,6 @@ var ospan_if_low_letters_accuracy = {
 var ospan_practice_letters_full_repeat_loop = {
   timeline: [ospan_practice_letters_full_loop, ospan_if_low_letters_accuracy],
   loop_function: function(data){
-    console.log(jsPsych.data.get().last(2).values()[0].response)
     if(jsPsych.data.get().last(2).values()[0].response == 1){
       OspanLettersPracticeCorrect = 0
       return true;
@@ -317,7 +317,6 @@ var ospan_practice_math_repeat = {
 var ospan_if_low_math_accuracy = {
   timeline: [cursor_on, ospan_practice_math_repeat, cursor_off],
   conditional_function: function(){
-    console.log(OspanMathPracticeCorrect)
     if(OspanMathPracticeCorrect <= 4){
       return true;
     } else {
