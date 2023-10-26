@@ -1,7 +1,6 @@
 ---
 title: "Working memory performance in adverse environments: Enhanced, impaired, or intact?"
-output: 
-  github_document:
+output: github_document
 editor_options: 
   markdown: 
     wrap: sentence
@@ -12,11 +11,12 @@ editor_options:
 library(tidyverse)
 devtools::load_all("D:/repositories/projectlog")
 #source('scripts/dependencies.R')
-knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+knitr::opts_chunk$set("ft.shadow" = FALSE, echo = F, message = F, warning = F)
 
 ```
 <br>
-This repository contains data, code, and output for a project entitled "Working memory performance in adverse environments: Enhanced, impaired, or intact?". A Stage 1 snapshot of the project has been submitted to [Peer Community in Registered Reports (PCI-RR)](https://rr.peercommunityin.org/)
+This repository contains data, code, and output for a project entitled "Working memory performance in adverse environments: Enhanced, impaired, or intact?". A Stage 1 snapshot of the project has been submitted to [Peer Community in Registered Reports (PCI-RR)](https://rr.peercommunityin.org/).
 
 # Project History
 
@@ -51,7 +51,7 @@ proj_history <-
   )
 
 
-flextable::flextable(proj_history) |> 
+knitr::knit_print(flextable::flextable(proj_history) |> 
   flextable::autofit() |> 
   flextable::compose(
     j = "milestone",
@@ -65,7 +65,7 @@ flextable::flextable(proj_history) |>
       flextable::hyperlink_text(x = "Click here", url = commit_link)
     )
   ) |> 
-  flextable::delete_columns(c("ref", "milestone_hash", "commit_hash", "files", "merge", "milestone_link", "commit_link"))
+  flextable::delete_columns(c("ref", "milestone_hash", "commit_hash", "files", "merge", "milestone_link", "commit_link")))
 ```
 
 ### Contact
