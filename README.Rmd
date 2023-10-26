@@ -1,0 +1,21 @@
+---
+title: "Working memory performance in adverse environments: Enhanced, impaired, or intact?"
+output: github_document
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+
+```{r setup, include=F, echo=F}
+library(tidyverse)
+devtools::load_all("D:/repositories/projectlog")
+#source('scripts/dependencies.R')
+
+knitr::opts_chunk$set("ft.shadow" = FALSE, echo = F, message = F, warning = F)
+
+```
+<br>
+This repository contains data, code, and output for a project entitled "Working memory performance in adverse environments: Enhanced, impaired, or intact?". A Stage 1 snapshot of the project has been submitted to [Peer Community in Registered Reports (PCI-RR)](https://rr.peercommunityin.org/).
+
+
