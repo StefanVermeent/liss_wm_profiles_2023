@@ -1,10 +1,10 @@
 ---
-title: ""
-output: github_document
+title: "Working memory performance in adverse environments: Enhanced, impaired, or intact?"
+output: 
+  html_document:
 editor_options: 
   markdown: 
     wrap: sentence
-always_allow_html: true
 ---
 
 
