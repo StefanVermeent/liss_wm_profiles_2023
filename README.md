@@ -14,7 +14,7 @@ Below is an overview of all the major milestones of this project,
 including a description and links. The links take you to the historic
 version of the project that corresponds to the milestone.
 
-<img src="README_files/figure-gfm/unnamed-chunk-1-1.png" width="3902" />
+<img src="README_files/figure-gfm/unnamed-chunk-1-1.png" width="4172" />
 
 ### Contact
 

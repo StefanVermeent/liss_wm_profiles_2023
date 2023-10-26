@@ -46,7 +46,8 @@ proj_history <-
   separate(message, into = c("message", "code"), sep = "code") |> 
   mutate(
     code = str_replace_all(code, "\\|\\>", "\\|\\>\\\n"),
-    message = str_remove(message, "\\\nobject_hash.*$")
+    message = str_remove(message, "\\\nobject_hash.*$"),
+    milestone = str_c("[", milestone, "]", "(www.google.com)")
   )
 
 
