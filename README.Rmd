@@ -1,7 +1,7 @@
 ---
 title: "Working memory performance in adverse environments: Enhanced, impaired, or intact?"
 output: 
-  html_document:
+  github_document:
 editor_options: 
   markdown: 
     wrap: sentence
@@ -42,20 +42,31 @@ proj_history <-
     milestone_link = paste0(get_git_url(), '/releases/tag/', milestone),
     link = commit_hash,
     commit_link = paste0(get_git_url(), '/tree/', commit_hash)
+  ) |> 
+  separate(message, into = c("message", "code"), sep = "code") |> 
+  mutate(
+    code = str_replace_all(code, "\\|\\>", "\\|\\>\\\n"),
+    message = str_remove(message, "\\\nobject_hash.*$")
   )
 
-reactable::reactable(
-  proj_history |> select(milestone, timestamp = time, author, message, link),
-  columns = list(
-    milestone = reactable::colDef(html = TRUE, cell = function(value, index) {
-      sprintf("<a href='%s' target='_blank'>%s</a>", proj_history$milestone_link[index], value)
-    }),
-    link = reactable::colDef(html = TRUE, cell = function(value, index) {
-      sprintf("<a href='%s' target=' _blank'>%s</a>", proj_history$commit_link[index], value)
-    })
-  )
-)
+
+flextable::flextable(proj_history) |> 
+  flextable::autofit() |> 
+  flextable::compose(
+    j = "milestone",
+    value = flextable::as_paragraph(
+      flextable::hyperlink_text(x = milestone, url = milestone_link)
+    )
+  ) |> 
+  flextable::compose(
+    j = "link",
+    value = flextable::as_paragraph(
+      flextable::hyperlink_text(x = "Click here", url = commit_link)
+    )
+  ) |> 
+  flextable::delete_columns(c("ref", "milestone_hash", "commit_hash", "files", "merge", "milestone_link", "commit_link"))
 ```
+
 ### Contact
 
 For questions or comments, feel free to contact me at p.c.s.vermeent@gmail.com.
