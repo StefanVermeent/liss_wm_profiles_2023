@@ -44,35 +44,6 @@ Below is an overview of all the project milestones, such as first-time data acce
 Data access events were automatically captured using custom code, which over the course of this project was collected in the R package `projectlog` [https://stefanvermeent.github.io/projectlog/](https://stefanvermeent.github.io/projectlog/).
 For more information about how tracking worked, Go to the [Open science workflow tab](https://stefanvermeent.github.io/abcd_ddm/opensci_workflow/README.html).
 
-```{r results ='asis', echo = FALSE}
-x <- gert::git_log(max = 10000) |> 
-  select(commit, author, time, message) |>
-  mutate(
-    milestone = map_chr(milestone, function(milestone) {
-      milestone |> 
-        str_remove("\\[\\[") |>
-        str_replace("_", " ") |> 
-        str_to_title()
-    }),
-    data_hash = str_remove(data_hash, "^object_hash ")
-  ) |> 
-  select(time, commit, milestone, description, code, data_hash) |> 
-  mutate(
-    code = str_replace_all(code, "\\|\\>", "\\|\\>\\\n"),
-    link_to_git = paste0(
-      "<anonymized repository>"
-     # gert::git_remote_list()$url |> str_remove(string = _, pattern = "\\.git$"), "/tree/", commit)
-    )
-  ) |>
-  arrange(time) |> 
-  glue_data("  - **[{time}]({link_to_git}): {description}**
-        - **Milestone:** {milestone}
-        - **Data MD5 hash**: {data_hash}
-        - [Link to code snippet](https://anonymous.4open.science/r/anon-255D/.gitlog/{commit}.R)
-        \n
-    ")
-x
 
-```
 
 
