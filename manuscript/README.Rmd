@@ -1,0 +1,19 @@
+---
+title: ""
+output: 
+  html_document:
+    template: ../assets/template.html
+    css: ../assets/style.css
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+## Registered Report
+
+Below is the Stage 1 Protocol of the Registered Report. 
+It can also be found [here](https://osf.io/4n8qr).
+
+```{=html}
+<iframe width="780" height="500" src="registered_report.pdf" title="Stage 2 Registered Report"></iframe>
+```

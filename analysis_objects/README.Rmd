@@ -1,0 +1,16 @@
+---
+title: ""
+output: 
+  html_document:
+    template: ../assets/template.html
+    css: ../assets/style.css
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+# Analysis objects
+
+This folder contains all analysis objects, i.e., the outputs of the various data processing scripts.
+Similar to the data, analysis objects containing individual-level data cannot be shared openly on GitHub.
+These analysis objects can be created either by using the simulated data files or by requesting access to the LISS data (see [how to reproduce this repository](#reproduce)).
