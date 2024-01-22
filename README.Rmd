@@ -44,6 +44,39 @@ Below is an overview of all the project milestones, such as first-time data acce
 Data access events were automatically captured using custom code, which over the course of this project was collected in the R package `projectlog` [https://stefanvermeent.github.io/projectlog/](https://stefanvermeent.github.io/projectlog/).
 For more information about how tracking worked, Go to the [Open science workflow tab](https://stefanvermeent.github.io/abcd_ddm/opensci_workflow/README.html).
 
-
+```{r results ='asis', echo = FALSE}
+gert::git_tag_list() |> 
+  mutate(
+    tags = pmap(list(name = name, ref = ref, commit = commit), function(name, ref, commit) {
+      gert::git_commit_info(commit) |> 
+        as_tibble() |> 
+        select(commit = id, author, time, message) 
+    })
+  ) |> 
+  select(-commit, -ref) |> 
+  unnest(tags) |> 
+  separate(message, into = c("description", "hash", "code"), sep = "\\n") |> 
+  mutate(
+    name = map_chr(name, function(name) {
+      name |> 
+        str_remove("\\[\\[") |>
+        str_remove("\\d*$") |> 
+        str_replace("_", " ") |> 
+        str_to_title()
+    })
+  ) |> 
+  mutate(
+    code = str_remove_all(code, "^code\\s") |> str_replace_all(string = _, "\\|\\>", "\\|\\>\\\n"),
+    link_to_git = paste0(
+       gert::git_remote_list()$url |> str_remove(string = _, pattern = "\\.git$"), "/tree/", commit)
+    ) |>
+  arrange(desc(time)) |> 
+  glue_data("  - **[{time}]({link_to_git}): {description}**
+        - **Milestone:** {name}
+        - **Data MD5 hash**: {hash}
+        - [Link to code snippet](https://https://github.com/StefanVermeent/abcd_ddm/tree/main/.projectlog/{commit}.R)
+        \n
+    ")
+```
 
 
