@@ -1,0 +1,23 @@
+---
+title: ""
+output: 
+  html_document:
+    template: ../assets/template.html
+    css: ../assets/style.css
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+## Data {#data}
+
+This folder contains all the data that serves as input for the analysis scripts.
+LISS data cannot be shared on open repositories.
+
+**Full reproduction**. In order to fully reproduce the analysis described in the manuscript, the interested reader needs to have their own personal access to the LISS data archive.
+After obtaining access, the required data files can be placed in the `data` folder (see [how to reproduce this repository](https://stefanvermeent.github.io/liss_wm_profiles_2023/) for more information).
+
+**Computational reproduction**. To facilitate computational reproducibility, we provide simulated data files.
+These files contain simulated data with the same variables as the original data.
+They are generated under `scrips/1_sim_pipeline` and can be used as input to the data analysis functions.
+Note that, because the values are not identical to the real data, the output will deviate from the statistics described in the manuscript.
