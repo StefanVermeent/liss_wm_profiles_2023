@@ -1,0 +1,39 @@
+---
+title: ""
+output: 
+  html_document:
+    template: ../assets/template.html
+    css: ../assets/style.css
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+## Materials {#materials}
+
+This folder contains all the materials of the cognitive tasks.
+All tasks were programmed in [JsPsych 7.3.2](https://www.jspsych.org/7.3/).
+
+1.  [`0_pilot/`](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/master/materials/0_pilot): Folder containing the pilot materials for the Operation Span Task and the Binding-Updating Task.
+2.  [`0_pilot2/`](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/master/materials/0_pilot2): Folder containing the pilot materials for the Rotation Span Task.
+3.  [`1_liss/`](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/master/materials/1_liss): Folder containing the final materials of all three tasks as used in the main study.
+
+In each of these study folders, you will find several files and folders:
+
+1.  `css/`. Handles the visual appearance of the cognitive tasks.
+2.  `functions/`. Several helper functions to create stimuli and/or timelines.
+3.  `plugins/`. Custom JsPsych plugins to handle trial behavior that is not included in the default JsPsych library.
+4.  `global_variables.js`. Global functions for control across studies, e.g., full-screen mode, turning off the cursor.
+5.  `index.html`. Script which combines the code of all three tasks, handles counterbalancing, and initiates the tasks.
+
+Within each study folder, each task also has it's own folder (`ospan`, `rspan`, or `updating_binding`.)
+In each folder, you will find two files:
+`0_[task]_instructions.js` contains the Javascript code for all task instructions.
+`1_[task]_procedure.js` contains Javascript code defining the stimuli and trials for both practice and test blocks.
+
+**Run tasks locally.** To run the tasks locally on your device, navigate to one of the three main folders as listed above, and open the `index.html` file in a browser. 
+This will automatically start the cognitive tasks (in counterbalanced order).
+
+**Run tasks online.** The tasks are hosted online at [https://liss-wm-profiles-2023-main.netlify.app/](https://liss-wm-profiles-2023-main.netlify.app/).
+Navigating to this url will automatically start the tasks.
+
