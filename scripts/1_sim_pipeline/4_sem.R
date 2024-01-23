@@ -7,14 +7,14 @@ library(lavaan.survey)
 
 # 2. Load data ------------------------------------------------------------
 
-load("data/full_data.RData")
+load("data/full_data_sim.RData")
 
 # 2. Specify Clustering Design -----------------------------------------------
 
 # Some children are clustered within families.
 # We account for this using the lavaan.survey package
 
-cluster_design <- survey::svydesign(ids=~nohouse_encr, prob=~1, data = data_clean)
+cluster_design <- survey::svydesign(ids=~nohouse_encr, prob=~1, data = data_clean_sim)
 
 
 # 3. Model specification(s) --------------------------------------------------
@@ -35,7 +35,7 @@ mod_meas <-
 
 fit_meas1 <- lavaan::sem(
   model = mod_meas,
-  data = data_clean,
+  data = data_clean_sim,
   estimator = "MLR", # Robust SEs in case of non-normal data
   missing = "ML",    # FIML for missing data
   orthogonal = TRUE,

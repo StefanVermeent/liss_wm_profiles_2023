@@ -245,7 +245,7 @@ ospan_data_math_clean <-
   filter(variable == "math") |>
   select(id, prolific_pid, rt, block, counterbalance, correct) |>
   group_by(prolific_pid) |>
-  summarise(ospan_math_acc = sum(correct) / n())
+  summarise(ospan_sec_acc = sum(correct) / n())
 
 ## Rspan ----
 
@@ -279,13 +279,15 @@ rspan_data_rotation_clean <-
   filter(variable == "rotation") |>
   select(id, prolific_pid, rt, block, correct) |>
   group_by(prolific_pid) |>
-  summarise(rspan_rotation_acc = sum(correct) / n())
+  summarise(rspan_sec_acc = sum(correct) / n())
 
 
 # Combine All Data --------------------------------------------------------
 
-pilot_data_clean <-
+pilot_full_data <-
   left_join(ospan_data_letter_clean, rspan_data_arrow_clean) |>
+  left_join(ospan_data_math_clean) |>
+  left_join(rspan_data_rotation_clean) |>
   left_join(
     bind_upd_color_clean |>
       pivot_wider(names_from = "version", values_from = 'color_acc') |>
@@ -311,103 +313,4 @@ pilot_data_clean <-
   mutate(id = 1:n()) |>
   select(-prolific_pid)
 
-
-# Partial correlations, controlling for age
-pilot_data_clean |>
-  select(-id) |>
-  cor(use = "pairwise.complete.obs") |>
-  partial.r(x = c(1,2,3,4,5,6,7,8,9), y = c(10))
-
-
-
-pilot_data_clean |>
-  pivot_longer(c(ends_with('cap'), starts_with("binding"), starts_with("updating")), names_to = 'task', values_to = 'score') |>
-  pivot_longer(c(pcunp_mean, vio_comp, ses_subj_comp), names_to = "adversity", values_to = "adv_value") |>
-  ggplot(aes(adv_value, score)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  facet_grid(task~adversity)
-
-
-# Timestamps --------------------------------------------------------------
-
-overall_duration <-
-  pilot_data |>
-  select(prolific_pid, timestamp_tasks) |>
-  mutate(timestamp_tasks = timestamp_tasks / 60)
-
-
-task_duration <- list(bind_upd_color_data, bind_upd_color_practice, bind_upd_number_data, bind_upd_number_practice, ospan_data, ospan_practice) |>
-  map_dfr(function(x){
-    x |>
-      group_by(prolific_pid, task) |>
-      summarise(duration = ((max(time_elapsed) - min(time_elapsed))/1000)/60) |>
-      ungroup()
-  }) |>
-  mutate(
-    task = case_when(
-      str_detect(task, "^bind_upd_color") ~ "bind_upd_color",
-      str_detect(task, "^bind_upd_number") ~ "bind_upd_number",
-      str_detect(task, "^ospan") ~ "ospan"
-    )
-  ) |>
-  group_by(prolific_pid, task) |>
-  summarise(duration = sum(duration)) |>
-  group_by(prolific_pid) |>
-  mutate(total_duration = sum(duration)) |>
-  left_join(overall_duration) |>
-  mutate(instruction_read_duration = (timestamp_tasks - total_duration)/3) |>
-  bind_rows(
-    rspan_data |>
-      group_by(prolific_pid, task) |>
-      summarise(duration = ((max(time_elapsed) - min(time_elapsed))/1000)/60) |>
-      ungroup() |>
-      mutate(task = "rspan") |>
-      bind_rows(
-        rspan_practice |>
-          group_by(prolific_pid, task) |>
-          summarise(duration = ((max(time_elapsed) - min(time_elapsed))/1000)/60) |>
-          ungroup() |>
-          mutate(task = "rspan")
-      ) |>
-      group_by(prolific_pid, task) |>
-      summarise(duration = sum(duration))
-  ) |>
-  arrange(prolific_pid) |>
-  mutate(instruction_read_duration = ifelse(is.na(instruction_read_duration), lag(instruction_read_duration, n = 1), instruction_read_duration)) |>
-  mutate(duration = duration + instruction_read_duration) |>
-  select(-c(total_duration, timestamp_tasks, instruction_read_duration))
-
-# Experiment duration with Ospan, Rspan and Binding-updating with numbers
-ospan_rspan_bindupdnum <-
-  task_duration |>
-  filter(task != "bind_upd_color") |>
-  summarise(duration = sum(duration)) |>
-  ungroup()
-
-ospan_rspan_bindupdnum |>
-  ggplot(aes(duration)) +
-  geom_histogram() +
-  geom_vline(xintercept = 25)
-
-ospan_rspan_bindupdnum |>
-  summarise(median_duration = median(duration))
-
-# Experiment duration with Ospan, Rspan and Binding-updating with colors
-ospan_rspan_bindupdcol <-
-  task_duration |>
-  filter(task != "bind_upd_number") |>
-  summarise(duration = sum(duration)) |>
-  ungroup() |>
-  summarise(median_duration = median(duration))
-
-# Experiment duration with Ospan, Binding-updating with numbers and colors
-ospan_color_number <-
-  task_duration |>
-  filter(task != "rspan") |>
-  summarise(duration = sum(duration)) |>
-  ungroup() |>
-  summarise(median_duration = median(duration))
-
-
-
+save(pilot_full_data, file = "data/pilot_full_data.RData")

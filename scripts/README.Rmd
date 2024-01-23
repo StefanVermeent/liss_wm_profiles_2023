@@ -61,7 +61,7 @@ file_list <- list.files(pattern = ".R$", full.names = T, recursive = T) %>%
 ```
 
 
-### Simulations
+### Pilot Study
 
 ```{r, echo = FALSE, results='asis'}
 pilot <- 
@@ -80,7 +80,7 @@ cat(
 )
 ```
 
-### Data Prep
+### Simulation pipeline
 
 ```{r, echo = FALSE, results='asis'}
 sim_pipeline <- 
