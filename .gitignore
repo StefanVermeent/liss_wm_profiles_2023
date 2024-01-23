@@ -4,4 +4,5 @@
 .httr-oauth
 .DS_Store
 
-/data
+/scripts/0_pilot/01_create_scales.R
+/data/pilot_full_data.RData
