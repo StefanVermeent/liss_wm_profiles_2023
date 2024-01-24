@@ -108,7 +108,7 @@ branch <- gert::git_branch_list() |> filter(local == TRUE) |> pull(name)
 glue_data(milestones, "  - **[{time}]({link_to_git}): {description}**
         - **Milestone:** {name}
         - **Data MD5 hash**: {hash}
-        - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/{branch}/.projectlog/{commit}.R)
+        - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/{branch}/.projectlog/{commit}.R)
         \n
     ")
 

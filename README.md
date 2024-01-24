@@ -40,43 +40,43 @@ For more information about how tracking worked, Go to the [Open science workflow
 - **[2023-10-26 13:32:15](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/46a2eaa2961e07f8d9f9b96af6a0b50661305a98): Final version of Stage 1 snapshot**
     - **Milestone:** Snapshot
     - **Data MD5 hash**: 
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/46a2eaa2961e07f8d9f9b96af6a0b50661305a98.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/46a2eaa2961e07f8d9f9b96af6a0b50661305a98.R)
     
 
 - **[2023-05-01 09:41:18](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/82f126ec06653b3794b6bb710b8a04b4e697d630): Crime Victimization Data Wave 4, shuffled ids**
     - **Milestone:** Data Access
     - **Data MD5 hash**: object_hash b56b2940d7818fa2943bdfb232239d33
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/82f126ec06653b3794b6bb710b8a04b4e697d630.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/82f126ec06653b3794b6bb710b8a04b4e697d630.R)
     
 
 - **[2023-05-01 09:40:53](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/598922e78bf7abcc1b5160e06355e32a73d02be5): Crime Victimization Data Wave 5, shuffled ids**
     - **Milestone:** Data Access
     - **Data MD5 hash**: object_hash a2791cce07d82ce930fa99903994e7d0
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/598922e78bf7abcc1b5160e06355e32a73d02be5.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/598922e78bf7abcc1b5160e06355e32a73d02be5.R)
     
 
 - **[2023-05-01 09:37:28](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/fcaf6747766662ee20f9709a2d0262b766ea4500): Crime Victimization Data Wave 6, shuffled ids**
     - **Milestone:** Data Access
     - **Data MD5 hash**: object_hash 2ca883ca56dfe4ac39d94c13f5d322e2
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/fcaf6747766662ee20f9709a2d0262b766ea4500.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/fcaf6747766662ee20f9709a2d0262b766ea4500.R)
     
 
 - **[2023-05-01 09:34:57](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/8f4ce9b0862b8107c7d02b93646c8d21374d40d2): LISS background variables January 2023, shuffled ids**
     - **Milestone:** Data Access
     - **Data MD5 hash**: object_hash a7e69cc50c4d617bee9f6e304ed09ae2
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/8f4ce9b0862b8107c7d02b93646c8d21374d40d2.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/8f4ce9b0862b8107c7d02b93646c8d21374d40d2.R)
     
 
 - **[2023-05-01 09:33:43](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/4904078af6fd51f7430a2b25997b5ea307a51a19): LISS background variables March 2023, shuffled ids**
     - **Milestone:** Data Access
     - **Data MD5 hash**: object_hash a2adc53b35b044fd34b61ebc319f4455
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/4904078af6fd51f7430a2b25997b5ea307a51a19.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/4904078af6fd51f7430a2b25997b5ea307a51a19.R)
     
 
 - **[2023-05-01 09:22:26](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/405be71518cfc40e3de09f82e499412a9b29ee64): LISS background variables March 2023, shuffled ids**
     - **Milestone:** Data Access
     - **Data MD5 hash**: object_hash fd7a8e3b5f28c625d2ee8abf02545bc1
-    - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/405be71518cfc40e3de09f82e499412a9b29ee64.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/405be71518cfc40e3de09f82e499412a9b29ee64.R)
     
 
 
