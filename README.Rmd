@@ -46,7 +46,7 @@ Data access events were automatically captured using custom code, which over the
 For more information about how tracking worked, Go to the [Open science workflow tab](https://stefanvermeent.github.io/abcd_ddm/opensci_workflow/README.html).
 
 ```{r results ='asis', echo = FALSE}
-gert::git_tag_list() |> 
+milestones <- gert::git_tag_list() |> 
   mutate(
     tags = pmap(list(name = name, ref = ref, commit = commit), function(name, ref, commit) {
       gert::git_commit_info(commit) |> 
@@ -71,13 +71,45 @@ gert::git_tag_list() |>
     link_to_git = paste0(
        gert::git_remote_list()$url |> str_remove(string = _, pattern = "\\.git$"), "/tree/", commit)
     ) |>
-  arrange(desc(time)) |> 
-  glue_data("  - **[{time}]({link_to_git}): {description}**
+  arrange(desc(time)) 
+
+# Write scripts including code to .projectlog folder
+milestones |> 
+  pwalk(function(name,commit,author,time,description,hash,code,link_to_git){
+    
+    if(name == "Data Access"){
+      code <- code |> 
+        str_replace_all(string = _, "\\|> ", "\\|>\n") |> 
+        str_remove(string = _, "^code ") 
+      
+      url <- gert::git_remote_list()$url |> 
+        str_remove(string = _, "\\.git$") |> 
+        paste0(paste0("/commit/", commit))
+      
+      #  url <- "<anonymized repository>"
+      
+      script <-
+        glue(
+          "
+          ### Date: {time}\n
+          ### Description: {description}\n\n
+          ### For more information on this commit, see the README file, or go to {url}\n
+          ### Below is the full code that was used to access the data:\n\n
+          {code}"
+        )
+      
+      writeLines(script, con = paste0(".projectlog/", commit, ".R"))
+    }
+  })
+
+# Print milestones
+glue_data(milestones, "  - **[{time}]({link_to_git}): {description}**
         - **Milestone:** {name}
         - **Data MD5 hash**: {hash}
         - [Link to code snippet](https://https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/main/.projectlog/{commit}.R)
         \n
     ")
+
 ```
 
 
