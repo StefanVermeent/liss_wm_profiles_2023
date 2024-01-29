@@ -1,0 +1,200 @@
+---
+bibliography: ../manuscript/references.bib
+csl: ../manuscript/apa.csl
+format: 
+  docx:
+    reference-doc: ../manuscript/reference-doc.docx
+    toc: true
+    toc-location: left
+    toc-title: Table of Contents
+output:
+  officedown::rdocx_document:
+    page_margins:
+      bottom: 1
+      footer: 0
+      gutter: 0
+      header: 0.5
+      left: 1
+      right: 1
+      top: 1
+    plots:
+      align: center
+      caption:
+        pre: 'Figure '
+        sep: '. '
+        style: Image Caption
+    tables:
+      caption:
+        pre: 'Table '
+        sep: '. '
+        style: Table Caption
+  pdf_document: default
+  word_document: default
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r include = FALSE}
+library(tidyverse)
+library(flextable)
+library(officer)
+
+load('staged_results.RData')
+
+# set up flextable for tables
+set_flextable_defaults(
+  font.family = "Times",
+  font.size = 10,
+  font.color = "black",
+  line_spacing = 1,
+  padding.bottom = 1,
+  padding.top = 1,
+  padding.left = 1,
+  padding.right = 1
+)
+
+knitr::opts_chunk$set(
+  echo = F,
+  fig.align = "center",
+  fig.pos = "!t", 
+  out.extra = "",
+  fig.show = "asis",
+  message = FALSE,
+  tab.topcaption = T,
+  warning = FALSE
+)
+```
+
+\pagebreak
+
+# 1. Pilot study
+
+A total of 99 Dutch adolescents (mean age = `r pilot_demo$m_age`, SD = `r pilot_demo$sd_age`, range = [`r pilot_demo$min_age`, `r pilot_demo$max_age`]) participated in the Pilot study via Prolific.
+The main goal of the Pilot study was to obtain feedback on the tasks (e.g., difficulty, clarity of instructions), and to explore bivariate correlations between the measures.
+Participants completed the same tasks as in the main study: (1) Operation Span Task, (2) Rotation Span Task, and (3) Binding-Updating Task.
+The Rotation Span Task was administered in a second session, and was completed by a subsample of 50 participants.
+All three tasks followed the exact same procedure as in the main study.
+
+In addition, participants completed measures of material deprivation, neighborhood threat, and unpredictability.
+These measures differed from the more comprehensive measures used in the main study, and were included to obtain quick, descriptive estimates.
+Material deprivation was measured using seven items about perceived level of available resources.
+Unpredictability was measured using a scale of perceived unpredictability [@mittal_2015; @young_2018].
+Neighborhood violence exposure was measured using the Neighborhood Violence Scale [NVS; @frankenhuis_2018; @frankenhuis_deVries_2020] as well as two items measuring involvement in fights.
+Participants responded to items of all questionnaires on a scale of 1 (never true) to 5 (very often true).
+Finally, participants provided feedback on the difficulty of the tasks and the clarity of the task instructions.
+
+Pilot data were collected sequentially to allow for intermediate changes to instructions based on participants' feedback.
+The first session (including the Operation Span Task and the Binding-Updating Task) took approximately 35 minutes to complete, and participants were paid 5.25 GBP.
+The second session (including the Rotation Span Task) took approximately 9 minutes to complete, and participants were paid 1.50 GBP.
+
+Table S1 presents bivariate correlations among the WM tasks, and between the WM tasks and measures of adversity.
+The WM tasks correlated moderately to strongly with each other.
+The strongest correlation was between the Binding and Updating score (.80).
+This is not surprising given that both scores are derived from the same task, and shows the importance of accounting for this association in the model.
+Neither unpredictability nor material deprivation were significantly associated with performance on any of the WM tasks.
+However, higher levels of experienced neighborhood threat were associated with lower performance on the Binding and Updating Task.
+Note that these associations were based on raw task performance and not on latent estimates.
+
+
+```{r}
+pilot_table1
+```
+
+
+# 2. Study Design
+
+Table S2 presents the study design plan, using the table provided by PCI-RR.
+
+```{r}
+table_s2 <- tibble(
+  `Research question` = c(
+    "1. what is the association between adversity and WM capacity?", 
+    "2. what is the association between adversity and WM updating after accounting for WM capacity?", 
+    "3. Are the directions and strengths of these associations similar or different for neighborhood threat, material deprivation, and unpredictability?"),
+  `Hypotheses`        = c(
+    "Deficit perspectives predict a negative association between all three types of adversity and WM capacity. Negative associations for one or two types of adversity would be partial support. In addition, deficit perspectives predict that none of the associations between adversity and WM capacity will be positive.",
+    
+    "Adaptation-based perspectives predict that the association between adversity and WM updating (after accounting for WM capacity) is either (1) positive, regardless of the association with WM capacity, or (2) practically equivalent to zero in combination with a negative association between adversity and WM capacity. 
+
+Deficit perspectives predict that the association between adversity and WM updating is negative.",
+
+    "We have two expectations based on prior studies. First, we expect that the association between material deprivation and WM capacity is more strongly negative than the associations with unpredictability and neighborhood threat.
+Second, we expect to find associations consistent with adaptations in WM updating (see RQ2) with either unpredictability or neighborhood threat, but not with material deprivation."
+    ),
+  `Sampling plan`     = c(
+    "We are collecting data of 800 participants in the Dutch Longitudinal Internet studies for the Social Sciences (LISS) panel. First, we will use data that were previously collected in LISS. Second, we will use new data that we collected ourselves in LISS. Data collection started on October 2nd and is expected to be completed in February 2024. We signed a contract with LISS stipulating that we will receive access to the data only after Stage 1 acceptance of this Registered Report.
+
+To ensure sufficient representation of people from lower socioeconomic backgrounds, roughly half the total sample will be sampled from participants who reported one or more of the following at least once in the three years: (1) a monthly income < €1,500, (2) HAVO or VWO as highest completed education (which are the two highest levels in Dutch secondary education), or (3) a score of 4 or lower on the 'ladder of life'", 
+    NA, 
+    NA),
+  `Analysis plan`     =  c(
+    "We will fit a single structural equation model (SEM) containing all adversity measures. We will use robust maximum likelihood estimation in case any variable is non-normally distributed. Missing data will be handled using full information maximum likelihood (FIML). If participants are from the same household, this clustering within families will be accounted for.
+
+WM capacity will be estimated as a latent factor loading on all outcome measures. In addition, we will estimate WM updating as a latent factor capturing residual variance in the updating measure. We will estimate the effect of each adversity type through regression analyses. Each association will be controlled for: (1) age in years; (2) the quadratic effect of age; (2) environmental noise; (3) two items measuring interruptions. 
+
+We will estimate the model in two. First, we will construct the measurement model of WM, without including the adversity measures. Once we obtain at least acceptable model fit, we will access and add the adversity measures to the model. We will control for multiple testing using the false discovery rate 
+We will use two one-sided tests (TOST) equivalence testing to test whether small effects—which we define as standardized effects between -.10 and .10—are practically equivalent, which we will interpret as evidence for intact performance.
+", 
+    NA, 
+    NA),
+  `Rationale for deciding the sensitivity of the test for confirming or disconfirming the hypothesis` = c(
+    "We based our power analysis on simulations reported by Kretzschmar ad Gignac (2019), determining the required sample size to detect a small effect size (β = 0.1) with at least 90% power at α = 0.05.
+Assuming a reliability of at least 0.7 (which is typical for WM tasks with a number of trials similar to ours; e.g., Wilhelm, et al., 2013), we would require a sample size of *N* = 730. Anticipating exclusions, we decided to include 800 participants.", 
+    NA, 
+    NA),
+  `Interpretation given different outcomes` = c(
+    "Contrary to predictions of deficit perspectives, we might find that all associations between adversity and WM capacity are either practically equivalent or positive. This would suggest that WM capacity is either unaffected or even enhanced by adversity.
+
+If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.
+",
+    
+    "Contrary to predictions of adaptation-based perspectives, we might find that the association between adversity and WM updating is negative. This would suggest that WM updating is impaired by adversity.
+
+Contrary to predictions of adaptation-based perspectives, we might find a practically equivalent association with adversity for both WM capacity and updating. This would suggest that WM is unaffected by adversity. 
+
+If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.",
+
+    "We might find that the association between threat or unpredictability with WM capacity is more strongly or equally strongly negative than with material deprivation. This would suggest that threat or unpredictability are more strongly associated with WM capacity than material deprivation.
+
+We might also find that material deprivation, but not unpredictability or neighborhood threat, is positively associated with WM updating. This would suggest that an enhanced updating ability has an adaptive benefit for individuals experiencing material deprivation."
+    ),
+  `Theory that could be shown wrong by the outcomes` = c(
+    "Theoretically, our analyses directly compare evidence in favor of deficit and adaptation-based perspectives. Both are established frameworks generating predictions that extend to other cognitive abilities beyond WM. Therefore, the current study could neither confirm nor disconfirm the frameworks in general.
+
+However, our findings could be (partially) inconsistent with predictions derived from both frameworks. Deviating findings for RQ1 or RQ 2 would require revising theoretical predictions about the specific WM abilities that are adapted to/impaired by adversity.
+
+In both cases, it would suggest that both frameworks need to be explicit in how they distinguish between different WM components.", 
+
+    NA, 
+    "The hypotheses specified for RQ3 do not directly offer (non-) support for either framework. However, finding different patterns than hypothesized here would be inconsistent with findings of prior studies."),
+) |> 
+  flextable() |> 
+  merge_at(i = 1:3, j = 3, part = "body") |> 
+  merge_at(i = 1:3, j = 4, part = "body") |>
+  merge_at(i = 1:3, j = 5, part = "body") |>
+  merge_at(i = 1:2, j = 7, part = "body") |>  
+  add_header_row(
+    values = " ",
+    colwidths = 7
+  ) |>
+  flextable::compose(
+    i = 1, j = 1,
+    as_paragraph(as_b("Table S2. "), "Study design plan."),
+    part = "header"
+  ) |> 
+  border(border.top = fp_border(color = "black"), part = "body") |> 
+  border(border.left = fp_border(color = "black"), part = "body") |> 
+  border(border.right = fp_border(color = "black"), part = "body") |> 
+  border(border.bottom = fp_border(color = "black"), part = "body") |> 
+  border(i = 2, border.left = fp_border(color = "black"), part = "header") |>
+  border(i = 2, j = 7, border.right = fp_border(color = "black"), part = "header") |>
+  border(border.bottom = fp_border(color = "black"), part = "body") |> 
+  border(i = 1, j = 1, border.left =  fp_border_default(style = "none", width = 0), part = "header") |>
+  border(i = 1, j = 7, border.right =  fp_border_default(style = "none", width = 0), part = "header") |> 
+  border(i = 1, border.top =  fp_border_default(style = "none", width = 0), part = "header") |> 
+  valign(valign = "top") |> 
+  width(width = 1)
+
+table_s2
+```
