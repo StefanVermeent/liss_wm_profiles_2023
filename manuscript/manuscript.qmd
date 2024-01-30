@@ -153,7 +153,7 @@ Performance on these tasks is assessed through the number of items that particip
 Although both early-life and recent adversity appear to be negatively associated with WM capacity, a small set of studies suggest that exposure to adversity may leave intact, or even enhance, the ability to update items in WM [@young_2018; @young_2022].
 Updating is defined as the ability to rapidly replace old information in WM with new information.
 The finding that updating may be left intact or even enhanced after exposure to adversity exemplifies emerging theoretical frameworks grounded in adaptive reasoning that are complementary to deficit frameworks [@frankenhuis_2013; @ellis_2017; @ellis_2022; @frankenhuis_2020].
-Adaptation frameworks assume that developmental processes tailor an individual's cognitive abilities to the unique challenges and opportunities posed by their environment.
+Adaptation-based theories assume that developmental processes tailor an individual's cognitive abilities to the unique challenges and opportunities posed by their environment.
 The link between adversity and cognitive abilities is further assumed to be specific; as different types of adversity (e.g., threat vs. deprivation) pose different challenges, they should (at least in part) shape cognitive abilities in different ways.
 WM updating may be especially adaptive in *unpredictable* environments, characterized by random variation in adversity exposure over space or time.
 WM updating allows people to maintain an up-to-date overview of the (changing) current state of the environment [@young_2018].
@@ -162,8 +162,8 @@ An enhanced WM updating ability could facilitate keeping track of and integratin
 
 # Associations between WM capacity and updating
 
-With deficit frameworks focusing on WM capacity and adaptation frameworks on WM updating, we may wonder how capacity and updating are related to each other.
-Performance on tasks measuring WM capacity and updating tend to be substantially correlated [in the range of .20-.50\; @frischkorn_2022].
+With deficit theories focusing on WM capacity and adaptation-based theories on WM updating, we may wonder how capacity and updating are related to each other.
+Performance on tasks measuring WM capacity and updating tend to be substantially correlated [in the range of .20-.50\; @frischkorn_2022; @loffler_2022].
 This overlap appears to stem from shared demands of both types of tasks, in particular the need to create and maintain arbitrary bindings [@gruszka_2017; @oberauer_2009; @wilhelm_2013].
 The term *binding* refers to the process of mapping memory items to specific positions in WM (e.g., serial, spatial, or temporal positions, depending on the task) [@oberauer_2009; @oberauer_2019].
 For example, on most WM tasks, correct recall of memory items depends on remembering them in their correct serial position, or in relation to the location where they were presented.
@@ -200,16 +200,25 @@ First, what is the association between adversity and WM capacity?
 Second, what is the association between adversity and WM updating *after* accounting for WM capacity?
 Third, are the directions and strengths of these associations similar or different for neighborhood threat, material deprivation, and unpredictability?
 
-We will evaluate evidence for deficit and adaptation frameworks.
-Rather than banking on specific predictions, we will describe how each of four different combinations of lowered, enhanced, and intact WM capacity and updating performance would be consistent with deficit and adaptation frameworks (For a summary, see Figure 1A).
-Crucially, we assume that deficit and adaptation processes can operate simultaneously [@frankenhuis_2020], meaning that we could find support or a lack of support for both frameworks in the same model.
-Lowered performance on WM capacity or updating, but not enhanced or intact performance, would be consistent with deficit frameworks.
-This follows from previous literature hypothesizing broad WM deficits [@farah_2006; @sheridan_2020].
-Two different patterns would be consistent with adaptation frameworks:
-First, if performance on WM updating is enhanced, regardless of WM capacity performance.
-Second, if performance on WM updating is intact, but only in combination with lowered WM capacity performance.
-If both updating and capacity are intact, this would instead suggest that the WM system is unaffected by adversity; neither impairment nor adaptative processes have shaped WM.
-That pattern would be inconsistent with both deficit and adaptation frameworks.
+We will evaluate evidence for deficit- and adaptation-based frameworks (see Figure 1A for a visual summary, and supplemental Table S2 for the study design plan). 
+Crucially, as deficit and adaptation processes can operate in concert [@frankenhuis_2020], we could find support (or lack thereof) for both frameworks in the same model. 
+
+Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating. 
+This follows from the hypothesis that adversity leads to broad WM deficits [@farah_2006; @sheridan_2020]. 
+Deficit frameworks are partially supported if we find negative associations with only one (or two) types of adversity. 
+
+Within adaptation-based frameworks, theories make two predictions. 
+First, if adaptive processes enhance WM updating and there are no impairment processes operating, we can expect a positive association between adversity and WM updating. 
+Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lowered WM capacity. 
+If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be intact.
+
+We also have two expectations based on prior studies. 
+First, we expect the association between material deprivation and WM capacity to be more negative than the associations with unpredictability and neighborhood threat. 
+This follows from findings showing that cognitive abilities are more negatively associated with cognitive deprivation than threat [@salhi_2021; @sheridan_2020].
+Although cognitive and material deprivation are distinct types of deprivation, they tend to be correlated, and are both associated with limited access to resources that stimulate cognitive development and functioning [@bradley_2001; @lurie_2024; @rosen_2019].
+Therefore, we expect that their associations with WM will have comparable effect sizes. 
+Second, researchers have hypothesized that WM updating is particularly adaptive in unpredictable and threatening environments, as it facilitates keeping track of unpredictable changes and sudden threats. 
+Therefore, we expect WM updating to be associated with unpredictability and neighborhood threat, but not with material deprivation [@young_2018; but see @young_2022].
 
 <br>
 
@@ -279,31 +288,31 @@ Second, participants were asked to choose which of the following best applied to
 Responses will be reverse-coded, so that higher scores indicate a worse financial situation.
 Third, participants answered which of the following issues they were confronted with at present (0 = no, 1 = yes): (1) "having trouble making ends meet"; (2) unable to quickly replace things that break"; (3) "having to lend money for necessary expenditures"; (4) "running behind in paying rent/mortgage or general utilities"; (5) "debt collector/bailiff at the door in the last month"; (6) "received financial support from family or friends in the last month".
 We will sum across these six items, with higher scores indicating more financial difficulties.
+Finally, we will create a single measure of perceived scarcity for each year by separately standardizing the three measures and averaging them.
 
 **Income-to-needs.** We will calculate an income-to-needs ratio for each year using monthly self-reported net household income from the LISS archive ([https://doi.org/10.57990/qn3k-as78](https://doi.org/10.57990/qn3k-as78)).
 Zero values in household income will be set to missing, as these could either indicate the lack of an income or an unwillingness to disclose the income.
 If monthly household income is missing (or zero) for an entire year for a participant, we will use, if available, the yearly net household income they reported in the LISS archive ([https://doi.org/10.57990/1gr4-bf42](https://doi.org/10.57990/1gr4-bf42)), dividing it by 12 to obtain a monthly estimate.
-First, we average monthly reported income across years for each participant.
-Then, we divide the average income per year by the *poverty threshold*, as determined by Statistics Netherlands (CBS) [@brakel_2023\; CBS, personal communication, December 15, 2023].
+First, we will divide the average income per year by the *poverty threshold*, as determined by Statistics Netherlands (CBS) [@brakel_2023\; CBS, personal communication, December 15, 2023].
 The poverty threshold changes across time to account for purchasing power.
 In addition, different thresholds are determined each year for different household compositions (single vs. two adults; zero, one, two, or three children).
 As thresholds are only provided for households with up to three children, we will apply the threshold of a household with three children to households with more than three children.
 Likewise, we will apply the threshold of a household with two adults for households that contain three or more adults.
-
-**Material deprivation composite.** We will compute a composite measure of material deprivation by aggregating across the perceived scarcity measures and the income-to-needs ratio.
-We will do so separately for each year.
-First, we will create a single measure of perceived scarcity by separately standardizing the three measures and averaging them.
 Second, we will calculate the average within-person income-to-needs ratio for each year by averaging across the monthly income-to-needs estimates.
 We will reverse code the yearly income-to-needs ratio so that higher scores indicate more deprivation.
-Third, we will average across perceived scarcity and the income-to-needs ratio for each year, standardizing each before averaging, and then finally calculate the average across all year.
+
+**Material deprivation composite.** We plan to compute a composite measure of material deprivation by aggregating across the perceived scarcity measures and the income-to-needs ratio, unless the correlation between these two variables is less than .30.
+First, we will separately calculate the average income-to-needs ratio and perceived scarcity across years.
+If the correlation between these measures is < .30, we will use perceived scarcity alone in the main model, and will explore a model using the income-to-needs ratio in the supplement.
+If the correlation is > .30, we will standardize both measures separately and average them together.
 
 ### Unpredictability
 
-**Unpredictability composite.** We will compute a composite measure of unpredictability based on the yearly unweighted averages of perceived scarcity and the income-to-needs ratio (reverse coded), as described above.
+**Unpredictability composite.** We will compute a composite measure of unpredictability based on the same measures as material deprivation, as described above.
 We will compute unpredictability as the within-person standard deviation in material deprivation across years [@ugarte_2023; @walasek_2023; @young_2020].
 The mean and standard deviation in income have been found to be strongly negatively correlated, indicating that people with lower incomes tend to experience less variability in income [@li_2018; @young_2023].
 For that reason, the standard deviation alone has been called into question as a measure of adversity, as the same fluctuation in income can have a greater relative impact for people close to the poverty line than for people with high incomes.
-We will address this issue by including the covariance between material deprivation (the mean) and unpredictability (the standard deviation) into the SEM model (see below).
+We will address this issue by including the covariance between material deprivation (the mean) and unpredictability (the standard deviation) into the model (see below).
 
 ### WM tasks
 
@@ -311,7 +320,7 @@ The WM tasks were all part of the newly collected data.
 All materials and scripts for the cognitive tasks can be found at [https://stefanvermeent.github.io/liss_wm_profiles_2023/materials/README.html](https://stefanvermeent.github.io/liss_wm_profiles_2023/materials/README.html).
 Prior to collecting LISS data, we conducted a pilot study among in a Dutch sample (*N* = 100) through Prolific Academic.
 The main goals of this pilot study were to collect participant feedback (e.g., difficulty of instructions, whether we included sufficient breaks) and to analyze performance and correlations between tasks.
-The results of this pilot study are described in more detail in the Supplemental Materials.
+The results of this pilot study are described in more detail in the Supplemental Materials [https://stefanvermeent.github.io/liss_wm_profiles_2023/supplement/README.html](https://stefanvermeent.github.io/liss_wm_profiles_2023/supplement/README.html).
 
 **Operation Span Task.** The Operation Span Task (Figure 2A) is a common measure of WM capacity [@conway_2005; @wilhelm_2013].
 In this task, participants alternate between a primary memorization task and a secondary processing task.
@@ -343,7 +352,7 @@ If they perform at or below chance, they have the opportunity to either repeat a
 After practicing, participants complete 12 test trials.
 We will compute a rotation span score by calculating the proportion of arrows recalled in the correct sequential position across trials [@conway_2005.
 
-**Binding-Updating Task.** The Binding-Updating task (Figure 2C) is adopted from [XXX].
+**Binding-Updating Task.** The Binding-Updating task (Figure 2C) is adopted from @wilhelm_2013.
 On each trial, participants see a 3 x 3 grid, with a fixation cross in the central cell.
 After 1,000 ms, they are presented with a sequence of numbers (0-9) in random locations of the grid.
 Each new number is presented for 1,500 ms, after which it disappears for 500 ms before the next number is presented.
@@ -360,7 +369,7 @@ Participants first complete four practice trials.
 If they perform at or below chance, they have the opportunity to either repeat the practice trials or to advance to the actual task.
 After practicing, they complete 18 test trials.
 We will compute a binding score by calculating the overall recall accuracy (%) across trials with zero updating steps.
-We will compute an updating score by calculating the overall recall accuracy (%) of updated letters (disregarding non-updated letters) across trials containing updating steps.
+We will compute an updating score by calculating the overall recall accuracy (%) across trials with one or more updating steps.
 
 ```{r}
 #| label: Figure2
@@ -398,6 +407,7 @@ The working memory data and one of the neighborhood threat indices were collecte
 These data will only be made available to the first author after Stage 1 acceptance, as stipulated in a signed contract with LISS.
 During planning of the study, the first author accessed to the LISS data archive and inspected three waves of the LISS data containing the items about neighborhood safety and crime exposure, as well as the three most recent monthly data collections containing basic demographic info.
 The purpose was to ascertain the number of individuals who had finished the previous waves a few years ago and were presently still participating in the panel (i.e., to see if we could reasonably create a link between these previous waves and newly collected data). 
+
 All data access events were automatically detected and logged on the GitHub repository using the *projectlog* R package [@vermeent_2023].
 We took the following measures to prevent bias: 1) we randomly shuffled the participant IDs in each data set using the *projectlog* R package, so that we were unable to link participant data between (waves of) studies; 2) we did not inspect any of the measures that will be part of our adversity composites; 3) we did not know which participants would be selected for the new LISS study; 4) the primary analyses will be based on composite measures that combine measures from these previous studies with data that were collected at a later timepoint.
 

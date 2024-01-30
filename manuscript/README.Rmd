@@ -11,8 +11,7 @@ editor_options:
 
 ## Registered Report
 
-Below is the Stage 1 Protocol of the Registered Report. 
-It can also be found [here](https://osf.io/4n8qr).
+Below is the Stage 1 Protocol of the Registered Report submitted to PCI-RR. 
 
 ```{=html}
 <iframe width="780" height="500" src="manuscript.pdf" title="Stage 1 Registered Report"></iframe>
