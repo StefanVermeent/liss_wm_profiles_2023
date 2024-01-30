@@ -14,5 +14,5 @@ editor_options:
 Below is the Stage 1 Protocol of the Registered Report submitted to PCI-RR. 
 
 ```{=html}
-<iframe width="780" height="500" src="manuscript.pdf" title="Stage 1 Registered Report"></iframe>
+<iframe width="780" height="600" src="manuscript.pdf" title="Stage 1 Registered Report"></iframe>
 ```
