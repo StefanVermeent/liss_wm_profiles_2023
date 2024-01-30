@@ -80,7 +80,7 @@ In addition, participants completed measures of material deprivation, neighborho
 These measures differed from the more comprehensive measures used in the main study, and were included to obtain quick, descriptive estimates.
 Material deprivation was measured using seven items about perceived level of available resources.
 Unpredictability was measured using a scale of perceived unpredictability [@mittal_2015; @young_2018].
-Neighborhood violence exposure was measured using the Neighborhood Violence Scale [NVS; @frankenhuis_2018; @frankenhuis_deVries_2020] as well as two items measuring involvement in fights.
+Neighborhood violence exposure was measured using the Neighborhood Violence Scale [NVS\; @frankenhuis_deVries_2020; @frankenhuis_2018] as well as two items measuring involvement in fights.
 Participants responded to items of all questionnaires on a scale of 1 (never true) to 5 (very often true).
 Finally, participants provided feedback on the difficulty of the tasks and the clarity of the task instructions.
 
@@ -113,14 +113,16 @@ table_s2 <- tibble(
     "2. what is the association between adversity and WM updating after accounting for WM capacity?", 
     "3. Are the directions and strengths of these associations similar or different for neighborhood threat, material deprivation, and unpredictability?"),
   `Hypotheses`        = c(
-    "Deficit perspectives predict a negative association between all three types of adversity and WM capacity. Negative associations for one or two types of adversity would be partial support. In addition, deficit perspectives predict that none of the associations between adversity and WM capacity will be positive.",
+    "Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating. This follows from the hypothesis that adversity leads to broad WM deficits. Deficit frameworks are partially supported if we find negative associations with only one (or two) types of adversity. ",
     
-    "Adaptation-based perspectives predict that the association between adversity and WM updating (after accounting for WM capacity) is either (1) positive, regardless of the association with WM capacity, or (2) practically equivalent to zero in combination with a negative association between adversity and WM capacity. 
+    "Within adaptation-based frameworks, theories make two predictions. 
 
-Deficit perspectives predict that the association between adversity and WM updating is negative.",
+First, if adaptive processes enhance WM updating and there are no impairment processes operating, we can expect a positive association between adversity and WM updating. 
+Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lowered WM capacity.
+If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be intact.",
 
-    "We have two expectations based on prior studies. First, we expect that the association between material deprivation and WM capacity is more strongly negative than the associations with unpredictability and neighborhood threat.
-Second, we expect to find associations consistent with adaptations in WM updating (see RQ2) with either unpredictability or neighborhood threat, but not with material deprivation."
+    "We have two expectations based on prior studies. First, we expect the association between material deprivation and WM capacity to be more negative than the associations with unpredictability and neighborhood threat. 
+Second, we expect WM updating to be associated with unpredictability and neighborhood threat, but not with material deprivation."
     ),
   `Sampling plan`     = c(
     "We are collecting data of 800 participants in the Dutch Longitudinal Internet studies for the Social Sciences (LISS) panel. First, we will use data that were previously collected in LISS. Second, we will use new data that we collected ourselves in LISS. Data collection started on October 2nd and is expected to be completed in February 2024. We signed a contract with LISS stipulating that we will receive access to the data only after Stage 1 acceptance of this Registered Report.
@@ -198,3 +200,12 @@ In both cases, it would suggest that both frameworks need to be explicit in how 
 
 table_s2
 ```
+
+\pagebreak
+
+# References
+
+::: {#refs}
+:::
+
+\pagebreak
