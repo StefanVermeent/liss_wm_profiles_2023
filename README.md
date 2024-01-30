@@ -37,6 +37,12 @@ Below is an overview of all the project milestones, such as first-time data acce
 Data access events were automatically captured using custom code, which over the course of this project was collected in the R package `projectlog` [https://stefanvermeent.github.io/projectlog/](https://stefanvermeent.github.io/projectlog/).
 For more information about how tracking worked, Go to the [Open science workflow tab](https://stefanvermeent.github.io/abcd_ddm/opensci_workflow/README.html).
 
+- **[2024-01-30 17:11:13](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/78c08d29b50f16c1f43c206264ab1b29ed180a2a): Stage 1 manuscript submitted to PCI-RR**
+    - **Milestone:** Submission
+    - **Data MD5 hash**: 
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/78c08d29b50f16c1f43c206264ab1b29ed180a2a.R)
+    
+
 - **[2023-10-26 13:32:15](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/46a2eaa2961e07f8d9f9b96af6a0b50661305a98): Final version of Stage 1 snapshot**
     - **Milestone:** Snapshot
     - **Data MD5 hash**: 
