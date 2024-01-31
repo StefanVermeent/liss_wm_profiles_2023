@@ -39,6 +39,7 @@ library(dplyr)
 library(tidyr)
 library(tibble)
 library(lavaan)
+library(officer)
 
 knitr::opts_chunk$set(
   echo = F,
@@ -200,7 +201,7 @@ First, what is the association between adversity and WM capacity?
 Second, what is the association between adversity and WM updating *after* accounting for WM capacity?
 Third, are the directions and strengths of these associations similar or different for neighborhood threat, material deprivation, and unpredictability?
 
-We will evaluate evidence for deficit- and adaptation-based frameworks (see Figure 1A for a visual summary, and supplemental Table S2 for the study design plan). 
+We will evaluate evidence for deficit- and adaptation-based frameworks (see Figure 1A for a visual summary, and Appendix 1 for the study design plan). 
 Crucially, as deficit and adaptation processes can operate in concert [@frankenhuis_2020], we could find support (or lack thereof) for both frameworks in the same model. 
 
 Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating. 
@@ -443,3 +444,100 @@ We will use two one-sided tests (TOST) equivalence testing to test whether small
 :::
 
 \pagebreak
+
+# Appendix I: Study Design Plan
+
+```{r}
+appendix1 <- tibble(
+  `Research question` = c(
+    "1. what is the association between adversity and WM capacity?", 
+    "2. what is the association between adversity and WM updating after accounting for WM capacity?", 
+    "3. Are the directions and strengths of these associations similar or different for neighborhood threat, material deprivation, and unpredictability?"),
+  `Hypotheses`        = c(
+    "Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating. This follows from the hypothesis that adversity leads to broad WM deficits. Deficit frameworks are partially supported if we find negative associations with only one (or two) types of adversity. ",
+    
+    "Within adaptation-based frameworks, theories make two predictions. 
+
+First, if adaptive processes enhance WM updating and there are no impairment processes operating, we can expect a positive association between adversity and WM updating. 
+Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lowered WM capacity.
+If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be intact.",
+
+    "We have two expectations based on prior studies. First, we expect the association between material deprivation and WM capacity to be more negative than the associations with unpredictability and neighborhood threat. 
+Second, we expect WM updating to be associated with unpredictability and neighborhood threat, but not with material deprivation."
+    ),
+  `Sampling plan`     = c(
+    "We are collecting data of 800 participants in the Dutch Longitudinal Internet studies for the Social Sciences (LISS) panel. First, we will use data that were previously collected in LISS. Second, we will use new data that we collected ourselves in LISS. Data collection started on October 2nd and is expected to be completed in February 2024. We signed a contract with LISS stipulating that we will receive access to the data only after Stage 1 acceptance of this Registered Report.
+
+To ensure sufficient representation of people from lower socioeconomic backgrounds, roughly half the total sample will be sampled from participants who reported one or more of the following at least once in the three years: (1) a monthly income < €1,500, (2) HAVO or VWO as highest completed education (which are the two highest levels in Dutch secondary education), or (3) a score of 4 or lower on the 'ladder of life'", 
+    NA, 
+    NA),
+  `Analysis plan`     =  c(
+    "We will fit a single structural equation model (SEM) containing all adversity measures. We will use robust maximum likelihood estimation in case any variable is non-normally distributed. Missing data will be handled using full information maximum likelihood (FIML). If participants are from the same household, this clustering within families will be accounted for.
+
+WM capacity will be estimated as a latent factor loading on all outcome measures. In addition, we will estimate WM updating as a latent factor capturing residual variance in the updating measure. We will estimate the effect of each adversity type through regression analyses. Each association will be controlled for: (1) age in years; (2) the quadratic effect of age; (2) environmental noise; (3) two items measuring interruptions. 
+
+We will estimate the model in two. First, we will construct the measurement model of WM, without including the adversity measures. Once we obtain at least acceptable model fit, we will access and add the adversity measures to the model. We will control for multiple testing using the false discovery rate 
+We will use two one-sided tests (TOST) equivalence testing to test whether small effects—which we define as standardized effects between -.10 and .10—are practically equivalent, which we will interpret as evidence for intact performance.
+", 
+    NA, 
+    NA),
+  `Rationale for deciding the sensitivity of the test for confirming or disconfirming the hypothesis` = c(
+    "We based our power analysis on simulations reported by Kretzschmar ad Gignac (2019), determining the required sample size to detect a small effect size (β = 0.1) with at least 90% power at α = 0.05.
+Assuming a reliability of at least 0.7 (which is typical for WM tasks with a number of trials similar to ours; e.g., Wilhelm, et al., 2013), we would require a sample size of *N* = 730. Anticipating exclusions, we decided to include 800 participants.", 
+    NA, 
+    NA),
+  `Interpretation given different outcomes` = c(
+    "Contrary to predictions of deficit perspectives, we might find that all associations between adversity and WM capacity are either practically equivalent or positive. This would suggest that WM capacity is either unaffected or even enhanced by adversity.
+
+If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.
+",
+    
+    "Contrary to predictions of adaptation-based perspectives, we might find that the association between adversity and WM updating is negative. This would suggest that WM updating is impaired by adversity.
+
+Contrary to predictions of adaptation-based perspectives, we might find a practically equivalent association with adversity for both WM capacity and updating. This would suggest that WM is unaffected by adversity. 
+
+If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.",
+
+    "We might find that the association between threat or unpredictability with WM capacity is more strongly or equally strongly negative than with material deprivation. This would suggest that threat or unpredictability are more strongly associated with WM capacity than material deprivation.
+
+We might also find that material deprivation, but not unpredictability or neighborhood threat, is positively associated with WM updating. This would suggest that an enhanced updating ability has an adaptive benefit for individuals experiencing material deprivation."
+    ),
+  `Theory that could be shown wrong by the outcomes` = c(
+    "Theoretically, our analyses directly compare evidence in favor of deficit and adaptation-based perspectives. Both are established frameworks generating predictions that extend to other cognitive abilities beyond WM. Therefore, the current study could neither confirm nor disconfirm the frameworks in general.
+
+However, our findings could be (partially) inconsistent with predictions derived from both frameworks. Deviating findings for RQ1 or RQ 2 would require revising theoretical predictions about the specific WM abilities that are adapted to/impaired by adversity.
+
+In both cases, it would suggest that both frameworks need to be explicit in how they distinguish between different WM components.", 
+
+    NA, 
+    "The hypotheses specified for RQ3 do not directly offer (non-) support for either framework. However, finding different patterns than hypothesized here would be inconsistent with findings of prior studies."),
+) |> 
+  flextable() |> 
+  merge_at(i = 1:3, j = 3, part = "body") |> 
+  merge_at(i = 1:3, j = 4, part = "body") |>
+  merge_at(i = 1:3, j = 5, part = "body") |>
+  merge_at(i = 1:2, j = 7, part = "body") |>  
+  add_header_row(
+    values = " ",
+    colwidths = 7
+  ) |>
+  flextable::compose(
+    i = 1, j = 1,
+    as_paragraph(as_b("Table S2. "), "Study design plan."),
+    part = "header"
+  ) |> 
+  border(border.top = fp_border(color = "black"), part = "body") |> 
+  border(border.left = fp_border(color = "black"), part = "body") |> 
+  border(border.right = fp_border(color = "black"), part = "body") |> 
+  border(border.bottom = fp_border(color = "black"), part = "body") |> 
+  border(i = 2, border.left = fp_border(color = "black"), part = "header") |>
+  border(i = 2, j = 7, border.right = fp_border(color = "black"), part = "header") |>
+  border(border.bottom = fp_border(color = "black"), part = "body") |> 
+  border(i = 1, j = 1, border.left =  fp_border_default(style = "none", width = 0), part = "header") |>
+  border(i = 1, j = 7, border.right =  fp_border_default(style = "none", width = 0), part = "header") |> 
+  border(i = 1, border.top =  fp_border_default(style = "none", width = 0), part = "header") |> 
+  valign(valign = "top") |> 
+  width(width = 1)
+
+appendix1
+```
