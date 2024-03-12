@@ -115,23 +115,24 @@ This study was approved by the Ethics Review Board of the Faculty of Social & Be
 
 # Proposal abstract
 
-Decades of research have shown that adversity tends to lower working memory (WM) performance.
-This literature has mainly focused on impairments in the overall capacity to hold information available in WM for further processing.
+Decades of research have shown that adversity tends to be associated with lower working memory (WM) performance.
+This literature has mainly focused on impairments in the capacity to hold information available in WM for further processing.
 However, some recent adaptation-based studies suggest that certain types of adversity can leave intact, or even enhance, the ability to rapidly update information in WM.
-One key issue in evaluating deficits and adaptations in WM is that WM capacity and updating tasks tend to covary.
+One key challenge is that WM capacity and updating tasks tend to covary.
 This is likely due to the fact that both types of tasks require the creation and maintenance of bindings in WM; links between mental representations of information in WM.
 To estimate the associations between adversity and different processes in WM, we need to isolate variance in performance related to WM capacity from variance in performance related to updating ability.
 In this Registered Report, we combine archived and newly collected data in the Dutch Longitudinal Internet studies for the Social Sciences (LISS) panel, which includes a representative sample of the Dutch adult population.
 Participants completed three WM tasks: two complex span tasks and a task measuring both binding and updating of information.
-In addition, we will derive estimates of participants' exposure to neighborhood threat, material deprivation, and unpredictability.
+In addition, we will estimate participants' exposure to neighborhood threat, material deprivation, and unpredictability.
 Using structural equation modeling, we will estimate associations between the three types of adversity and latent estimates of WM capacity and updating.
-These findings will advance our theoretical understanding of how adversity is associated with WM, which will aid the development of interventions aimed at alleviating performance difficulties and leveraging areas of strengths.
+These findings will advance our theoretical understanding of how adversity is associated with WM, which will aid interventions aimed at alleviating performance difficulties and leveraging areas of strength.
 
 \pagebreak
 
 # Working memory performance in adverse environments: Enhanced, impaired, or intact?
 
 Living in adverse conditions, with prolonged exposure to intense stress, tends to have a profound and enduring impact on cognitive functioning [@farah_2006; @sheridan_2022; @sheridan_2014].
+Although adversity can be described in many ways, we follow contemporary models focusing on threat, deprivation, and unpredictability as key dimensions of adversity [@ellis_2009; @ellis_2022; @mclaughlin_2016; @mclaughlin_2021].
 A domain that seems to be particularly affected by adversity is working memory (WM). 
 WM is a system for mentally building, maintaining, and updating immediately relevant information [@oberauer_2018].
 Performance on WM tasks is associated with a host of social and cognitive abilities, such as math [@peng_2016], reading [@chiappe_2000], learning [@cowan_2014], general intelligence [@conway_2003], and mentalizing [@mutter_2006].
@@ -148,15 +149,18 @@ These associations may be potentially attributable to the enduring influence of 
 Much of this work has focused on WM capacity, or the ability to keep multiple pieces of information simultaneously available for further processing.
 For early-life adversity, this negative association is already present during childhood, and persists into adulthood [@bos_2009; @evans_2009; @hackman_2010; @farah_2006; @goodman_2019; @noble_2007; but see @nweze_2021].
 Studies with college students have found a link between both recent and lifetime experiences of stressful major life events (discrete negative events that have a clear onset and offset, unlike chronic adversity) with lowered WM capacity [@klein_2001; @shields_2017; @shields_2019].
-The most common tasks used to examine this link are simple span tasks (repeating a string of stimuli of increasing length), complex span tasks (remembering a string of stimuli while being engaged by a secondary task), and *n*-back tasks (judging whether the current stimulus in a string is identical to the stimulus *n* steps ago)  [@goodman_2019].
+
+The most common tasks used to examine the negative association between adversity and WM are simple span tasks (repeating a string of stimuli of increasing length), complex span tasks (remembering a string of stimuli while being engaged by a secondary task), and *n*-back tasks (judging whether the current stimulus in a string is identical to the stimulus *n* steps ago)  [@goodman_2019].
 Performance on these tasks is assessed through the number of items that participants can retain in WM, that is, their overall capacity [with the exception of *n*-back\; for concerns about the construct validity of this task, see @frost_2021; @kane_2007].
 
-Although both early-life and recent adversity appear to be negatively associated with WM capacity, a small set of studies suggest that exposure to adversity may leave intact, or even enhance, the ability to update items in WM [@young_2018; @young_2022].
+Although both early-life and recent adversity appear to be negatively associated with WM capacity, a small set of studies suggest that exposure to adversity may leave intact, or even enhance, the ability to update items in WM in adolescents [@young_2022] and adults [@young_2018].
 Updating is defined as the ability to rapidly replace old information in WM with new information.
 The finding that updating may be left intact or even enhanced after exposure to adversity exemplifies emerging theoretical frameworks grounded in adaptive reasoning that are complementary to deficit frameworks [@frankenhuis_2013; @ellis_2017; @ellis_2022; @frankenhuis_2020].
+
 Adaptation-based theories assume that developmental processes tailor an individual's cognitive abilities to the unique challenges and opportunities posed by their environment.
 The link between adversity and cognitive abilities is further assumed to be specific; as different types of adversity (e.g., threat vs. deprivation) pose different challenges, they should (at least in part) shape cognitive abilities in different ways.
-WM updating may be especially adaptive in *unpredictable* environments, characterized by random variation in adversity exposure over space or time.
+For example, with regards to executive functioning, some previous studies have found that children and adults with more exposure to unpredictability (characterized by random variation in adversity exposure over space or time) and threat tend to be better at rapidly shifting their attention between tasks [@fields_2021; @mittal_2015; @steudte_2014; @young_2022; but see @nweze_2021].
+WM updating may be especially adaptive in unpredictable environments.
 WM updating allows people to maintain an up-to-date overview of the (changing) current state of the environment [@young_2018].
 Additionally, improved WM updating performance has also been documented for threat exposure [@young_2022].
 An enhanced WM updating ability could facilitate keeping track of and integrating signals that may potentially signal acutely threatening situations.
@@ -191,11 +195,16 @@ For applied science, it could hide from view potential pathways to leverage peop
 
 # Current study
 
-In this study, we will estimate associations between three types of adversity exposure and latent estimates of WM capacity and updating.
-Specifically, we will measure exposure to two forms of harshness: *neighborhood threat* (perceived neighborhood safety, personal crime victimization), and *material deprivation* (perceived scarcity, income-to-needs).
-We also include a measure of *unpredictability*, indexed as variability in material deprivation over time.
-Together, these adversity types capture key dimensions in contemporary models of adversity [threat vs. deprivation vs. unpredictability\; @ellis_2009; @ellis_2022; @mclaughlin_2016; @mclaughlin_2021].
+In this study, we will estimate associations between latent estimates of WM capacity and updating with three types of adversity: threat, deprivation, and unpredictability. 
+Together, these adversity types capture key dimensions in contemporary models of adversity [@ellis_2009; @ellis_2022; @mclaughlin_2016; @mclaughlin_2021]. 
+Threat refers to experiences involving the potential for harm imposed by others. 
+We focus on perceived neighborhood violence, the extent to which an individual reports having been exposed to acts of violence in their neighborhood. 
+Deprivation refers to having a low level of resources. 
+We focus on perceived material deprivation, a (perceived) lack of access to material resources. 
+Unpredictability refers to variation in material deprivation over time. 
+This definition is inspired by, but deviates from the harshness-unpredictability framework, in which unpredictability is defined as stochastic variation in harshness (age-specific rates in morbidity and mortality) over space and time [@ellis_2009; @ellis_2022].
 We will not calculate unpredictability in neighborhood threat given that participants have at most six timepoints, and often as few as one or two, which is insufficient to calculate variation over time [@walasek_2023].
+
 We will address three research questions.
 First, what is the association between adversity and WM capacity?
 Second, what is the association between adversity and WM updating *after* accounting for WM capacity?
@@ -203,8 +212,12 @@ Third, are the directions and strengths of these associations similar or differe
 
 We will evaluate evidence for deficit- and adaptation-based frameworks (see Figure 1A for a visual summary, and Appendix 1 for the study design plan). 
 Crucially, as deficit and adaptation processes can operate in concert [@frankenhuis_2020], we could find support (or lack thereof) for both frameworks in the same model. 
+We distinguish between three between-person data patterns: (1) lowered performance, (2) enhanced performance, and (3) intact performance.
+We define lowered performance as a statistically significant negative association between a type of adversity and WM capacity or updating (irrespective of effect size).
+We define enhanced performance as a statistically significant positive association between a type of adversity and WM capacity or updating (irrespective of effect size).
+We define intact performance as an association between a type of adversity and WM capacity or updating that has a standardized effect smaller than 0.1 *and* larger than -0.1---even if the effect is statistically different from zero---which we will test using Two One-Sided T-Tests (TOST) equivalence testing [see the 'Primary analyses' section\; @lakens_2018].
 
-Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating. 
+Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating.
 This follows from the hypothesis that adversity leads to broad WM deficits [@farah_2006; @sheridan_2020]. 
 Deficit frameworks are partially supported if we find negative associations with only one (or two) types of adversity. 
 
@@ -230,7 +243,7 @@ Therefore, we expect WM updating to be associated with unpredictability and neig
 #| dpi: 600
 #| out-width: 6in
 #| fig-cap: | 
-#|   **Figure 1.** Overview of predictions derived from deficit and adaptation frameworks. Panel A depicts the most likely data patterns based on previous literature, and whether we would consider them consistent with deficit and adaptation frameworks (see the main text for more details). Panel B depicts an overview of the Structural Equation Model. Ellipses represent latent variables, rectangles represent manifest variables, and circles represent residual variances. Unidirectional solid lines represent factor loadings, bidirectional solid lines represent covariances, and dashed lines represent regression paths. All four manifest WM measures load on a latent WM capacity factor, reflecting the fact that people have to hold information active in WM on all tasks. We fix the loading of WM capacity on the Binding Task to 1, reflecting the idea that the ability to create and maintain bindings is the main limiting factor in WM capacity [@gruszka_2017; @oberauer_2009; @wilhelm_2013]. WM updating is modeled as a latent factor capturing the residual variance in the updating task after accounting for variance related to WM capacity. 
+#|   **Figure 1.** Overview of predictions derived from deficit and adaptation frameworks. Panel A depicts the most likely between-person data patterns based on previous literature, and whether we would consider them consistent with deficit and adaptation frameworks (see the main text for more details). Panel B depicts an overview of the Structural Equation Model. Ellipses represent latent variables, rectangles represent manifest variables, and circles represent residual variances. Unidirectional solid lines represent factor loadings, bidirectional solid lines represent covariances, and dashed lines represent regression paths. All four manifest WM measures load on a latent WM capacity factor, reflecting the fact that people have to hold information active in WM on all tasks. We fix the loading of WM capacity on the Binding Task to 1, reflecting the idea that the ability to create and maintain bindings is the main limiting factor in WM capacity [@gruszka_2017; @oberauer_2009; @wilhelm_2013]. WM updating is modeled as a latent factor capturing the residual variance in the updating task after accounting for variance related to WM capacity. INR = income-to-needs ratio; Perc. Scarcity = perceived scarcity; SD = standard deviation.
 knitr::include_graphics("fig/fig1.png")
 ```
 
@@ -240,15 +253,27 @@ knitr::include_graphics("fig/fig1.png")
 
 ## Participants
 
-We collected data in the Longitudinal Internet studies for the Social Sciences (LISS) panel [@scherpenzeel_2011].
+Our study will include 800 participant who were randomly sampled from the Longitudinal Internet studies for the Social Sciences (LISS) panel [@scherpenzeel_2011].
 The LISS panel is a representative probability sample of roughly 5,000 Dutch households (~7,500 individuals) drawn from the population register by Statistics Netherlands on an invite-only basis.
 Households without a computer or internet connection are provided with these facilities by LISS.
 Each year, participants complete the same core battery of questionnaires about---among other topics---their financial situation in the past year.
 In addition, participants can complete additional online questionnaires every month, with variable content.
 The current study integrates two data sources.
-First, we will use data that were previously collected in LISS (hereafter referred to as the LISS archive).
-Second, we will use new data that we collected ourselves in LISS between October 2nd and December 22nd, 2023 (hereafter referred to as newly collected data).
-We signed a contract with LISS stipulating that we will receive access to the data only after Stage 1 acceptance of this Registered Report.
+First, our sample of 800 participants participated in a new LISS study between October 2023 and February 2024 (hereafter referred to as 'newly collected data'), in which we included a measure of neighborhood threat and multiple measures of working memory.
+Second, we will access data that were previously collected in LISS (hereafter referred to as 'the LISS archive').
+See Figure 2 for a visual overview of the data sources and their measurement timepoints.
+We signed a contract with LISS stipulating that we will receive access to the newly collected data only after Stage 1 acceptance of this Registered Report.
+
+```{r}
+#| label: Figure2
+#| fig-width: 6.5
+#| fig-height: 7
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 2.**. Overview of the different data sources used in this study. We distinguish between measures taken from the LISS data archive and measures that were newly collected in our own study between October 2023 and February 2024. Perceived scarcity and income were collected yearly in the full panel from 2008 – 2023. Neighborhood crime and crime victimization were collected across six waves between 2008 and 2018. In the newly collected data, we collected data on a measure of neighborhood threat and multiple measures of working memory. Note that participants may not have data across all timepoints of the archived studies because they joined the LISS panel more recently or because they did not participate in each wave.
+knitr::include_graphics("fig/fig2.png")
+```
 
 We based our power analysis on simulations reported by @kretzschmar_2019, determining the required sample size to detect a small effect size ($\beta$ = 0.1) with at least 90% power at $\alpha$ = 0.05.
 Assuming a reliability of at least 0.7 [which is typical for WM tasks with a number of trials similar to ours\; e.g., @wilhelm_2013], we would require a sample size of *N* = 730.
@@ -277,43 +302,42 @@ We included seven items concerning exposure to crime: (1) burglary or attempted 
 We compute a variety score by summing the exposures to *unique* types of crime across all waves.
 Thus, if a participants reports exposure to the same type of crime on separate waves, this will count as one exposure in the total score [@sweeten_2012].
 
-**Neighborhood threat composite.** We will compute a composite measure of neighborhood threat by aggregating across the perceived neighborhood crime and crime victimization measures exposure.
-First, we will create a single measure of perceived neighborhood crime by separately standardizing the two scales and averaging them.
-Second, we will average across perceived neighborhood crime and crime victimization, standardizing each before averaging.
+**Neighborhood threat composite.** We will first compute an average across time for each measure separately (i.e., the two measures of neighborhood crime and the measure of crime victimization).
+If all correlations between averaged measures are equal to or larger than .60 (i.e., indicating a "strong" correlation), then we will compute a uniformly weighted average.
+If the correlation is lower than .60, we will apply Principal Component Analysis (PCA) to the averaged measures and extract only the first principal component score.
 
 ### Material deprivation
 
-**Perceived scarcity.** We will use a few items from the LISS archive that were collected on a yearly basis between 2007 and 2023 ([https://doi.org/10.57990/1gr4-bf42](https://doi.org/10.57990/1gr4-bf42)) to index perceived scarcity.
+We will measure material deprivation with two separate indicators: perceived scarcity and the income-to-needs ratio.
+
+**Perceived scarcity (mean).** We will use a few items from the LISS archive that were collected on a yearly basis between 2008 and 2023 ([https://doi.org/10.57990/1gr4-bf42](https://doi.org/10.57990/1gr4-bf42)) to index perceived scarcity.
 First, participants indicated how hard or easy it currently is to live off the income of their household, on a scale from 0 (very hard) to 10 (very easy).
 Second, participants were asked to choose which of the following best applied to their current situation: (1) "we are accumulating debt"; (2) "we are somewhat eating into savings"; (3) "we are just managing to make ends meet"; (4) "we have a little bit of money to spare"; (5) "we have a lot of money to spare".
 Responses will be reverse-coded, so that higher scores indicate a worse financial situation.
 Third, participants answered which of the following issues they were confronted with at present (0 = no, 1 = yes): (1) "having trouble making ends meet"; (2) unable to quickly replace things that break"; (3) "having to lend money for necessary expenditures"; (4) "running behind in paying rent/mortgage or general utilities"; (5) "debt collector/bailiff at the door in the last month"; (6) "received financial support from family or friends in the last month".
-We will sum across these six items, with higher scores indicating more financial difficulties.
-Finally, we will create a single measure of perceived scarcity for each year by separately standardizing the three measures and averaging them.
 
-**Income-to-needs.** We will calculate an income-to-needs ratio for each year using monthly self-reported net household income from the LISS archive ([https://doi.org/10.57990/qn3k-as78](https://doi.org/10.57990/qn3k-as78)).
+We will first compute the average across time for each item separately, and examine correlation between the item averages.
+We will follow the same guidelines as with neighborhood threat to determine if we will compute a uniformly weighted average or extract the first principal component using PCA.
+
+**Income-to-needs (mean).** We will calculate an income-to-needs ratio for each year using monthly self-reported net household income from the LISS archive ([https://doi.org/10.57990/qn3k-as78](https://doi.org/10.57990/qn3k-as78)).
 Zero values in household income will be set to missing, as these could either indicate the lack of an income or an unwillingness to disclose the income.
 If monthly household income is missing (or zero) for an entire year for a participant, we will use, if available, the yearly net household income they reported in the LISS archive ([https://doi.org/10.57990/1gr4-bf42](https://doi.org/10.57990/1gr4-bf42)), dividing it by 12 to obtain a monthly estimate.
 First, we will divide the average income per year by the *poverty threshold*, as determined by Statistics Netherlands (CBS) [@brakel_2023\; CBS, personal communication, December 15, 2023].
-The poverty threshold changes across time to account for purchasing power.
-In addition, different thresholds are determined each year for different household compositions (single vs. two adults; zero, one, two, or three children).
 As thresholds are only provided for households with up to three children, we will apply the threshold of a household with three children to households with more than three children.
 Likewise, we will apply the threshold of a household with two adults for households that contain three or more adults.
 Second, we will calculate the average within-person income-to-needs ratio for each year by averaging across the monthly income-to-needs estimates.
 We will reverse code the yearly income-to-needs ratio so that higher scores indicate more deprivation.
 
-**Material deprivation composite.** We plan to compute a composite measure of material deprivation by aggregating across the perceived scarcity measures and the income-to-needs ratio, unless the correlation between these two variables is less than .30.
-First, we will separately calculate the average income-to-needs ratio and perceived scarcity across years.
-If the correlation between these measures is < .30, we will use perceived scarcity alone in the main model, and will explore a model using the income-to-needs ratio in the supplement.
-If the correlation is > .30, we will standardize both measures separately and average them together.
-
 ### Unpredictability
 
-**Unpredictability composite.** We will compute a composite measure of unpredictability based on the same measures as material deprivation, as described above.
-We will compute unpredictability as the within-person standard deviation in material deprivation across years [@ugarte_2023; @walasek_2023; @young_2020].
+**Perceived scarcity (SD/mean).** This measure is based on the same items as outlined above (see Perceived scarcity (mean)).
+We will compute unpredictability over time in perceived scarcity using the coefficient of variation, which is the within-person standard deviation across years divided by the mean [@key_2017; @liu_2022; @ugarte_2023; @walasek_2024; @young_2020].
 The mean and standard deviation in income have been found to be strongly negatively correlated, indicating that people with lower incomes tend to experience less variability in income [@li_2018; @young_2023].
 For that reason, the standard deviation alone has been called into question as a measure of adversity, as the same fluctuation in income can have a greater relative impact for people close to the poverty line than for people with high incomes.
-We will address this issue by including the covariance between material deprivation (the mean) and unpredictability (the standard deviation) into the model (see below).
+
+To compute an overall measure of unpredictability in perceived scarcity, we will follow the same procedure as with mean perceived scarcity, but based on the coefficient of variation.
+
+**Income-to-needs (SD/mean).** Similar to perceived scarcity, we will compute unpredictability over time in the income-to-needs ratio using the coefficient of variation.
 
 ### WM tasks
 
@@ -332,11 +356,11 @@ Their task is to indicate whether the outcome is correct or incorrect by pressin
 The equations always contain one addition or subtraction, with numbers ranging between one and 10.
 Outcomes are always positive integers.
 On each trial, participants have to memorize between four and six letters, with each set size repeated three times.
-At the end of each sequence, all letters are presented in a 3 x 4 grid, and participants click the letters in the correct order.
+At the end of each sequence, all letters are presented in a 3×4 grid, and participants click the letters in the correct order.
 
 Participants first practice the letter task (three times), then the math task (eight times), and then the full task (three times).
 If they perform at or below chance, they have the opportunity to either repeat a part or advance to the next part.
-After practicing, participants complete 12 test trials.
+After practicing, participants complete 9 test trials, with a total of 45 recall items and 45 math items.
 We will compute an operation span score by calculating the proportion of letters recalled in the correct sequential position across trials [@conway_2005].
 
 **Rotation Span Task.** The Rotation Span Task (Figure 2B) is similar to the Operation Span Task and is adopted from @wilhelm_2013.
@@ -350,11 +374,11 @@ At the end of each sequence, all arrows are presented simultaneously, and partic
 
 Participants first practice the arrow task (three times), then the letter task (eight times), and then the full task (three times).
 If they perform at or below chance, they have the opportunity to either repeat a part or to advance to the next part.
-After practicing, participants complete 12 test trials.
-We will compute a rotation span score by calculating the proportion of arrows recalled in the correct sequential position across trials [@conway_2005.
+After practicing, participants complete 12 test trials, with a total of 45 recall items and 45 letter items.
+We will compute a rotation span score by calculating the proportion of arrows recalled in the correct sequential position across trials [@conway_2005].
 
 **Binding-Updating Task.** The Binding-Updating task (Figure 2C) is adopted from @wilhelm_2013.
-On each trial, participants see a 3 x 3 grid, with a fixation cross in the central cell.
+On each trial, participants see a 3×3 grid, with a fixation cross in the central cell.
 After 1,000 ms, they are presented with a sequence of numbers (0-9) in random locations of the grid.
 Each new number is presented for 1,500 ms, after which it disappears for 500 ms before the next number is presented.
 The task is to remember the last number they see in each location.
@@ -368,19 +392,19 @@ At the end of the trials, participants indicate which letter they saw last in ea
 
 Participants first complete four practice trials.
 If they perform at or below chance, they have the opportunity to either repeat the practice trials or to advance to the actual task.
-After practicing, they complete 18 test trials.
+After practicing, they complete 18 test trials, of which nine are binding-only (24 recall items in total) and nine are updating trials (24 recall items in total).
 We will compute a binding score by calculating the overall recall accuracy (%) across trials with zero updating steps.
 We will compute an updating score by calculating the overall recall accuracy (%) across trials with one or more updating steps.
 
 ```{r}
-#| label: Figure2
+#| label: Figure3
 #| fig-width: 6.5
 #| fig-height: 7
 #| dpi: 600
 #| out-width: 6in
 #| fig-cap: | 
-#|   **Figure 2.** Overview of the working memory tasks. Panel A: Operation Span Task. Participants had to memorize letters in the correct order, while engaging in a secondary math task. Panel B: Rotation Span Task. Participants had to memorize the orientation of arrows, while judging whether letters were mirrored or normal in a secondary task. Panel C: Participants had to memorize numbers in the correct location in a 3x3 grid. On half of the trials, all numbers were presented in unique locations, only requiring binding the numbers to the correct position. On the other half, some numbers were presented in the same location as a previously presented number, requiring updating. Note that stimuli are not to scale. 
-knitr::include_graphics("fig/fig2.png")
+#|   **Figure 3.** Overview of the working memory tasks. Panel A: Operation Span Task. Participants memorized letters in the correct order, while engaging in a secondary math task. Panel B: Rotation Span Task. Participants memorized the orientation of arrows, while judging whether letters were mirrored or normal in a secondary task. Panel C: Participants memorized numbers in the correct location in a 3×3 grid. On half of the trials, all numbers were presented in unique locations, only requiring binding the numbers to the correct position. On the other half, some numbers were presented in the same location as a previously presented number, requiring updating. Note: stimuli are not to scale. 
+knitr::include_graphics("fig/fig3.png")
 ```
 
 ## Procedure
@@ -407,10 +431,10 @@ If participants experienced difficulties of any sort, they could contact the LIS
 The working memory data and one of the neighborhood threat indices were collected through October-December 2023, prior to submitting the Stage 1 protocol.
 These data will only be made available to the first author after Stage 1 acceptance, as stipulated in a signed contract with LISS.
 During planning of the study, the first author accessed to the LISS data archive and inspected three waves of the LISS data containing the items about neighborhood safety and crime exposure, as well as the three most recent monthly data collections containing basic demographic info.
-The purpose was to ascertain the number of individuals who had finished the previous waves a few years ago and were presently still participating in the panel (i.e., to see if we could reasonably create a link between these previous waves and newly collected data). 
+The purpose was to ascertain the number of individuals who had finished the previous waves in the LISS data archive and were presently still participating in the panel (i.e., to see if we could reasonably create a link between the LISS data archive and newly collected data). 
 
 All data access events were automatically detected and logged on the GitHub repository using the *projectlog* R package [@vermeent_2023].
-We took the following measures to prevent bias: 1) we randomly shuffled the participant IDs in each data set using the *projectlog* R package, so that we were unable to link participant data between (waves of) studies; 2) we did not inspect any of the measures that will be part of our adversity composites; 3) we did not know which participants would be selected for the new LISS study; 4) the primary analyses will be based on composite measures that combine measures from these previous studies with data that were collected at a later timepoint.
+We took the following measures to prevent bias: 1) we randomly shuffled the participant IDs in each data set using the *projectlog* R package, so that we were unable to link participant data between (waves of) studies in the LISS data archive; 2) we did not inspect any of the measures that will be part of our adversity composites; 3) we did not know which participants would be selected for the newly collected data; 4) the primary analyses will be based on composite measures that combine measures from the LISS data archive with measures from the newly collected data. 
 
 ### Primary analyses
 
@@ -434,7 +458,11 @@ This step will be carried out prior to accessing any of the adversity measures.
 Once we obtain at least acceptable model fit, we will access and add the adversity measures to the model.
 This procedure will be tracked and timestamped on the GitHub repository using the procedure outlined above.
 We will control for multiple testing using the false discovery rate [@benjamini_1995; @cribbie_2007].
-We will use two one-sided tests (TOST) equivalence testing to test whether small effects---which we define as standardized effects between -.10 and .10---are practically equivalent, which we will interpret as evidence for intact performance.
+
+To statistically test whether small effects are practically equivalent to zero---suggesting intact performance---we will use Two One-Sided T-tests (TOST) equivalence testing [@lakens_2018], using -0.1 and 0.1 as equivalence bounds.
+TOST equivalence testing allows us to conclude intact performance based on a significant effect, rather than erroneously interpreting a non-significant effect as evidence for the absence of an effect.
+We consider any effect that falls within this region to reflect practical equivalence, that is, a between-person difference in performance that is practically equivalent to zero. 
+TOST provides two *p*-values, one testing against the upper bound and one testing against the lower bound; we will report only the largest of the two *p*-values.
 
 \pagebreak
 
