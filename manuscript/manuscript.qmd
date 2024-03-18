@@ -203,7 +203,7 @@ Deprivation refers to having a low level of resources.
 We focus on perceived material deprivation, a (perceived) lack of access to material resources. 
 Unpredictability refers to variation in material deprivation over time. 
 This definition is inspired by, but deviates from the harshness-unpredictability framework, in which unpredictability is defined as stochastic variation in harshness (age-specific rates in morbidity and mortality) over space and time [@ellis_2009; @ellis_2022].
-We will not calculate unpredictability in neighborhood threat given that participants have at most six timepoints, and often as few as one or two, which is insufficient to calculate variation over time [@walasek_2023].
+We will not calculate unpredictability in neighborhood threat given that participants have at most six timepoints, and often as few as one or two, which is insufficient to calculate variation over time [@walasek_2024].
 
 We will address three research questions.
 First, what is the association between adversity and WM capacity?
