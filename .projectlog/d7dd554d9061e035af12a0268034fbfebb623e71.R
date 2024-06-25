@@ -1,0 +1,13 @@
+### Date: 2024-03-30 16:15:43
+
+### Description: access to all crime victimization waves in LISS archive, v2
+
+
+### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/d7dd554d9061e035af12a0268034fbfebb623e71
+
+### Below is the full code that was used to access the data:
+
+
+purrr::map(.x = list.files('data/liss_data/crime', pattern = '.sav', full.names = TRUE), function(x) {haven::read_sav(file = x, col_select = NULL) |>
+ dplyr::filter() |>
+ shuffle(data = _, shuffle_vars = 'NULL', long_format = FALSE, seed = 3985843)})
