@@ -36,6 +36,12 @@ Click on each of the folders to get more details.
 Below is an overview of all the project milestones, such as first-time data access, submissions, and revisions.
 Data access events were automatically captured using custom code, which over the course of this project was collected in the R package `projectlog` [https://stefanvermeent.github.io/projectlog/](https://stefanvermeent.github.io/projectlog/).
 
+- **[2024-06-25 14:53:58](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/fb048d8764291871fbb0d6e3de4aca880c90c7cd): Submission of stage 2 manuscript**
+    - **Milestone:** Submission
+    - **Data MD5 hash**: Not applicable
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/fb048d8764291871fbb0d6e3de4aca880c90c7cd)
+    
+
 - **[2024-04-29 11:52:56](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/9dbbb90a82566421d7967010dba755b0faae773f): final SEM specification**
     - **Milestone:** Analysis
     - **Data MD5 hash**: Not applicable
