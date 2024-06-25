@@ -41,6 +41,8 @@ library(flextable)
 library(officer)
 
 load('staged_results.RData')
+load('../analysis_objects/exploratory_results.RData')
+load('../analysis_objects/fig6.RData')
 
 # set up flextable for tables
 set_flextable_defaults(
@@ -199,6 +201,107 @@ In both cases, it would suggest that both frameworks need to be explicit in how 
   width(width = 1)
 
 table_s2
+```
+
+\pagebreak
+
+# 3. Exploratory analyses
+
+To contextualize our confirmatory (preregistered) findings, we conducted twoexploratory (non-preregistered) analyses.
+Below, we present the results of analyses exploring the associations between adversity and performance on the separate WM tasks using linear regression.
+The other exploratory analyses, which were based on alternative SEM specifications, are presented in the supplemental materials.
+
+We estimated a total of five linear regression models, one per WM task.
+Each model included the same independent variables and covariates as the primary analysis.
+We adjusted for multiple testing across models involving the Rotation Span Task, Operation Span Task, and the binding trials of the Binding-Updating Task, and separately for the updating trials of the Binding-Updating Task, as the former three tasks are primarily conceptualized as WM capacity tasks.
+We also tested for practical equivalence in the same way as for the confirmatory analyses
+
+The results are summarized in Figure 6.
+Threat was negatively associated with performance on the Rotation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "rspan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "rspan") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`), Operation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "Ospan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "Ospan") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`), and binding trials of the Binding-Updating Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "binding") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "binding") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`).
+Unpredictability in perceived scarcity was positively associated with performance on the Rotation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "p_scar_cv", task == "rspan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "p_scar_cv", task == "rspan") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`).
+None of the types of adversity were significantly associated with performance on the updating trials of the Binding-Updating Task.
+
+In addition, there was some limited evidence for practical equivalence, especially for unpredictability in the income-to-needs ratio, which showed a practically equivalent association with the Operation Span Task, Rotation Span Task, and Updating Task.
+We also found a practically equivalent association between unpredictability in perceived scarcity and the Binding Task.
+
+<br>
+
+```{r}
+#| label: Figure6
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 6.** Exploratory (non-preregistered) results testing the association between threat, deprivation, and unpredictability on residual variances of separate WM tasks. The gray area shows the area of practical equivalence. Solid points indicate effects outside the area of practical equivalence, which was true for all effects. Standard errors represent the 95% confidence intervals. CV = coefficient of variation; INR = income-to-needs ratio; M = mean; WM = working memory.
+fig6
+```
+<br>
+
+# 4. Histograms of independent measures
+
+```{r}
+#| label: Figure7
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 7.** Histograms for mean perceived material deprivation over time.
+p_scar_m_combn_hist
+```
+
+<br>
+
+```{r}
+#| label: Figure8
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 8.** Histogram for the mean income-to-needs ratio over time.
+p_scar_m_combn_hist
+```
+
+<br>
+
+```{r}
+#| label: Figure9
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 9.** Histograms for mean threat exposure over time.
+threat_combn_hist
+
+```
+
+<br>
+
+```{r}
+#| label: Figure10
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 10.** Histograms for unpredictability in measures of perceived scarcity over time (coefficient of change).
+p_scar_cv_combn_hist
+```
+
+<br>
+
+```{r}
+#| label: Figure11
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 11.** Histograms for unpredictability in the income-to-needs ratio over time (coefficient of change).
+inr_cv_hist
 ```
 
 \pagebreak

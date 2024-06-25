@@ -1,0 +1,332 @@
+---
+bibliography: ../manuscript/references.bib
+csl: ../manuscript/apa.csl
+format: 
+  docx:
+    reference-doc: ../manuscript/reference-doc.docx
+    toc: true
+    toc-location: left
+    toc-title: Table of Contents
+output:
+  officedown::rdocx_document:
+    page_margins:
+      bottom: 1
+      footer: 0
+      gutter: 0
+      header: 0.5
+      left: 1
+      right: 1
+      top: 1
+    plots:
+      align: center
+      caption:
+        pre: 'Figure '
+        sep: '. '
+        style: Image Caption
+    tables:
+      caption:
+        pre: 'Table '
+        sep: '. '
+        style: Table Caption
+  pdf_document: default
+  word_document: default
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r include = FALSE}
+library(tidyverse)
+library(flextable)
+library(officer)
+
+load('staged_results.RData')
+load('../analysis_objects/exploratory_results.RData')
+load('../analysis_objects/fig6.RData')
+
+# set up flextable for tables
+set_flextable_defaults(
+  font.family = "Times",
+  font.size = 10,
+  font.color = "black",
+  line_spacing = 1,
+  padding.bottom = 1,
+  padding.top = 1,
+  padding.left = 1,
+  padding.right = 1
+)
+
+knitr::opts_chunk$set(
+  echo = F,
+  fig.align = "center",
+  fig.pos = "!t", 
+  out.extra = "",
+  fig.show = "asis",
+  message = FALSE,
+  tab.topcaption = T,
+  warning = FALSE
+)
+```
+
+
+\pagebreak
+
+# 1. Pilot study
+
+A total of 99 Dutch adolescents (mean age = `r pilot_demo$m_age`, SD = `r pilot_demo$sd_age`, range = [`r pilot_demo$min_age`, `r pilot_demo$max_age`]) participated in the Pilot study via Prolific.
+The main goal of the Pilot study was to obtain feedback on the tasks (e.g., difficulty, clarity of instructions), and to explore bivariate correlations between the measures.
+Participants completed the same tasks as in the main study: (1) Operation Span Task, (2) Rotation Span Task, and (3) Binding-Updating Task.
+The Rotation Span Task was administered in a second session, and was completed by a subsample of 50 participants.
+All three tasks followed the exact same procedure as in the main study.
+
+In addition, participants completed measures of material deprivation, neighborhood threat, and unpredictability.
+These measures differed from the more comprehensive measures used in the main study, and were included to obtain quick, descriptive estimates.
+Material deprivation was measured using seven items about perceived level of available resources.
+Unpredictability was measured using a scale of perceived unpredictability [@mittal_2015; @young_2018].
+Neighborhood violence exposure was measured using the Neighborhood Violence Scale [NVS\; @frankenhuis_deVries_2020; @frankenhuis_2018] as well as two items measuring involvement in fights.
+Participants responded to items of all questionnaires on a scale of 1 (never true) to 5 (very often true).
+Finally, participants provided feedback on the difficulty of the tasks and the clarity of the task instructions.
+
+Pilot data were collected sequentially to allow for intermediate changes to instructions based on participants' feedback.
+The first session (including the Operation Span Task and the Binding-Updating Task) took approximately 35 minutes to complete, and participants were paid 5.25 GBP.
+The second session (including the Rotation Span Task) took approximately 9 minutes to complete, and participants were paid 1.50 GBP.
+
+Table S1 presents bivariate correlations among the WM tasks, and between the WM tasks and measures of adversity.
+The WM tasks correlated moderately to strongly with each other.
+The strongest correlation was between the Binding and Updating score (.80).
+This is not surprising given that both scores are derived from the same task, and shows the importance of accounting for this association in the model.
+Neither unpredictability nor material deprivation were significantly associated with performance on any of the WM tasks.
+However, higher levels of experienced neighborhood threat were associated with lower performance on the Binding and Updating Task.
+Note that these associations were based on raw task performance and not on latent estimates.
+
+
+
+```{r}
+pilot_table1
+```
+
+
+
+# 2. Study Design
+
+Table S2 presents the study design plan, using the table provided by PCI-RR.
+
+
+```{r}
+table_s2 <- tibble(
+  `Research question` = c(
+    "1. what is the association between adversity and WM capacity?", 
+    "2. what is the association between adversity and WM updating after accounting for WM capacity?", 
+    "3. Are the directions and strengths of these associations similar or different for neighborhood threat, material deprivation, and unpredictability?"),
+  `Hypotheses`        = c(
+    "Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating. This follows from the hypothesis that adversity leads to broad WM deficits. Deficit frameworks are partially supported if we find negative associations with only one (or two) types of adversity. ",
+    
+    "Within adaptation-based frameworks, theories make two predictions. 
+
+First, if adaptive processes enhance WM updating and there are no impairment processes operating, we can expect a positive association between adversity and WM updating. 
+Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lowered WM capacity.
+If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be intact.",
+
+    "We have two expectations based on prior studies. First, we expect the association between material deprivation and WM capacity to be more negative than the associations with unpredictability and neighborhood threat. 
+Second, we expect WM updating to be associated with unpredictability and neighborhood threat, but not with material deprivation."
+    ),
+  `Sampling plan`     = c(
+    "We are collecting data of 800 participants in the Dutch Longitudinal Internet studies for the Social Sciences (LISS) panel. First, we will use data that were previously collected in LISS. Second, we will use new data that we collected ourselves in LISS. Data collection started on October 2nd and is expected to be completed in February 2024. We signed a contract with LISS stipulating that we will receive access to the data only after Stage 1 acceptance of this Registered Report.
+
+To ensure sufficient representation of people from lower socioeconomic backgrounds, roughly half the total sample will be sampled from participants who reported one or more of the following at least once in the three years: (1) a monthly income < €1,500, (2) HAVO or VWO as highest completed education (which are the two highest levels in Dutch secondary education), or (3) a score of 4 or lower on the 'ladder of life'", 
+    NA, 
+    NA),
+  `Analysis plan`     =  c(
+    "We will fit a single structural equation model (SEM) containing all adversity measures. We will use robust maximum likelihood estimation in case any variable is non-normally distributed. Missing data will be handled using full information maximum likelihood (FIML). If participants are from the same household, this clustering within families will be accounted for.
+
+WM capacity will be estimated as a latent factor loading on all outcome measures. In addition, we will estimate WM updating as a latent factor capturing residual variance in the updating measure. We will estimate the effect of each adversity type through regression analyses. Each association will be controlled for: (1) age in years; (2) the quadratic effect of age; (2) environmental noise; (3) two items measuring interruptions. 
+
+We will estimate the model in two. First, we will construct the measurement model of WM, without including the adversity measures. Once we obtain at least acceptable model fit, we will access and add the adversity measures to the model. We will control for multiple testing using the false discovery rate 
+We will use two one-sided tests (TOST) equivalence testing to test whether small effects—which we define as standardized effects between -.10 and .10—are practically equivalent, which we will interpret as evidence for intact performance.
+", 
+    NA, 
+    NA),
+  `Rationale for deciding the sensitivity of the test for confirming or disconfirming the hypothesis` = c(
+    "We based our power analysis on simulations reported by Kretzschmar ad Gignac (2019), determining the required sample size to detect a small effect size (β = 0.1) with at least 90% power at α = 0.05.
+Assuming a reliability of at least 0.7 (which is typical for WM tasks with a number of trials similar to ours; e.g., Wilhelm, et al., 2013), we would require a sample size of *N* = 730. Anticipating exclusions, we decided to include 800 participants.", 
+    NA, 
+    NA),
+  `Interpretation given different outcomes` = c(
+    "Contrary to predictions of deficit perspectives, we might find that all associations between adversity and WM capacity are either practically equivalent or positive. This would suggest that WM capacity is either unaffected or even enhanced by adversity.
+
+If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.
+",
+    
+    "Contrary to predictions of adaptation-based perspectives, we might find that the association between adversity and WM updating is negative. This would suggest that WM updating is impaired by adversity.
+
+Contrary to predictions of adaptation-based perspectives, we might find a practically equivalent association with adversity for both WM capacity and updating. This would suggest that WM is unaffected by adversity. 
+
+If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.",
+
+    "We might find that the association between threat or unpredictability with WM capacity is more strongly or equally strongly negative than with material deprivation. This would suggest that threat or unpredictability are more strongly associated with WM capacity than material deprivation.
+
+We might also find that material deprivation, but not unpredictability or neighborhood threat, is positively associated with WM updating. This would suggest that an enhanced updating ability has an adaptive benefit for individuals experiencing material deprivation."
+    ),
+  `Theory that could be shown wrong by the outcomes` = c(
+    "Theoretically, our analyses directly compare evidence in favor of deficit and adaptation-based perspectives. Both are established frameworks generating predictions that extend to other cognitive abilities beyond WM. Therefore, the current study could neither confirm nor disconfirm the frameworks in general.
+
+However, our findings could be (partially) inconsistent with predictions derived from both frameworks. Deviating findings for RQ1 or RQ 2 would require revising theoretical predictions about the specific WM abilities that are adapted to/impaired by adversity.
+
+In both cases, it would suggest that both frameworks need to be explicit in how they distinguish between different WM components.", 
+
+    NA, 
+    "The hypotheses specified for RQ3 do not directly offer (non-) support for either framework. However, finding different patterns than hypothesized here would be inconsistent with findings of prior studies."),
+) |> 
+  flextable() |> 
+  merge_at(i = 1:3, j = 3, part = "body") |> 
+  merge_at(i = 1:3, j = 4, part = "body") |>
+  merge_at(i = 1:3, j = 5, part = "body") |>
+  merge_at(i = 1:2, j = 7, part = "body") |>  
+  add_header_row(
+    values = " ",
+    colwidths = 7
+  ) |>
+  flextable::compose(
+    i = 1, j = 1,
+    as_paragraph(as_b("Table S2. "), "Study design plan."),
+    part = "header"
+  ) |> 
+  border(border.top = fp_border(color = "black"), part = "body") |> 
+  border(border.left = fp_border(color = "black"), part = "body") |> 
+  border(border.right = fp_border(color = "black"), part = "body") |> 
+  border(border.bottom = fp_border(color = "black"), part = "body") |> 
+  border(i = 2, border.left = fp_border(color = "black"), part = "header") |>
+  border(i = 2, j = 7, border.right = fp_border(color = "black"), part = "header") |>
+  border(border.bottom = fp_border(color = "black"), part = "body") |> 
+  border(i = 1, j = 1, border.left =  fp_border_default(style = "none", width = 0), part = "header") |>
+  border(i = 1, j = 7, border.right =  fp_border_default(style = "none", width = 0), part = "header") |> 
+  border(i = 1, border.top =  fp_border_default(style = "none", width = 0), part = "header") |> 
+  valign(valign = "top") |> 
+  width(width = 1)
+
+table_s2
+```
+
+
+\pagebreak
+
+# 3. Exploratory analyses
+
+To contextualize our confirmatory (preregistered) findings, we conducted twoexploratory (non-preregistered) analyses.
+Below, we present the results of analyses exploring the associations between adversity and performance on the separate WM tasks using linear regression.
+The other exploratory analyses, which were based on alternative SEM specifications, are presented in the supplemental materials.
+
+We estimated a total of five linear regression models, one per WM task.
+Each model included the same independent variables and covariates as the primary analysis.
+We adjusted for multiple testing across models involving the Rotation Span Task, Operation Span Task, and the binding trials of the Binding-Updating Task, and separately for the updating trials of the Binding-Updating Task, as the former three tasks are primarily conceptualized as WM capacity tasks.
+We also tested for practical equivalence in the same way as for the confirmatory analyses
+
+The results are summarized in Figure 6.
+Threat was negatively associated with performance on the Rotation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "rspan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "rspan") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`), Operation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "Ospan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "Ospan") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`), and binding trials of the Binding-Updating Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "binding") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "binding") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`).
+Unpredictability in perceived scarcity was positively associated with performance on the Rotation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "p_scar_cv", task == "rspan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "p_scar_cv", task == "rspan") |> pull(pvalue_adj) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove(string = _, pattern = "^0")`).
+None of the types of adversity were significantly associated with performance on the updating trials of the Binding-Updating Task.
+
+In addition, there was some limited evidence for practical equivalence, especially for unpredictability in the income-to-needs ratio, which showed a practically equivalent association with the Operation Span Task, Rotation Span Task, and Updating Task.
+We also found a practically equivalent association between unpredictability in perceived scarcity and the Binding Task.
+
+<br>
+
+
+```{r}
+#| label: Figure6
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 6.** Exploratory (non-preregistered) results testing the association between threat, deprivation, and unpredictability on residual variances of separate WM tasks. The gray area shows the area of practical equivalence. Solid points indicate effects outside the area of practical equivalence, which was true for all effects. Standard errors represent the 95% confidence intervals. CV = coefficient of variation; INR = income-to-needs ratio; M = mean; WM = working memory.
+fig6
+```
+
+<br>
+
+# 4. Histograms of independent measures
+
+
+```{r}
+#| label: Figure7
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 7.** Histograms for mean perceived material deprivation over time.
+p_scar_m_combn_hist
+```
+
+
+<br>
+
+
+```{r}
+#| label: Figure8
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 8.** Histogram for the mean income-to-needs ratio over time.
+p_scar_m_combn_hist
+```
+
+
+<br>
+
+
+```{r}
+#| label: Figure9
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 9.** Histograms for mean threat exposure over time.
+threat_combn_hist
+
+```
+
+
+<br>
+
+
+```{r}
+#| label: Figure10
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 10.** Histograms for unpredictability in measures of perceived scarcity over time (coefficient of change).
+p_scar_cv_combn_hist
+```
+
+
+<br>
+
+
+```{r}
+#| label: Figure11
+#| fig-width: 6.5
+#| fig-height: 6
+#| dpi: 600
+#| out-width: 6in
+#| fig-cap: | 
+#|   **Figure 11.** Histograms for unpredictability in the income-to-needs ratio over time (coefficient of change).
+inr_cv_hist
+```
+
+
+\pagebreak
+
+# References
+
+::: {#refs}
+:::
+
+\pagebreak
+
