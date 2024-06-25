@@ -494,6 +494,8 @@ If participants experienced difficulties of any sort, they could contact the LIS
 
 ## Proposed analysis plan
 
+The Stage 1 protocol of this Registered Report can be found at [https://osf.io/dp7wc](https://osf.io/dp7wc).
+
 ### Data access
 
 The working memory data and one of the neighborhood threat indices were collected through October-December 2023, prior to submitting the Stage 1 protocol.
