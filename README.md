@@ -37,10 +37,64 @@ Below is an overview of all the project milestones, such as first-time data acce
 Data access events were automatically captured using custom code, which over the course of this project was collected in the R package `projectlog` [https://stefanvermeent.github.io/projectlog/](https://stefanvermeent.github.io/projectlog/).
 For more information about how tracking worked, Go to the [Open science workflow tab](https://stefanvermeent.github.io/abcd_ddm/opensci_workflow/README.html).
 
-- **[2024-01-31 13:00:02](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/d2becea31ada8030bc3bc39baff1dafb02491e6f): Resubmission of Stage 1 manuscript - inclusion of Study Design Plan**
+- **[2024-04-04 09:20:20](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/a0be5183db79da2d3f752565d29097b8c4a72186): access to all working memory measures of new study**
+    - **Milestone:** Data Access
+    - **Data MD5 hash**: object_hash 59d61e1e763f394d277b7164c2154703
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/a0be5183db79da2d3f752565d29097b8c4a72186.R)
+    
+
+- **[2024-04-03 16:13:42](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/1c2d2e6b017aeb8ce96b1022cc62393e66e7cb55): Read subject IDs only of new data collection to filter IV data**
+    - **Milestone:** Data Access
+    - **Data MD5 hash**: object_hash a482ccaaea62b90b223a71e1c3ed9191
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/1c2d2e6b017aeb8ce96b1022cc62393e66e7cb55.R)
+    
+
+- **[2024-04-01 09:58:39](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/76539b6a145eef99ba237f8837ee40ba966158ae): access to all background variable waves in LISS archive**
+    - **Milestone:** Data Access
+    - **Data MD5 hash**: object_hash 06795c268ce6957b29760bfc3ff0d6ad
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/76539b6a145eef99ba237f8837ee40ba966158ae.R)
+    
+
+- **[2024-03-30 16:25:37](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/71d70ab79326ada925a66e4e695c2e1ae703389a): access to all income waves in LISS archive**
+    - **Milestone:** Data Access
+    - **Data MD5 hash**: object_hash 2ae792026b72c0037e3f260319f53a6c
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/71d70ab79326ada925a66e4e695c2e1ae703389a.R)
+    
+
+- **[2024-03-30 16:15:43](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/d7dd554d9061e035af12a0268034fbfebb623e71): access to all crime victimization waves in LISS archive, v2**
+    - **Milestone:** Data Access
+    - **Data MD5 hash**: object_hash 738eb9c7c1a6a621b6e83c2e04007e88
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/d7dd554d9061e035af12a0268034fbfebb623e71.R)
+    
+
+- **[2024-03-30 13:21:56](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/869bedb88af275fd01f5dc0a72e2776cea975e1c): access to all crime victimization waves in LISS archive**
+    - **Milestone:** Data Access
+    - **Data MD5 hash**: object_hash 7562d74565de35bdfdc495b1e867e5aa
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/869bedb88af275fd01f5dc0a72e2776cea975e1c.R)
+    
+
+- **[2024-03-12 03:04:17](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/b44155672fefc445831dad956a97aaa0fabc599e): Revision 1 for PCI-RR**
+    - **Milestone:** Revision
+    - **Data MD5 hash**: 
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/b44155672fefc445831dad956a97aaa0fabc599e.R)
+    
+
+- **[2024-01-31 13:20:40](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/62fb84de1e12dc43d0b5da4e781932b8e255b2fb): update README files**
+    - **Milestone:** List
+    - **Data MD5 hash**: 
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/62fb84de1e12dc43d0b5da4e781932b8e255b2fb.R)
+    
+
+- **[2024-01-31 13:20:40](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/62fb84de1e12dc43d0b5da4e781932b8e255b2fb): update README files**
+    - **Milestone:** List
+    - **Data MD5 hash**: 
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/62fb84de1e12dc43d0b5da4e781932b8e255b2fb.R)
+    
+
+- **[2024-01-31 13:09:11](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/5ed452462b20e1f4c5f9e6f0f6523970cfdd032d): Resubmission of Stage 1 manuscript - inclusion of Study Design Plan**
     - **Milestone:** Submission
     - **Data MD5 hash**: 
-    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/d2becea31ada8030bc3bc39baff1dafb02491e6f.R)
+    - [Link to code snippet](https://github.com/StefanVermeent/liss_wm_profiles_2023/blob/master/.projectlog/5ed452462b20e1f4c5f9e6f0f6523970cfdd032d.R)
     
 
 - **[2024-01-30 17:11:13](https://github.com/StefanVermeent/liss_wm_profiles_2023/tree/78c08d29b50f16c1f43c206264ab1b29ed180a2a): Stage 1 manuscript submitted to PCI-RR**

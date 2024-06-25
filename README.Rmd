@@ -43,7 +43,6 @@ Click on each of the folders to get more details.
 
 Below is an overview of all the project milestones, such as first-time data access, submissions, and revisions.
 Data access events were automatically captured using custom code, which over the course of this project was collected in the R package `projectlog` [https://stefanvermeent.github.io/projectlog/](https://stefanvermeent.github.io/projectlog/).
-For more information about how tracking worked, Go to the [Open science workflow tab](https://stefanvermeent.github.io/abcd_ddm/opensci_workflow/README.html).
 
 ```{r results ='asis', echo = FALSE}
 milestones <- gert::git_tag_list() |> 
@@ -58,36 +57,35 @@ milestones <- gert::git_tag_list() |>
   unnest(tags) |> 
   separate(message, into = c("description", "hash", "code"), sep = "\\n") |> 
   mutate(
+    branch = gert::git_branch_list() |> filter(local == TRUE) |> pull(name),
     name = map_chr(name, function(name) {
       name |> 
-        str_remove("\\[\\[") |>
         str_remove("\\d*$") |> 
         str_replace("_", " ") |> 
         str_to_title()
-    })
-  ) |> 
-  mutate(
-    code = str_remove_all(code, "^code\\s") |> str_replace_all(string = _, "\\|\\>", "\\|\\>\\\n"),
-    link_to_git = paste0(
-       gert::git_remote_list()$url |> str_remove(string = _, pattern = "\\.git$"), "/tree/", commit)
+    }),
+    code = ifelse(name == "Data Access", str_remove_all(code, "^code\\s") |> str_replace_all(string = _, "\\|\\>", "\\|\\>\\\n"), "Not applicable"),
+    link_to_git = ifelse(name == 'Data Access', 
+                         paste0(get_git_url(), "/blob/", branch, "/", commit, ".R"),
+                         paste0(get_git_url(), "/tree/", commit)
+    ),
+    hash = ifelse(name != "Data Access", "Not applicable", hash),
+    
     ) |>
   arrange(desc(time)) 
 
 # Write scripts including code to .projectlog folder
 milestones |> 
-  pwalk(function(name,commit,author,time,description,hash,code,link_to_git){
+  pwalk(function(name,commit,author,time,description,hash,code,branch,link_to_git){
     
     if(name == "Data Access"){
       code <- code |> 
         str_replace_all(string = _, "\\|> ", "\\|>\n") |> 
         str_remove(string = _, "^code ") 
       
-      url <- gert::git_remote_list()$url |> 
-        str_remove(string = _, "\\.git$") |> 
-        paste0(paste0("/commit/", commit))
-      
-      #  url <- "<anonymized repository>"
-      
+      url <- get_git_url() |> 
+        paste0("/commit/", commit)
+ 
       script <-
         glue(
           "
@@ -101,8 +99,6 @@ milestones |>
       writeLines(script, con = paste0(".projectlog/", commit, ".R"))
     }
   })
-
-branch <- gert::git_branch_list() |> filter(local == TRUE) |> pull(name)
 
 # Print milestones
 glue_data(milestones, "  - **[{time}]({link_to_git}): {description}**
