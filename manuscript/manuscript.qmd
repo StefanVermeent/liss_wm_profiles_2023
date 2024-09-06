@@ -74,7 +74,7 @@ load("../analysis_objects/fig5.RData")
 load("../analysis_objects/fig6.RData")
 ```
 
-#### **Working memory performance in adverse environments: Enhanced, impaired, or intact?**
+#### **Inconclusive evidence for associations between adverse experiences in adulthood and working memory performance**
 
 <br>
 
@@ -137,7 +137,7 @@ Our results show that adversity researchers should account for overlap in WM tas
 
 \pagebreak
 
-# Working memory performance in adverse environments: Enhanced, impaired, or intact?
+# Inconclusive evidence for associations between adverse experiences in adulthood and working memory performance
 
 Living in adverse conditions, with prolonged exposure to intense stress, tends to have a profound and enduring impact on cognitive functioning [@farah_2006; @sheridan_2022; @sheridan_2014].
 Although adversity can be described in many ways, we follow contemporary models focusing on threat, deprivation, and unpredictability as key dimensions of adversity [@ellis_2009; @ellis_2022; @mclaughlin_2016; @mclaughlin_2021].
@@ -156,7 +156,7 @@ A large literature has shown negative associations between exposures to adversit
 These associations may be potentially attributable to the enduring influence of stress on several key brain regions that support WM [@duval_2017; @hanson_2012].
 Much of this work has focused on WM capacity, or the ability to keep multiple pieces of information simultaneously available for further processing.
 For early-life adversity, this negative association is already present during childhood, and persists into adulthood [@bos_2009; @evans_2009; @hackman_2010; @farah_2006; @goodman_2019; @noble_2007; but see @nweze_2021].
-Studies with college students have found a link between both recent and lifetime experiences of stressful major life events (discrete negative events that have a clear onset and offset, unlike chronic adversity) with lowered WM capacity [@klein_2001; @shields_2017; @shields_2019].
+Studies with college students have found a link between both recent and lifetime experiences of stressful major life events (discrete negative events that have a clear onset and offset, unlike chronic adversity) with lower WM capacity [@klein_2001; @shields_2017; @shields_2019].
 
 The most common tasks used to examine the negative association between adversity and WM are simple span tasks (repeating a string of stimuli of increasing length), complex span tasks (remembering a string of stimuli while being engaged by a secondary task), and *n*-back tasks (judging whether the current stimulus in a string is identical to the stimulus *n* steps ago)  [@goodman_2019].
 Performance on these tasks is assessed through the number of items that participants can retain in WM, that is, their overall capacity [with the exception of *n*-back\; for concerns about the construct validity of this task, see @frost_2021; @kane_2007].
@@ -220,10 +220,10 @@ Third, are the directions and strengths of these associations similar or differe
 
 We evaluated evidence for deficit- and adaptation-based frameworks (see Figure 1A for a visual summary, and Appendix 1 for the study design plan). 
 Crucially, as deficit and adaptation processes can operate in concert [@frankenhuis_2020], we could find support (or lack thereof) for both frameworks in the same model. 
-We distinguished between three between-person data patterns: (1) lowered performance, (2) enhanced performance, and (3) intact performance.
-We defined lowered performance as a statistically significant negative association between a type of adversity and WM capacity or updating (irrespective of effect size).
-We defined enhanced performance as a statistically significant positive association between a type of adversity and WM capacity or updating (irrespective of effect size).
-We defined intact performance as an association between a type of adversity and WM capacity or updating that has a standardized effect smaller than 0.1 *and* larger than -0.1---even if the effect is statistically different from zero---which we tested using Two One-Sided T-Tests (TOST) equivalence testing [see the 'Primary analyses' section\; @lakens_2018].
+We distinguished between three between-person data patterns: (1) lower performance, (2) higher performance, and (3) practically equivalent performance.
+We defined lower performance as a statistically significant negative association between a type of adversity and WM capacity or updating (irrespective of effect size).
+We defined higher performance as a statistically significant positive association between a type of adversity and WM capacity or updating (irrespective of effect size).
+We defined practically equivalent performance as an association between a type of adversity and WM capacity or updating that has a standardized effect smaller than 0.1 *and* larger than -0.1---even if the effect is statistically different from zero---which we tested using Two One-Sided T-Tests (TOST) equivalence testing [see the 'Primary analyses' section\; @lakens_2018].
 
 Deficit frameworks predict a negative association between all three types of adversity and WM capacity as well as WM updating.
 This follows from the hypothesis that adversity leads to broad WM deficits [@farah_2006; @sheridan_2020]. 
@@ -231,8 +231,8 @@ Deficit frameworks are partially supported if we find negative associations with
 
 Within adaptation-based frameworks, theories make two predictions. 
 First, if adaptive processes enhance WM updating and there are no impairment processes operating, we can expect a positive association between adversity and WM updating. 
-Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lowered WM capacity. 
-If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be intact.
+Second, if, adaptive processes operate in concert with general impairment processes, we can expect practically equivalent WM updating performance in combination with lower WM capacity. 
+If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be practically equivalent.
 
 We also had two expectations based on prior studies. 
 First, we expected the association between material deprivation and WM capacity to be more negative than the associations with unpredictability and neighborhood threat. 
@@ -325,8 +325,8 @@ unsafe", 2) "do not respond to a call at the door because you feel that it is un
 We recoded these items so that 0 indicated "(Almost) never". 
 We then summed the responses within each wave for which participants had data, and calculated an average across the waves.
 
-In addition, we implemented the Neighborhood Violence Scale [NVS\; @frankenhuis_2018; @frankenhuis_2020] in the newly collected data.
-The NVS includes seven items measuring perceived exposure to neighborhood violence (e.g., "Crime is common in the neighborhood where I live"; "Where I live, it is important to be able to defend yourself against physical harm").
+In addition, we implemented the Neighborhood Violence Scale [@frankenhuis_2018; @frankenhuis_2020] in the newly collected data.
+The Neighborhood Violence Scale includes seven items measuring perceived exposure to neighborhood violence (e.g., "Crime is common in the neighborhood where I live"; "Where I live, it is important to be able to defend yourself against physical harm").
 Participants answered these questions on a scale of 1 ("Completely disagree") to 7 ("Completely agree").
 We computed an average of the seven items.
 
@@ -337,7 +337,7 @@ Thus, if a participants reported exposure to the same type of crime on separate 
 
 **Neighborhood threat composite.** We first computed an average across time for each measure separately (i.e., the two measures of neighborhood crime and the measure of crime victimization).
 Because correlations were below .60 (see Table 2), we then used PCA to extract only the first principal component score (R^2 = .20).
-The threat component was most strongly determined by the NVS (`r pca_threat_fit$loadings[3] |> formatC(digits = 2, width = 2, format = 'f')`), followed by the perceived neighborhood crime scale from the LISS archive (`r pca_threat_fit$loadings[1] |> formatC(digits = 2, width = 2, format = 'f')`) and crime victimization (`r pca_threat_fit$loadings[2] |> formatC(digits = 2, width = 2, format = 'f')`).
+The threat component was most strongly determined by the Neighborhood Violence Scale (`r pca_threat_fit$loadings[3] |> formatC(digits = 2, width = 2, format = 'f')`), followed by the perceived neighborhood crime scale from the LISS archive (`r pca_threat_fit$loadings[1] |> formatC(digits = 2, width = 2, format = 'f')`) and crime victimization (`r pca_threat_fit$loadings[2] |> formatC(digits = 2, width = 2, format = 'f')`).
 
 ### Material deprivation
 
@@ -355,7 +355,7 @@ Because correlations were all above .60, we calculated a uniformly weighted aver
 **Income-to-needs (mean).** We calculated an income-to-needs ratio for each year using monthly self-reported net household income from the LISS archive ([https://doi.org/10.57990/qn3k-as78](https://doi.org/10.57990/qn3k-as78)).
 Zero values in household income were set to missing, as these could either indicate the lack of an income or an unwillingness to disclose the income.
 If monthly household income is missing (or zero) for an entire year for a participant, we used, if available, the yearly net household income they reported in the LISS archive ([https://doi.org/10.57990/1gr4-bf42](https://doi.org/10.57990/1gr4-bf42)), dividing it by 12 to obtain a monthly estimate.
-First, we divided the average income per year by the *poverty threshold*, as determined by Statistics Netherlands (CBS) [@brakel_2023\; CBS, personal communication, December 15, 2023].
+First, we divided the average income per year by the *poverty threshold*, as determined by Statistics Netherlands [@brakel_2023\; CBS, personal communication, December 15, 2023].
 As thresholds are only provided for households with up to three children, we applied the threshold of a household with three children to households with more than three children.
 Likewise, we applied the threshold of a household with two adults for households that contained three or more adults.
 Second, we calculated the average within-person income-to-needs ratio for each year by averaging across the monthly income-to-needs estimates.
@@ -364,7 +364,7 @@ Second, we calculated the average within-person income-to-needs ratio for each y
 
 **Perceived scarcity (SD/mean).** This measure was based on the same items as outlined above (see Perceived scarcity (mean)).
 We computed unpredictability over time in perceived scarcity using the coefficient of variation, which is the within-person standard deviation across years divided by the mean [@key_2017; @liu_2022; @ugarte_2023; @walasek_2024; @young_2020].
-The mean and standard deviation in income have been found to be strongly negatively correlated, indicating that people with lower incomes tend to experience less variability in income [@li_2018; @young_2023].
+The mean and standard deviation in income have been found to be strongly negatively correlated, indicating that people with lower incomes tend to experience less variability in income [@li_2018; @young_2024].
 For that reason, the standard deviation alone has been called into question as a measure of adversity, as the same fluctuation in income can have a greater relative impact for people close to the poverty line than for people with high incomes.
 
 We first computed the standard deviation across time for each item separately.
@@ -529,8 +529,8 @@ Once we obtained at least acceptable model fit, we accessed and added the advers
 This procedure was tracked and timestamped on the GitHub repository using the procedure outlined above.
 We controlled for multiple testing using the false discovery rate [@benjamini_1995; @cribbie_2007].
 
-To statistically test whether small effects were practically equivalent to zero---suggesting intact performance---we used Two One-Sided T-tests (TOST) equivalence testing [@lakens_2018], using -0.1 and 0.1 as equivalence bounds.
-TOST equivalence testing allows us to conclude intact performance based on a significant effect, rather than erroneously interpreting a non-significant effect as evidence for the absence of an effect.
+To statistically test whether small effects were practically equivalent to zero we used Two One-Sided T-tests (TOST) equivalence testing [@lakens_2018], using -0.1 and 0.1 as equivalence bounds.
+TOST equivalence testing allows us to conclude practically equivalent performance based on a significant effect, rather than erroneously interpreting a non-significant effect as evidence for the absence of an effect.
 We considered any effect that fell within this region to reflect practical equivalence, that is, a between-person difference in performance that is practically equivalent to zero. 
 TOST provides two *p*-values, one testing against the upper bound and one testing against the lower bound; we report only the largest of the two *p*-values.
 
@@ -584,9 +584,9 @@ fig5
 ```
 <br>
 
-## Posthoc exploratory analyses
+## Posthoc non-preregistered analyses
 
-We conducted two posthoc exploratory (non-preregistered) analyses, described in more detail in the supplemental materials.
+We conducted three posthoc non-preregistered analyses, described in more detail in the supplemental materials.
 First, to contextualize our findings based on latent WM estimates, we estimated associations between adversity and performance on the separate WM tasks using four linear regressions.
 Threat had small, significant negative associations with performance on the Rotation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "rspan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "rspan") |> pull(p.value) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`), Operation Span Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "Ospan") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "Ospan") |> pull(p.value) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`), and Binding Task ($\beta$ = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "binding") |> pull(estimate) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r lm_reg_coef_expl |> filter(term == "threat_comp", task == "binding") |> pull(p.value) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`).
 None of the types of adversity were significantly associated with performance on the Updating Task (all *p*s > `r lm_reg_coef_expl |> filter(task == "updating") |> pull(pvalue_adj) |> min() |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`), and only the association with unpredictability in the income-to-needs was practically equivalent to zero (*p* = `r equivalence_tests_lm_expl |> filter(task == "updating", term == "inr_cv") |> pull(eq_pvalue) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`).
@@ -595,7 +595,14 @@ Second, the inconclusive nature of our confirmatory results could indicate that 
 To explore this, we conducted an alternative test for the absence of an association between adversity and WM by constraining regression paths between adversity and WM factors to zero in the SEM.
 Constraining all paths to latent WM capacity to zero significantly reduced model fit, although the change in AIC was below the cut-off as proposed by @burnham_2002, $\Delta$ AIC = `r (max(anova_expl02$AIC) - min(anova_expl02$AIC)) |> formatC(digits = 2, width = 2, format = 'f')`, $\Delta$ $\chi$(`r anova_expl02 |> filter(term == "fit_struc_expl02") |> pull(Df.diff)`) = `r anova_expl02 |> filter(term == "fit_struc_expl02") |> pull(Chisq.diff) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r anova_expl02 |> filter(term == "fit_struc_expl02") |> pull(p.value) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`, Robust CFI = `r fitstats_expl02[["cfi.robust"]] |> round(2)`, robust RMSEA = `r fitstats_expl02[["rmsea.robust"]] |> round(2)`, 95% CI = [`r fitstats_expl02[["rmsea.ci.lower.scaled"]] |> round(2)`, `r fitstats_expl02[["rmsea.ci.upper.scaled"]] |> round(2)`].
 Constraining all paths to latent WM updating did not significantly reduce model fit, $\Delta$ AIC = `r (max(anova_expl03$AIC) - min(anova_expl03$AIC)) |> formatC(digits = 2, width = 2, format = 'f')`, $\Delta$ $\chi$(`r anova_expl03 |> filter(term == "fit_struc_expl03") |> pull(Df.diff)`) = `r anova_expl03 |> filter(term == "fit_struc_expl03") |> pull(Chisq.diff) |> formatC(digits = 2, width = 2, format = 'f')`, *p* = `r anova_expl03 |> filter(term == "fit_struc_expl03") |> pull(p.value) |> formatC(digits = 3, width = 3, format = 'f') |> str_remove("^0")`, Robust CFI = `r fitstats_expl03[["cfi.robust"]] |> round(2)`, robust RMSEA = `r fitstats_expl03[["rmsea.robust"]] |> round(2)`, 95% CI = [`r fitstats_expl03[["rmsea.ci.lower.scaled"]] |> round(2)`, `r fitstats_expl03[["rmsea.ci.upper.scaled"]] |> round(2)`].
+Thus, these results were somewhat inconsistent with the preregistered frequentist equivalent tests.
 
+Third, as a non-preregistered robustness check, we calculated Bayes factors for the preregistered equivalence tests using the *bain* package [@hoijtink_2019], in which we evaluated whether the observed data are more likely under the hypothesis that the effects fall within the equivalence bounds, relative to the hypothesis that the effects fall outside of the equivalence bounds. 
+The results are summarized in Table S3.
+For all but one association, the model comparisons showed at least strong evidence in favor of the data being more likely under the hypothesis that the effects fell within the equivalence bounds (BF~10~ ranging between `r BF_expl04 |> filter(Hypothesis != '-0.1 ≤ (WM capacity ~ Threat) ≥ 0.1') |> pull(BF.c) |> min()` and `r BF_expl04 |> filter(Hypothesis != '-0.1 ≤ (WM capacity ~ Threat) ≥ 0.1') |> pull(BF.c) |> max()`.
+The only exception was the association between threat and WM capacity, for which we found moderate evidence in favor of the data being more likely under the hypothesis that the effect fell within the equivalence bounds (BF~10~ = `r BF_expl04 |> filter(Hypothesis == '-0.1 ≤ (WM capacity ~ Threat) ≥ 0.1') |> pull(BF.c)`.
+Thus, these results were inconsistent with the preregistered frequentist equivalent tests, which did not find evidence for practical equivalence.
+  
 ## Deviation from the Stage 1 protocol
 
 In the Stage 1 protocol, we planned to first access the dependent variables to construct the SEM, and then access the independent variables. 
@@ -611,25 +618,25 @@ We investigated associations between adversity (threat, material deprivation, an
 We distinguished between WM capacity and updating on a latent level using four different tasks, three of which are primarily construed as WM capacity tasks, and one that is primarily construed as a WM updating task.
 The WM capacity factor loaded on performance of all four tasks, in line with previous findings [@frischkorn_2022; @gruszka_2017; @oberauer_2009; @wilhelm_2013].
 An additional WM updating factor accounted for the portion of variance in the Updating Task that was not explained by WM capacity.
-
 We did not find any consistent associations between adversity and WM capacity nor updating in our preregistered analyses. 
 On the one hand, none of the associations significantly differed from zero. 
 On the other hand, none of the associations fell within the pre-specified region of practical equivalence to zero (i.e., a between-person difference in performance that is practically equivalent to zero). 
-The conclusions from these confirmatory (preregistered) analyses differed in several respects from posthoc exploratory (non-preregistered) analyses focusing on associations between adversity and performance on the individual tasks.
-In these latter analyses, higher levels of exposure to neighborhood threat had small, significant negative associations with the Binding, Operation Span, and Rotation Span Tasks, which are all typically considered WM capacity tasks [@conway_2005; @wilhelm_2013]. 
 
 The confirmatory results were not consistent with hypotheses generated from a deficit framework.
 A large literature has documented negative associations between exposure to early-life adversity---especially deprivation---and WM capacity, which persists into adulthood [@farah_2006; @goodman_2019; @sheridan_2022; @sheridan_2014; @young_2018; but see @nweze_2021].
 Similarly, studies with young adults have found that a higher frequency of recent as well as lifetime stressful major life events (i.e., negative events with a clear onset and offset, unlike chronic adversity) is also negatively associated with WM capacity [@klein_2001; @shields_2017; @shields_2019].
-Exploratory analyses suggested there may be small associations between adversity and WM capacity, but that our tests of these associations were underpowered.
-This would mean that associations between adversity exposure in adulthood and WM capacity are smaller than we expected based on the literature outlined above, and would require a larger sample size to reliably detect.
-
 The results were also not consistent with hypotheses generated from adaptation frameworks.
-Recently, a small set of studies documented intact and even enhanced WM updating performance in adolescents and adults who reported more exposure to childhood adversity [@young_2018; @young_2022].
+Recently, a small set of studies documented intact and even higher WM updating performance in adolescents and adults who reported more exposure to childhood adversity [@young_2018; @young_2022].
 These associations have been interpreted as reflecting developmental adaptations to adversity: in more threatening and unpredictable environments, it may be beneficial to be able to rapidly update the items held in WM [@frankenhuis_2013; @ellis_2017; @ellis_2022; @frankenhuis_2020].
 In contrast, we did not find consistent associations between adversity exposure and WM updating.
 These findings are inconclusive, as we also did not find evidence for practical equivalence in our preregistered analysis.
-However, additional exploratory analyses suggested that the association between adversity exposure in adulthood and WM updating was negligible.
+
+A set of non-preregistered robustness checks were comparatively more consistent with practically equivalent performance, although they did not fully rule out the existence of small associations between adversity exposure and working memory performance.
+First, A Bayesian reanalysis of the preregistered equivalence tests (using the same equivalence bounds) provided strong evidence in favor of the hypothesis that working memory performance was practically equivalent, in contrast to the preregistered analyses.
+Second, constraining the regression paths in the SEM to zero somewhat reduced model fit for WM capacity, but not for WM updating.
+This suggests that there may have been systematic associations with WM capacity that were smaller than the equivalence bounds used in the (Bayesian) equivalence tests.
+If true, the associations would be smaller than we expected based on the literature outlined above, and would require a larger sample size to reliably detect.
+These analyses were not part of the registered analysis protocol, and therefore should be interpreted with sufficient caution pending replication.
 
 The Updating Task shared a large proportion of variance with the WM capacity measures, which aligns with prior psychometric work focused on the structure of WM [@lewandowsky_2010; @oberauer_2000; @wilhelm_2013].
 This highlights an important methodological issue for the field of adversity research, especially researchers working from adaptation frameworks, who hypothesize distinct effects of adversity on different components of WM (in contrast to deficit-oriented researchers, who expect adversity to have a negative effect on all components of WM). 
@@ -683,7 +690,8 @@ This has spurred a growing number of studies investigating more precise links be
 Adaptation perspectives in particular have emphasized the need to be more precise about how specific types of adversity are associated with specific cognitive abilities.
 However, this increased need for precision in the measurement of cognitive abilities requires more advanced psychometric approaches.
 For this, adversity researchers can draw, more than they currently do, on decades of psychometric research focused on WM and other cognitive abilities.
-Doing so will ultimately lead to a better understanding of the unique abilities that develop in contexts of adversity, as well as more precise intervention targets.
+Here, our psychometric investigation of WM yielded inconclusive associations with adverse experiences in adulthood.
+Building on this work will ultimately lead to a better understanding of the unique abilities that develop in contexts of adversity, as well as more precise intervention targets.
 
 \pagebreak
 
@@ -714,7 +722,7 @@ appendix1 <- tibble(
     "Within adaptation-based frameworks, theories make two predictions. 
 
 First, if adaptive processes enhance WM updating and there are no impairment processes operating, we can expect a positive association between adversity and WM updating. 
-Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lowered WM capacity.
+Second, if, adaptive processes operate in concert with general impairment processes, we can expect intact WM updating in combination with lower WM capacity.
 If neither impairment nor adaptative processes are operating, we can expect both WM updating and capacity to be intact.",
 
     "We have two expectations based on prior studies. First, we expect the association between material deprivation and WM capacity to be more negative than the associations with unpredictability and neighborhood threat. 
@@ -742,7 +750,7 @@ Assuming a reliability of at least 0.7 (which is typical for WM tasks with a num
     NA, 
     NA),
   `Interpretation given different outcomes` = c(
-    "Contrary to predictions of deficit perspectives, we might find that all associations between adversity and WM capacity are either practically equivalent or positive. This would suggest that WM capacity is either unaffected or even enhanced by adversity.
+    "Contrary to predictions of deficit perspectives, we might find that all associations between adversity and WM capacity are either practically equivalent or positive. This would suggest that WM capacity is either unaffected or even higher in people with more adversity exposure.
 
 If we find both a non-significant association and practical non-equivalence, we will conclude that our data neither support nor refute either framework.
 ",
@@ -755,7 +763,7 @@ If we find both a non-significant association and practical non-equivalence, we 
 
     "We might find that the association between threat or unpredictability with WM capacity is more strongly or equally strongly negative than with material deprivation. This would suggest that threat or unpredictability are more strongly associated with WM capacity than material deprivation.
 
-We might also find that material deprivation, but not unpredictability or neighborhood threat, is positively associated with WM updating. This would suggest that an enhanced updating ability has an adaptive benefit for individuals experiencing material deprivation."
+We might also find that material deprivation, but not unpredictability or neighborhood threat, is positively associated with WM updating. This would suggest that higher updating ability has an adaptive benefit for individuals experiencing material deprivation."
     ),
   `Theory that could be shown wrong by the outcomes` = c(
     "Theoretically, our analyses directly compare evidence in favor of deficit and adaptation-based perspectives. Both are established frameworks generating predictions that extend to other cognitive abilities beyond WM. Therefore, the current study could neither confirm nor disconfirm the frameworks in general.

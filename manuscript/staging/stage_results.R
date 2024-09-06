@@ -65,8 +65,8 @@ table1 <- descr |>
       ) |>
       pivot_longer(everything(), names_to = "cat", values_to = "stat")
   ) |>
-  add_row(.before = 3, cat = "Highest completed education") |>
-  add_row(.before = 12, cat = "Number of waves") |>
+  add_row(.before = 3, cat = "Highest completed education (%)") |>
+  add_row(.before = 12, cat = "Mean number of waves (SD)") |>
   flextable() |>
   set_header_labels(cat = "Category", stat = "Statistic") |>
   padding(i = c(4:11, 13:15), j = 1, padding.left = 10)
@@ -96,7 +96,7 @@ table2 <- clean_data |>
       "Current situation (CV)",
       "Perceived scarcity (CV)",
       "Neighborhood safety",
-      "NVS",
+      "Neighborhood Violence Scale",
       "Crime victimization",
       "Threat"
     ),
