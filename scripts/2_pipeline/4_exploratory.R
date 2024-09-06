@@ -3,6 +3,8 @@
 
 library(tidyverse)
 library(lavaan)
+library(bain)
+library(flextable)
 
 # 2. Load data ------------------------------------------------------------
 
@@ -198,7 +200,40 @@ anova_expl03 <- anova(fit_struc01, fit_struc_expl03) |>
 fitstats_expl03 <- fitMeasures(fit_struc_expl03)[c("cfi.robust", "rmsea.robust", "rmsea.ci.lower.scaled", "rmsea.ci.upper.scaled")]
 
 
+## 6. Robustness check using Bayes Factors
+
+set.seed(35721)
+
+bay_wmc_inr_cv <- bain(fit_struc01, hypothesis = 'wmc_l~inr_cv < 0.1      & wmc_l~inr_cv > -0.1', fraction = 1, standardize = TRUE)
+bay_wmc_inr_m <- bain(fit_struc01, hypothesis  = 'wmc_l~inr_m < 0.1       & wmc_l~inr_m > -0.1', fraction = 1, standardize = TRUE)
+bay_wmc_psc_cv <- bain(fit_struc01, hypothesis = 'wmc_l~p_scar_cv < 0.1   & wmc_l~p_scar_cv > -0.1', fraction = 1, standardize = TRUE)
+bay_wmc_psc_m <- bain(fit_struc01, hypothesis  = 'wmc_l~p_scar_m < 0.1    & wmc_l~p_scar_m > -0.1', fraction = 1, standardize = TRUE)
+bay_wmc_thr <- bain(fit_struc01, hypothesis    = 'wmc_l~threat_comp < 0.1 & wmc_l~threat_comp > -0.1', fraction = 1, standardize = TRUE)
+
+bay_upd_inr_cv <- bain(fit_struc01, hypothesis = 'upd_l~inr_cv < 0.1      & upd_l~inr_cv > -0.1', fraction = 1, standardize = TRUE)
+bay_upd_inr_m <- bain(fit_struc01, hypothesis  = 'upd_l~inr_m < 0.1       & upd_l~inr_m > -0.1', fraction = 1, standardize = TRUE)
+bay_upd_psc_cv <- bain(fit_struc01, hypothesis = 'upd_l~p_scar_cv < 0.1   & upd_l~p_scar_cv > -0.1', fraction = 1, standardize = TRUE)
+bay_upd_psc_m <- bain(fit_struc01, hypothesis  = 'upd_l~p_scar_m < 0.1    & upd_l~p_scar_m > -0.1', fraction = 1, standardize = TRUE)
+bay_upd_thr <- bain(fit_struc01, hypothesis    = 'upd_l~threat_comp < 0.1 & upd_l~threat_comp > -0.1', fraction = 1, standardize = TRUE)
+
+BF_expl04 <- list(bay_wmc_inr_cv, bay_wmc_inr_m, bay_wmc_psc_cv, bay_wmc_psc_m, bay_wmc_thr,
+  bay_upd_inr_cv, bay_upd_inr_m, bay_wmc_psc_cv, bay_upd_psc_m, bay_upd_thr) |>
+  map_dfr(function(x) {
+    bf <- x$fit |>
+      as_tibble() |>
+      select(BF.c) |>
+      drop_na() |>
+      mutate(BF.c = round(BF.c, 1))
+  }) |>
+  mutate(
+    Hypothesis = c("-0.1 < (WM capacity ~ INR CV) < 0.1", "-0.1 < (WM capacity ~ INR mean) < 0.1", "-0.1 < (WM capacity ~ Perc. scarcity CV) < 0.1", "-0.1 < (WM capacity ~ Perc. scarcity mean) < 0.1",
+                   "-0.1 < (WM capacity ~ Threat) < 0.1",
+                   "-0.1 < (WM updating ~ INR CV) < 0.1", "-0.1 < (WM updating ~ INR mean) < 0.1", "-0.1 < (WM updating ~ Perc. scarcity CV) < 0.1", "-0.1 < (WM updating ~ Perc. scarcity mean) < 0.1",
+                   "-0.1 < (WM updating ~ Threat) < 0.1"
+                   )
+  )
 
 save(lm_reg_coef_expl, equivalence_tests_lm_expl,
      anova_expl02, fitstats_expl02, anova_expl03, fitstats_expl03,
+     BF_expl04,
      file = "analysis_objects/exploratory_results.RData")

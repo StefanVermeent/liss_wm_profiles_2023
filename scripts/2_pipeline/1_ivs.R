@@ -189,7 +189,7 @@ assertthat::assert_that(all(crime_waves_parsed$q_101 %in% c(1,2, NA)))
 
 write_csv(crime_waves_parsed, "data/liss_data/crime/crime_waves_parsed.csv")
 
-#TODO: Sanity checks
+
 
 
 ## 1.5 Working Memory data ----
