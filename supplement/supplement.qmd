@@ -207,9 +207,12 @@ table_s2
 
 # 3. Exploratory analyses
 
-To contextualize our confirmatory (preregistered) findings, we conducted twoexploratory (non-preregistered) analyses.
-Below, we present the results of analyses exploring the associations between adversity and performance on the separate WM tasks using linear regression.
-The other exploratory analyses, which were based on alternative SEM specifications, are presented in the supplemental materials.
+To contextualize our confirmatory (preregistered) findings, we conducted three exploratory (non-preregistered) analyses.
+First, we explored associations between adversity and performance on the separate WM tasks using linear regression.
+Second, we constrained regression paths in the SEM to zero, as an alternative to the equivalence tests.
+Third, we computed Bayes Factors for the equivalence tests.
+
+## 3.1 Linear regression analyses
 
 We estimated a total of five linear regression models, one per WM task.
 Each model included the same independent variables and covariates as the primary analysis.
@@ -237,6 +240,51 @@ We also found a practically equivalent association between unpredictability in p
 fig6
 ```
 <br>
+
+## 3.2 Bayes Factors for equivalence tests
+
+We calculated Bayes factors for the preregistered equivalence tests using the *bain* package [@hoijtink_2019].
+We evaluated evidence in favor of the hypothesis that the regression coefficients fell within the equivalence bounds ($\beta$ ≤ -0.1 and $\beta$ ≥ 0.1)
+
+Third, as a robustness check, we calculated Bayes factors for the preregistered equivalence tests using the *bain* package [@hoijtink_2019], in which we evaluated evidence in favor of the hypothesis that the effects fell within the equivalence bounds, relative to the hypothesis that the effects fell outside the equivalence bounds.
+The results are summarized in Table S3.
+For all but one association, the model comparisons showed at least strong evidence in favor of the hypothesis that the effects fell within the equivalence bounds (BF~10~ ranging between `r BF_expl04 |> filter(Hypothesis != '-0.1 ≤ (WM capacity ~ Threat) ≥ 0.1') |> pull(BF.c) |> min()` and `r BF_expl04 |> filter(Hypothesis != '-0.1 ≤ (WM capacity ~ Threat) ≥ 0.1') |> pull(BF.c) |> max()`.
+The only exception was the association between threat and WM capacity, for which we found moderate evidence for the hypothesis that the effect fell within the equivalence bounds (BF~10~ = `r BF_expl04 |> filter(Hypothesis == '-0.1 ≤ (WM capacity ~ Threat) ≥ 0.1') |> pull(BF.c)`.
+Thus, these results were inconsistent with the preregistered frequentist equivalent tests.
+  
+
+
+```{r}
+table_s3 <- BF_expl04 |> 
+  select(Hypothesis, BF.c) |>
+  flextable::flextable() |>
+  compose(i = 1, j = 2, as_paragraph("BF", as_sub('10')), part = "header") %>%
+  border_remove() %>% 
+  add_header_row(
+    values = " ",
+    colwidths = 2
+  ) |> 
+  flextable::compose(
+    i = 1, j = 1, 
+    as_paragraph(as_b("Table S3. "), "Bayes Factors for practical equivalence tests."),
+    part = "header"
+  ) |> 
+  add_footer_row(
+    values = " ",
+    colwidths = 2
+  ) |> 
+  flextable::compose(
+    i = 1, j = 1, 
+    as_paragraph("BF = Bayes factor; CV = coefficient of variance, INR = income-to-needs ratio, M = mean, Perc. Scarcity = perceived scarcity, WM = working memory"), 
+    part = "footer"
+  ) |> 
+  border(i = 1, border.bottom = fp_border_default(), part = "header") %>% 
+  border(i = 2, border.bottom = fp_border_default(), part = "header") %>% 
+  border(i = 10, border.bottom = fp_border_default(), part = "body") %>% 
+  autofit()
+
+table_s3
+```
 
 # 4. Histograms of independent measures
 
@@ -303,6 +351,8 @@ p_scar_cv_combn_hist
 #|   **Figure 11.** Histograms for unpredictability in the income-to-needs ratio over time (coefficient of change).
 inr_cv_hist
 ```
+
+
 
 \pagebreak
 
