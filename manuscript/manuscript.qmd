@@ -685,13 +685,14 @@ A valuable direction is to combine such a ‘person-centered’ approach with st
 
 ## Conclusion
 
-Over the last decade, adversity research has been shifting towards a more balanced view, focusing not just on cognitive deficits but also on potential adaptations.
+Our psychometric investigation yielded inconclusive evidence for associations between adverse experiences in adulthood and WM capacity and updating ability: Differences in abilities were not significantly different from zero, yet also not negligibly small.
+This study is part of a recent shift in adversity research towards a more balanced view, focusing not just on cognitive deficits but also on potential adaptations.
 This has spurred a growing number of studies investigating more precise links between specific types of adversity and different cognitive abilities.
 Adaptation perspectives in particular have emphasized the need to be more precise about how specific types of adversity are associated with specific cognitive abilities.
 However, this increased need for precision in the measurement of cognitive abilities requires more advanced psychometric approaches.
 For this, adversity researchers can draw, more than they currently do, on decades of psychometric research focused on WM and other cognitive abilities.
-Here, our psychometric investigation of WM yielded inconclusive associations with adverse experiences in adulthood.
-Building on this work will ultimately lead to a better understanding of the unique abilities that develop in contexts of adversity, as well as more precise intervention targets.
+Our findings suggest that this may lead to a more complicated picture compared to traditional investigations into raw performance.
+However, this will ultimately lead to a better understanding of the unique abilities that develop in contexts of adversity, as well as more precise intervention targets.
 
 \pagebreak
 
