@@ -11,8 +11,8 @@ editor_options:
 
 ## Registered Report
 
-Below is the Stage 1 Protocol of the Registered Report submitted to PCI-RR. 
+Below is the Stage 2 version of the Registered Report submitted to PCI-RR. 
 
 ```{=html}
-<iframe width="780" height="600" src="manuscript.pdf" title="Stage 1 Registered Report"></iframe>
+<iframe width="780" height="600" src="vermeent_2024_stage2.pdf" title="Stage 2 Registered Report"></iframe>
 ```

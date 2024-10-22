@@ -3,7 +3,7 @@
 ### Description: access to all income waves in LISS archive
 
 
-### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/71d70ab79326ada925a66e4e695c2e1ae703389a
+### For more information on this commit, see the README file, or go to https://github.com/stefanvermeent/liss_wm_profiles_2023/commit/71d70ab79326ada925a66e4e695c2e1ae703389a
 
 ### Below is the full code that was used to access the data:
 

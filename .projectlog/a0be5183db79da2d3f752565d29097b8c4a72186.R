@@ -3,7 +3,7 @@
 ### Description: access to all working memory measures of new study
 
 
-### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/a0be5183db79da2d3f752565d29097b8c4a72186
+### For more information on this commit, see the README file, or go to https://github.com/stefanvermeent/liss_wm_profiles_2023/commit/a0be5183db79da2d3f752565d29097b8c4a72186
 
 ### Below is the full code that was used to access the data:
 

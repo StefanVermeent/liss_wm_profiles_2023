@@ -3,7 +3,7 @@
 ### Description: access to all background variable waves in LISS archive
 
 
-### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/76539b6a145eef99ba237f8837ee40ba966158ae
+### For more information on this commit, see the README file, or go to https://github.com/stefanvermeent/liss_wm_profiles_2023/commit/76539b6a145eef99ba237f8837ee40ba966158ae
 
 ### Below is the full code that was used to access the data:
 

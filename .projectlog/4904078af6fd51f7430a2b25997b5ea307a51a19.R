@@ -3,7 +3,7 @@
 ### Description: LISS background variables March 2023, shuffled ids
 
 
-### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/4904078af6fd51f7430a2b25997b5ea307a51a19
+### For more information on this commit, see the README file, or go to https://github.com/stefanvermeent/liss_wm_profiles_2023/commit/4904078af6fd51f7430a2b25997b5ea307a51a19
 
 ### Below is the full code that was used to access the data:
 

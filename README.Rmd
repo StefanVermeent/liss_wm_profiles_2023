@@ -20,7 +20,7 @@ knitr::opts_chunk$set("ft.shadow" = FALSE, echo = F, message = F, warning = F)
 
 ```
 <br>
-This repository contains data, code, and output for a project entitled "Working memory performance in adverse environments: Enhanced, impaired, or intact?". A Stage 1 snapshot of the project has been submitted to [Peer Community in Registered Reports (PCI-RR)](https://rr.peercommunityin.org/).
+This repository contains data, code, and output for a project entitled "Inconclusive evidence for associations between adverse experiences in adulthood and working memory performance". The Stage 2 Registered Report has been [recommended by  Peer Community in Registered Reports (PCI-RR)](https://doi.org/10.24072/pci.rr.100859).
 
 Do you want to download or clone the materials for this project? Go to [https://github.com/stefanvermeent/liss_wm_profiles_2023](https://github.com/stefanvermeent/liss_wm_profiles_2023).
 

@@ -3,7 +3,7 @@
 ### Description: Read subject IDs only of new data collection to filter IV data
 
 
-### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/1c2d2e6b017aeb8ce96b1022cc62393e66e7cb55
+### For more information on this commit, see the README file, or go to https://github.com/stefanvermeent/liss_wm_profiles_2023/commit/1c2d2e6b017aeb8ce96b1022cc62393e66e7cb55
 
 ### Below is the full code that was used to access the data:
 

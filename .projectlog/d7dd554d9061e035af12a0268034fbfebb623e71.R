@@ -3,7 +3,7 @@
 ### Description: access to all crime victimization waves in LISS archive, v2
 
 
-### For more information on this commit, see the README file, or go to https://github.com/StefanVermeent/liss_wm_profiles_2023/commit/d7dd554d9061e035af12a0268034fbfebb623e71
+### For more information on this commit, see the README file, or go to https://github.com/stefanvermeent/liss_wm_profiles_2023/commit/d7dd554d9061e035af12a0268034fbfebb623e71
 
 ### Below is the full code that was used to access the data:
 
